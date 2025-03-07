@@ -1,0 +1,64 @@
+{
+    "JointSpaceDegreeOfFreedom" : 3,
+    "TaskSpaceDegreeOfFreedom": 2,
+    "TaskSpace" : {
+        "Vx" : true,
+        "Vy" : true,
+        "Vz" : false,
+        "Wx" : false,
+        "Wy" : false,
+        "Wz" : false
+    },
+    "ControllerLoopTimeMs": 10,
+    "JointLimits" : {
+        "MaxPosition" : [6.28, 6.28, 6.28],
+        "MinPosition" : [-6.28, -6.28, -6.28],
+        "MaxVelocity" : [3.14, 3.14, 3.14],
+        "MaxAcceleration" : [0, 0, 0],
+        "MaxTorque" : [0, 0, 0]
+    },
+    "TaskLimits" : {
+        "MaxVelocity" : [5.0, 5.0, 0.0, 0.0, 0.0, 0.0],
+        "MaxAcceleration" : [0, 0, 0, 0, 0, 0]
+    },
+    "ProfileParameters" : {
+        "JointVelocities" : [0, 0, 0],
+        "JointAccelerations" : [0, 0, 0],
+        "TaskVelocity" : [0, 0],
+        "TaskAcceleration" : [0, 0]
+    },
+    "Kinematics" : {
+        "Type" : "MathExpressions",
+        "MathExpressions" : {
+            "Lengths" : {
+                "lx" : [1.0, 1.0, 1.0],
+                "ly" : [0.0, 0.0, 0.0],
+                "lz" : [0.0, 0.0, 0.0]
+            },
+            "ForwardKinematics" : {
+                "IrIE" : {
+                    "0" : "l1x*cos(q1) + l2x*cos(q1 + q2) + l3x*cos(q1 + q2 + q3)",
+                    "1" : "l1x*sin(q1) + l2x*sin(q1 + q2) + l3x*sin(q1 + q2 + q3)",
+                    "2" : "NaN"
+                },
+                "CardanXYZ" : {
+                    "X" : "NaN",
+                    "Y" : "NaN",
+                    "Z" : "NaN"
+                }
+            },
+            "Jacobian" : {
+                "Row0": {
+                    "Col0": "-l1x*sin(q1) - l2x*sin(q1 + q2) - l3x*sin(q1 + q2 + q3)",
+                    "Col1": "-l2x*sin(q1 + q2) - l3x*sin(q1 + q2 + q3)",
+                    "Col2": "-l3x*sin(q1 + q2 + q3)"
+                },
+                "Row1": {
+                    "Col0": "l1x*cos(q1) + l2x*cos(q1 + q2) + l3x*cos(q1 + q2 + q3)",
+                    "Col1": "l2x*cos(q1 + q2) + l3x*cos(q1 + q2 + q3)",
+                    "Col2": "l3x*cos(q1 + q2 + q3)"
+                }
+            }
+        }
+    }
+}

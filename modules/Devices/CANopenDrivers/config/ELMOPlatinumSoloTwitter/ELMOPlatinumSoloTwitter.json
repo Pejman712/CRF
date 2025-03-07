@@ -1,0 +1,36 @@
+{
+    "SlaveID" : 1,
+    "PositionUnitConversion" : 9126.58,
+    "VelocityUnitConversion" : 9126.58,
+    "AccelerationUnitConversion" : 9126.58,
+    "JerkUnitConversion" : 9126.58,
+    "TorqueUnitConversion" : 7.14,
+    "CurrentUnitConversion" : 7.14,
+    "PDOConfiguration" : {
+        "RxPDOAssign" : [
+            {
+                "Idx" : "1600",
+                "Map" : [
+                    {"Idx" : "6040", "SubIdx" : "00", "BitLength" : "10" },
+                    {"Idx" : "607A", "SubIdx" : "00", "BitLength" : "20" },
+                    {"Idx" : "60FF", "SubIdx" : "00", "BitLength" : "20" },
+                    {"Idx" : "6071", "SubIdx" : "00", "BitLength" : "10" },
+                    {"Idx" : "6060", "SubIdx" : "00", "BitLength" : "08" }
+                ]
+            }
+        ],
+        "TxPDOAssign" : [
+            {
+                "Idx" : "1A00",
+                "Map" : [
+                    {"Idx" : "6041", "SubIdx" : "00", "BitLength" : "10" },
+                    {"Idx" : "6064", "SubIdx" : "00", "BitLength" : "20" },
+                    {"Idx" : "606C", "SubIdx" : "00", "BitLength" : "20" },
+                    {"Idx" : "6077", "SubIdx" : "00", "BitLength" : "10" },
+                    {"Idx" : "6078", "SubIdx" : "00", "BitLength" : "10" },
+                    {"Idx" : "6061", "SubIdx" : "00", "BitLength" : "08" }
+                ]
+            }
+        ]
+    }
+}

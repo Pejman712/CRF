@@ -1,0 +1,22 @@
+{
+    "JointSpaceDegreeOfFreedom" : 3,
+    "TaskSpaceDegreeOfFreedom" : 6,
+    "ControllerLoopTimeMs" : 2,
+    "JointLimits" : {
+        "MaxPosition" : [6.28, 6.28, 6.28],
+        "MinPosition" : [-6.28, -6.28, -6.28],
+        "MaxVelocity" : [2.09, 2.09, 3.14],
+        "MaxAcceleration" : [3, 3, 3],
+        "MaxTorque" : [1, 1, 1]
+    },
+    "TaskLimits" : {
+        "MaxVelocity" : [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        "MaxAcceleration" : [1, 1, 1, 1, 1, 1]
+    },
+    "ProfileParameters" : {
+        "JointVelocities" : [1, 1, 1],
+        "JointAccelerations" : [1.4, 1.4, 1.4],
+        "TaskVelocity" : [0.2, 0.2, 0.2, 0.1, 0.1, 0.1],
+        "TaskAcceleration" : [1, 1, 1, 0.8, 0.8, 0.8]
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "Range": {
+        "Minimum": 0,
+        "Maximum": 25
+        },
+    "Angle": {
+        "Minimum": 0,
+        "Maximum": 6.28
+    },
+    "AngularResolution": 0,
+    "ScanSize": 0,
+    "Frequency": 4,
+    "ScanIntervalUs": 1,
+    "LiDARIDs":  {
+        "LidarVendorID": 4292,
+        "LidarProductID": 60000
+    },
+    "FrameLimits": {
+        "X_Minimum": -25,
+        "X_Maximum": 25,
+        "Y_Minimum": -25,
+        "Y_Maximum": 25,
+        "Z_Minimum": 0,
+        "Z_Maximum": 0
+    }    
+}
+

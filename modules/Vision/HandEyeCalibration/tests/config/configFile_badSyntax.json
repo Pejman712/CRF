@@ -1,0 +1,9 @@
+{
+    "inputImageFilename": "image-%d.png",
+    "inputPoseFilename": "pose_fPe_%d.yaml",
+    "intrinsicFile": "camera.xml",
+XXX
+    "cameraName": "Camera",
+    "outputFilename": "cpproboticframework/build/eMc.txt"
+}
+

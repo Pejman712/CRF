@@ -1,0 +1,101 @@
+{
+    "positionsSize": 12,
+    "positions": {
+        "position0": {
+            "joint0": 0,
+            "joint1": -0.4,
+            "joint2": -0.9,
+            "joint3": 0,
+            "joint4": 0.4,
+            "joint5": 2.6
+        },
+        "position1": {
+            "joint0": -2.8,
+            "joint1": 1.3,
+            "joint2": 2.3,
+            "joint3": 0,
+            "joint4": 0.4,
+            "joint5": -0.4
+        },
+        "position2": {
+            "joint0": 0,
+            "joint1": -0.8,
+            "joint2": -1.5,
+            "joint3": 0,
+            "joint4": 0,
+            "joint5": 0
+        },
+        "position3": {
+            "joint0": 0.7,
+            "joint1": -0.9,
+            "joint2": -0.5,
+            "joint3": 0.356,
+            "joint4": 1.34,
+            "joint5": 2.6
+        },
+        "position4": {
+            "joint0": 0,
+            "joint1": -2.1,
+            "joint2": -2.5,
+            "joint3": 0,
+            "joint4": 0,
+            "joint5": -2.7
+        },
+        "position5": {
+            "joint0": 1,
+            "joint1": 1.5,
+            "joint2": 2.1,
+            "joint3": 0.9,
+            "joint4": 0.7,
+            "joint5": -3.4
+        },
+        "position6": {
+            "joint0": 1.3,
+            "joint1": -1.2,
+            "joint2": -2.3,
+            "joint3": 2.3,
+            "joint4": 1,
+            "joint5": -2
+        },
+        "position7": {
+            "joint0": 1.1,
+            "joint1": -0.6,
+            "joint2": -1.6,
+            "joint3": 2.3,
+            "joint4": 0.9,
+            "joint5": -2
+        },
+        "position8":{
+            "joint0": 1.3,
+            "joint1": -1.2,
+            "joint2": -2.3,
+            "joint3": 2.3,
+            "joint4": 1,
+            "joint5": -2
+        },
+        "position9": {
+            "joint0": -1.3,
+            "joint1": -1.2,
+            "joint2": -2.3,
+            "joint3": 0.6,
+            "joint4": -0.9,
+            "joint5": -2
+        },
+        "position10": {
+            "joint0": 0,
+            "joint1": 1,
+            "joint2": 1.3,
+            "joint3": 0,
+            "joint4": 0.63,
+            "joint5": 2.6
+        },
+        "position11": {
+            "joint0": 0,
+            "joint1": -0.9,
+            "joint2": 0,
+            "joint3": 0,
+            "joint4": 1.8,
+            "joint5": 2.3
+        }
+    }
+}

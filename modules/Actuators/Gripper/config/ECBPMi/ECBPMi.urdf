@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="ECBPMi">
+
+    <!-- Base link -->
+    <link name="base_link">
+    </link>
+
+    <!-- Tool link -->
+    <link name="tool_link">
+    </link>
+
+    <!-- Joint connecting base_link and tool_link -->
+    <joint name="base_to_tool" type="fixed">
+        <parent link="base_link"/>
+        <child link="tool_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Tool definition -->
+    <tool name="ECBPMiGripper">
+        <origin rpy="0 0 0" xyz="0 0 -121"/>
+    </tool>
+
+</robot>

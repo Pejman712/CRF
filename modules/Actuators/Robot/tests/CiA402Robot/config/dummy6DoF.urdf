@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="ECBPMi">
+
+    <link name="root_link"/>
+
+    <joint name="root_joint" type="fixed">
+        <parent link="root_link"/>
+        <child link="link1"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="link1"/>
+
+    <joint name="joint1" type="continuous">
+        <parent link="link1"/>
+        <child link="link2"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+     <link name="link2"/>
+
+    <joint name="joint2" type="continuous">
+        <parent link="link2"/>
+        <child link="link3"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+     <link name="link3"/>
+
+    <joint name="joint3" type="continuous">
+        <parent link="link3"/>
+        <child link="link4"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+     <link name="link4"/>
+
+    <joint name="joint4" type="continuous">
+        <parent link="link4"/>
+        <child link="link5"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+     <link name="link5"/>
+
+    <joint name="joint5" type="continuous">
+        <parent link="link5"/>
+        <child link="link6"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+     <link name="link6"/>
+
+    <joint name="joint6" type="continuous">
+        <parent link="link6"/>
+        <child link="leafLink"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="leafLink"/>
+
+    <joint name="leafJoint" type="fixed">
+        <parent link="leafLink"/>
+        <child link="end_effector_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="end_effector_link"/>
+
+</robot>

@@ -1,0 +1,47 @@
+{
+    "ValidityCheckingResolution" : 0.03,
+    "MaximumPlanningTimeSeconds" : 0.3,
+    "SimplifyPath" : true,
+    "MaximumSimplificationTimeSeconds" : 1,
+    "StateConfiguration" : [
+        {
+            "Type" : "SO2",
+            "Weight" : 1
+        },
+        {
+            "Type" : "Real",
+            "Dimension" : 1,
+            "Weight" : 1,
+            "Bounds" : {
+                "Max" : 5.54,
+                "Min" : 0.75
+            }
+        },
+        {
+            "Type" : "Real",
+            "Dimension" : 1,
+            "Weight" : 1,
+            "Bounds" : {
+                "Max" : 5.98,
+                "Min" : 0.3
+            }
+        },
+        {
+            "Type" : "SO2",
+            "Weight" : 1
+        },
+        {
+            "Type" : "Real",
+            "Dimension" : 1,
+            "Weight" : 1,
+            "Bounds" : {
+                "Max" : 5.09,
+                "Min" : 1.2
+            }
+        },
+        {
+            "Type" : "SO2",
+            "Weight" : 1
+        }
+    ]
+}

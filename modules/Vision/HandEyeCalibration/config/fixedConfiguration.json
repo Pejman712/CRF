@@ -1,0 +1,8 @@
+{
+    "inputImageFilename": "cpproboticframework/build/image-%d.png",
+    "inputPoseFilename": "cpproboticframework/build/pose_fPe_%d.yaml",
+    "intrinsicFile": "cpproboticframework/build/camera.xml",
+    "cameraName": "Camera",
+    "endEffectorToObjectoutputFilename": "cpproboticframework/build/eMo.txt",
+    "worldToCameraoutputFilename": "cpproboticframework/build/wMc.txt"
+}

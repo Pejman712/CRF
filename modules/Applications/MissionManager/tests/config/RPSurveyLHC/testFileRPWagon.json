@@ -1,0 +1,31 @@
+{
+    "HardwareConfiguration" : "TIMRPWagon",
+    "Communications" : {
+        "Priority" : 60,
+        "TIM" : {
+            "Host" : "localhost",
+            "Port" : 4000
+        },
+        "TIMRPWagon" : {
+            "Host" : "localhost",
+            "Port" : 3002
+        },
+        "RPSensor" : {
+            "Host" : "localhost",
+            "Port" : 8000
+        }
+    },
+    "Movement" : {
+        "TIMPositionThreshold" : 0.3,
+        "DefaultTIMVelocity" : 10.0,
+        "ReducedTIMVelocity" : 0.5,
+        "Obstacles" : {
+            "Margin" : 9.0,
+            "AreaExtension" : 10.0
+        }
+    },
+    "TIMHeadOffset" : 2.0,
+    "TIMTailOffset" : 9.0,
+    "MaxBufferSize" : 10,
+    "ResultsPath" : "cpproboticframework/build/"
+}

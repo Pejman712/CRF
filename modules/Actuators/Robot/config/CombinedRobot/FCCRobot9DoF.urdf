@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="FCCRobot9DoF">
+
+<!-- ********************************** BASE / Inertial Frame ********************************* -->
+<!-- If mobile platform: This is the platform link -->
+<!-- If robotic arm: This is the inertial frame or mounting of the robotic arm -->
+<link name="mountingPlate">
+	<visual>
+        <geometry>
+            <mesh filename="G:/Projects/Robotics/02. Robots/03. Robotic Arms/FCC Robot/URDF Files/OBJ MTL files/mountingPlate927.obj"/>
+        </geometry>
+    </visual>
+</link>
+
+<!-- ***************************************** WHEELS ***************************************** -->
+
+<!-- No Wheels on the FCC Robot -->
+
+<!-- ****************************************** ARM ******************************************* -->
+
+<joint name="joint1" type="continuous">
+    <parent link="mountingPlate"/>
+    <child link="link1"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+</joint>
+
+<link name="link1">
+	<visual>
+        <geometry>
+            <mesh filename="G:/Projects/Robotics/02. Robots/03. Robotic Arms/FCC Robot/URDF Files/OBJ MTL files/link1.obj"/>
+        </geometry>
+    </visual>
+</link>
+
+<joint name="joint2" type="continuous">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.193 -0.190 0.165"/>
+</joint>
+
+<link name="link2">
+	<visual>
+        <geometry>
+            <mesh filename="G:/Projects/Robotics/02. Robots/03. Robotic Arms/FCC Robot/URDF Files/OBJ MTL files/link2.obj"/>
+        </geometry>
+    </visual>
+</link>
+
+<joint name="joint3" type="continuous">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.04795 0 0.820"/>
+</joint>
+
+<link name="link3">
+	<visual>
+        <geometry>
+            <mesh filename="G:/Projects/Robotics/02. Robots/03. Robotic Arms/FCC Robot/URDF Files/OBJ MTL files/link3.obj"/>
+        </geometry>
+    </visual>
+</link>
+
+<joint name="joint4" type="continuous">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="-0.095 0 0.400"/>
+</joint>
+
+<link name="link4">
+	<visual>
+        <geometry>
+            <mesh filename="G:/Projects/Robotics/02. Robots/03. Robotic Arms/FCC Robot/URDF Files/OBJ MTL files/link4.obj"/>
+        </geometry>
+    </visual>
+</link>
+
+<joint name="joint5" type="continuous">
+    <parent link="link4"/>
+    <child link="link5"/>
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.176 0 0.181"/>
+</joint>
+
+<link name="link5">
+	<visual>
+        <geometry>
+            <mesh filename="G:/Projects/Robotics/02. Robots/03. Robotic Arms/FCC Robot/URDF Files/OBJ MTL files/link5.obj"/>
+        </geometry>
+    </visual>
+</link>
+
+<joint name="joint6" type="continuous">
+    <parent link="link5"/>
+    <child link="link6"/>
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.137 0 0.613"/>
+</joint>
+
+<link name="link6">
+	<visual>
+        <geometry>
+            <mesh filename="G:/Projects/Robotics/02. Robots/03. Robotic Arms/FCC Robot/URDF Files/OBJ MTL files/link6.obj"/>
+        </geometry>
+    </visual>
+</link>
+
+<joint name="joint7" type="continuous">
+    <parent link="link6"/>
+    <child link="link7"/>
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.135 0 0.571"/>
+</joint>
+
+<link name="link7">
+	<visual>
+        <geometry>
+            <mesh filename="G:/Projects/Robotics/02. Robots/03. Robotic Arms/FCC Robot/URDF Files/OBJ MTL files/link7.obj"/>
+        </geometry>
+    </visual>
+</link>
+
+<joint name="joint8" type="continuous">
+    <parent link="link7"/>
+    <child link="link8"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0 0 0.120"/>
+</joint>
+
+<link name="link8">
+	<visual>
+        <geometry>
+            <mesh filename="G:/Projects/Robotics/02. Robots/03. Robotic Arms/FCC Robot/URDF Files/OBJ MTL files/link8.obj"/>
+        </geometry>
+    </visual>
+</link>
+
+<!-- The last object needs to be a joint for the kinematic calculations done later -->
+
+<joint name="joint9" type="continuous">
+    <parent link="link8"/>
+    <child link="link9"/>
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.117 0 0"/>
+</joint>
+
+<link name="link9">
+	<visual>
+        <geometry>
+            <mesh filename="G:/Projects/Robotics/02. Robots/03. Robotic Arms/FCC Robot/URDF Files/OBJ MTL files/link9.obj"/>
+        </geometry>
+    </visual>
+</link>
+
+</robot>

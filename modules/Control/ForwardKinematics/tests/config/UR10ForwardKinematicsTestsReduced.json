@@ -1,0 +1,38 @@
+{
+    "IrIE" :
+    {
+        "0" : "cos(q1) + l1x",
+        "1" : "cos(q2) + l1y",
+        "2" : "NaN"
+    },
+    "CardanXYZ" :
+    {
+        "X" : "NaN",
+        "Y" : "NaN",
+        "Z" : "cos(q4) + l2x"
+    },
+    "IvIE" :
+    {
+        "0" : "cos(qd1) + sin(q1) + l2y",
+        "1" : "cos(qd2) + sin(q2) + l2z",
+        "2" : "NaN"
+    },
+    "IwIE" :
+    {
+        "0" : "NaN",
+        "1" : "NaN",
+        "2" : "cos(qd4) + sin(q4) + l3y"
+    },
+    "IaIE" :
+    {
+        "0" : "sin(qdd1) + cos(qd1) + sin(q1) + l3z",
+        "1" : "sin(qdd2) + cos(qd2) + sin(q2) + l4x",
+        "2" : "NaN"
+    },
+    "IalphaIE" :
+    {
+        "0" : "NaN",
+        "1" : "NaN",
+        "2" : "sin(qdd4) + cos(qd4) + sin(q4) + l4z"
+    }
+}

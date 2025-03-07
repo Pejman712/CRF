@@ -1,0 +1,27 @@
+{
+    "PositionUnitConversion" : 57295.7795,
+    "VelocityUnitConversion" : 57295.7795,
+    "AccelerationUnitConversion" : 57295.7795,
+    "ModesOfOperation" : {
+        "InterpolatedPositionMode" : {
+            "InterpolationTimePeriod" :  {
+                "InterpolationTimePeriodValue" : 50,
+                "InterpolationTimeIndex" : -3
+            },
+            "PositionWindow": 0.159,
+            "PositionWindowTime" : 0.159
+        },
+        "VelocityMode": {
+            "VelocityMinMaxAmount" : {
+                "Min": 0,
+                "Max": 14323.945
+            }
+        },
+        "ProfilePositionMode" : {
+            "MaxProfileVelocity" : 14323.944,
+            "QuickStopDeceleration" : 71619.7244,
+            "MaxAcceleration" : 71619.7244,
+            "MotionProfileType" : "Trapezoidal"
+        }
+    }
+}

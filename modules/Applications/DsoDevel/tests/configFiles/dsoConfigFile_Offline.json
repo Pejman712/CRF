@@ -1,0 +1,6 @@
+{
+    "vignette": "/home/pptaszni/Documents/DsoDatasets/seq11/vignette.png",
+    "cameraConfig": "/home/pptaszni/Documents/DsoDatasets/seq11/camera.txt",
+    "gammaCalib": "/home/pptaszni/Documents/DsoDatasets/seq11/pcalib.txt",
+    "offlineData": "/home/pptaszni/Documents/DsoDatasets/seq11/images/%05d.jpg"
+}

@@ -1,0 +1,8 @@
+{
+    "inputImageFilename": "cpproboticframework/tests/Applications/HandEyeCalibrationTests/data/QR_noQR_images/image-%d.png",
+    "inputPoseFilename": "cpproboticframework/tests/Applications/HandEyeCalibrationTests/data/QR_noQR_poses/pose_fPe_%d.yaml",
+    "intrinsicFile": "cpproboticframework/tests/Applications/HandEyeCalibrationTests/data/good_intrinsic_file.xml",
+    "cameraName": "Camera",
+    "outputFilename": "cpproboticframework/build/test_eMc.txt"
+}
+

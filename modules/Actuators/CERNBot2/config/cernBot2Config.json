@@ -1,0 +1,22 @@
+{
+    "Name" : "CERNBot2",
+    "NumberOfWheels" : 4,
+    "LoopTimeUs": 5000,
+    "hasLiftingStage": 1,
+    "Wheels": {
+        "PositionX": 0.685,
+        "PositionY": 0.71,
+        "WheelsDiameter": 0.2554,
+        "MaximumVelocity": 15.7,
+        "MaximumAcceleration": 20
+    },
+    "TaskLimits": {
+        "MaximumVelocity": [ 2.0,  1.0, 0.0, 0.0, 0.0, 1.0],
+        "MaximumAcceleration": [10.0, 10.0, 0.5, 5.0, 5.0, 5.0]
+    },
+    "LinearStage": {
+        "rotationToLinearRatio": 0.000131579,
+        "maximumVelocity": 1,
+        "maximumAcceleration": 1
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "Name" : "YouBot",
+    "NumberOfWheels" : 4,
+    "LoopTimeUs": 20000,
+    "MaximumLinearVelocity": 1.0,
+    "MaximumAngularVelocity": 1.0,
+    "MaximumTranversalVelocity": 1.0,
+    "hasLiftingStage": 0,
+    "Wheels": {
+        "PositionX": 0.30046,
+        "PositionY": 0.471,
+        "InchSize" : 4,
+        "WheelsDiameter4": 0.10
+        },
+    "TaskLimits": {
+        "MaximumPosition": [15.0, 15.0, 0.15, 3.14, 3.14, 3.14],
+        "MaximumVelocity": [ 1.0,  1.0, -0.05, 0.05, 0.05, 1.0],
+        "MaximumAcceleration": [2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
+    }
+}

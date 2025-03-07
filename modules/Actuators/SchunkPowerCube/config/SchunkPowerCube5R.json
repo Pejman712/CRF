@@ -1,0 +1,85 @@
+{
+    "NumberOfJoints" : 5,
+    "LoopTimeMs": 11,
+    "KinematicChain" :
+    {
+        "format": "DH",
+        "parameters": [
+            {
+                "D" : 0.2700,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : -1.5707
+            },
+            {
+                "D" : 0.0,
+                "Theta" : -1.5707,
+                "A" : 0.3100,
+                "Alpha" : 3.1415
+            },
+            {
+                "D" : 0.0,
+                "Theta" : -1.5707,
+                "A" : 0.0,
+                "Alpha" : -1.5707
+            },
+            {
+                "D" : 0.3430,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : 1.5707
+            },
+            {
+                "D" : 0.0,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : -1.5707
+            }]
+    },
+    "Joints" : [
+        {
+            "CanID" : 1,
+            "Offset" : 0.0,
+            "Maximum": 3.1415,
+            "Minimum": -3.1415,
+            "MaximumVelocity": 0.3,
+            "MaximumAcceleration": 0.05
+        },
+        {
+            "CanID" : 2,
+            "Offset" : 0.0,
+            "Maximum": 2.0900,
+            "Minimum": -2.0900,
+            "MaximumVelocity": 0.3,
+            "MaximumAcceleration": 0.05
+        },
+        {
+            "CanID" : 7,
+            "Offset" : 0.0,
+            "Maximum": 2.1800,
+            "Minimum": -2.1800,
+            "MaximumVelocity": 0.3,
+            "MaximumAcceleration": 0.05
+        },
+        {
+            "CanID" : 4,
+            "Offset" : 0.2,
+            "Maximum": 3.1415,
+            "Minimum": -3.1415,
+            "MaximumVelocity": 0.3,
+            "MaximumAcceleration": 0.05
+        },
+        {
+            "CanID" : 0,
+            "Offset" : 0.0,
+            "Maximum": 2.000,
+            "Minimum": -2.000,
+            "MaximumVelocity": 0.3,
+            "MaximumAcceleration": 0.05
+        }
+    ],
+    "TaskLimits": {
+        "MaximumVelocity": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        "MaximumAcceleration": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+    }
+}

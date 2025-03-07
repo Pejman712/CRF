@@ -1,0 +1,70 @@
+{
+    "kNN" : {
+        "value" : 2,
+        "closestPoints": true,
+        "radius": 0.1
+    },
+    "solver" : {
+        "dense": true,
+        "cholmod": false,
+        "csparse": false,
+        "eigen": false,
+        "pcg": true
+    },
+    "optimizer" : {
+        "type" : {
+            "levenberg": true,
+            "gaussNewton": false
+        },
+        "levenberg" : {
+            "lambdaSelection": false,
+            "lambda": 0.00001,
+            "trialsSelection": false,
+            "trialAfterFailure": -10
+        },
+        "optimizerVerbose": true,
+        "iterations": 100,
+        "robustKernel": false
+    },
+    "odometrySimulation" : {
+        "noise" : {
+            "x": 0.005,
+            "y": 0.001,
+            "z": 0.005
+        },
+        "speed" : {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.1
+        }
+    },
+    "threshold" : {
+        "value": 0.10
+    },
+    "visualization" : false,
+    "organizedPointCloud" : true,
+    "frameTransformation" : {
+        "R0": [1, 0 ,0],
+        "R1": [0, 1 ,0],
+        "R2": [0, 0 ,1],
+        "t0": 0.3,
+        "t1": 0,
+        "t2": 0.1
+    },
+    "initialPosition" : {
+        "R0": [1, 0 ,0],
+        "R1": [0, 1 ,0],
+        "R2": [0, 0 ,1],
+        "t0": 0,
+        "t1": 0,
+        "t2": 0
+    },
+    "doors" : {
+        "number": 2,
+        "doorsLocation" : {
+            "door0": [20, 0.01, 0],
+            "door1": [50, 0.03, 0]
+        }
+    }
+}
+

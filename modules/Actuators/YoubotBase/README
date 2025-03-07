@@ -1,0 +1,37 @@
+Installing youbot-driver on a new linux distribution
+
+Install dependencies
+sudo apt-get install git cmake build-essential libboost-all-dev doxygen libeigen3-dev
+
+Install orocos KDL
+git clone https://github.com/orocos/orocos_kinematics_dynamics.git
+cd orocos_kinematics_dynamics/orocos_kdl
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+
+Install youbot_driver
+git clone https://github.com/youbot/youbot_driver.git
+cd youbot_driver
+
+cd config
+nano youbot-ethercat.cfg
+
+Change
+EthernetDevice = eth0
+in 
+EthernetDevice = eth1
+
+Save and close
+
+cd ..
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+
+
+Ready to GO!

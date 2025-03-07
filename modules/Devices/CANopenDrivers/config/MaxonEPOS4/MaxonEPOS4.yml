@@ -1,0 +1,108 @@
+#######################################################################################################################
+##                                                                                                                   ##
+## © Copyright CERN 2022. All rights reserved. This software is released under a CERN proprietary software license.  ##
+## Any permission to use it shall be granted in writing. Requests shall be addressed to CERN through mail-KT@cern.ch ##
+##                                                                                                                   ##
+## Author: Natalija Topalovic CERN BE/CEM/MRO 2022                                                                   ##
+##                                                                                                                   ##
+#######################################################################################################################
+
+master:
+  node_id: 5
+  sync_period: 50000 # us
+  heartbeat_consumer: true
+  heartbeat_producer: 50 # ms
+
+slave_3:
+  dcf: "MaxonEPOS4.eds"
+  dcf_path: "cpproboticframework/modules/Devices/CANopenDrivers/config/MaxonEPOS4/"
+  node_id: 3
+  heartbeat_consumer: true
+  heartbeat_producer: 50 # ms
+
+  rpdo:
+    1:
+      enabled: true
+      cob_id: auto
+      transmission: 0x01
+      mapping:
+         - {index: 0x607A, sub_index: 0x00} # target position
+         - {index: 0x60FF, sub_index: 0x00} # target velocity
+    2:
+      enabled: true
+      cob_id: auto
+      transmission: 0x01
+      mapping:
+      # value with 6 bytes
+        - {index: 0x6071,  sub_index: 0x00} # target torque
+  tpdo:
+    1:
+      enabled: true
+      cob_id: auto
+      transmission: 0x01
+      mapping:
+      #both values have 4 bytes
+        - {index: 0x6041, sub_index: 0x00} # statusword
+        - {index: 0x6064, sub_index: 0x00} # actual position value register
+    2:
+      enabled: true
+      cob_id: auto
+      transmission: 0x01
+      mapping:
+      # value with 6 bytes
+        - {index: 0x6061,  sub_index: 0x00} # modes of operation display
+        - {index: 0x606C,  sub_index: 0x00} # velocity actual value
+    3:
+      enabled: true
+      cob_id: auto
+      transmission: 0x01
+      mapping:
+      # value with 6 bytes
+        - {index: 0x6077,  sub_index: 0x00} # torque actual value
+
+slave_4:
+  dcf: "MaxonEPOS4.eds"
+  dcf_path: "cpproboticframework/modules/Devices/CANopenDrivers/config/MaxonEPOS4/"
+  node_id: 4
+  heartbeat_consumer: true
+  heartbeat_producer: 50 # ms
+
+  rpdo:
+    1:
+      enabled: true
+      cob_id: auto
+      transmission: 0x01
+      mapping:
+         - {index: 0x607A, sub_index: 0x00} # target position
+         - {index: 0x60FF, sub_index: 0x00} # target velocity
+    2:
+      enabled: true
+      cob_id: auto
+      transmission: 0x01
+      mapping:
+      # value with 6 bytes
+        - {index: 0x6071,  sub_index: 0x00} # target torque
+  tpdo:
+    1:
+      enabled: true
+      cob_id: auto
+      transmission: 0x01
+      mapping:
+      #both values have 4 bytes
+        - {index: 0x6041, sub_index: 0x00} # statusword
+        - {index: 0x6064, sub_index: 0x00} # actual position value register
+    2:
+      enabled: true
+      cob_id: auto
+      transmission: 0x01
+      mapping:
+      # value with 6 bytes
+        - {index: 0x6061,  sub_index: 0x00} # modes of operation display
+        - {index: 0x606C,  sub_index: 0x00} # velocity actual value
+    3:
+      enabled: true
+      cob_id: auto
+      transmission: 0x01
+      mapping:
+      # value with 6 bytes
+        - {index: 0x6077,  sub_index: 0x00} # torque actual value

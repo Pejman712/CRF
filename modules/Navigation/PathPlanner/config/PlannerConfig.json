@@ -1,0 +1,30 @@
+{
+    "ValidityCheckingResolution" : 0.03,
+    "MaximumPlanningTimeSeconds" : 1,
+    "MaximumSimplificationTimeSeconds" : 1,
+    "SimplifyPath" : true,
+    "StateConfiguration" : [
+        {
+            "Type" : "Real",
+            "Dimension" : 1,
+            "Weight" : 1,
+            "Bounds" : {
+                "Max" : 1e4,
+                "Min" : -1e4
+            }
+        },
+        {
+            "Type" : "Real",
+            "Dimension" : 1,
+            "Weight" : 1,
+            "Bounds" : {
+                "Max" : 1e4,
+                "Min" : -1e4
+            }
+        },
+        {
+            "Type" : "SO2",
+            "Weight" : 1
+        }
+    ]
+}

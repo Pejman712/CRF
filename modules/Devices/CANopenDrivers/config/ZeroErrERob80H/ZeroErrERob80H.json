@@ -1,0 +1,53 @@
+{
+    "SlaveID" : 1,
+    "CheckSupportedModes" : false,
+    "PositionUnitConversion" : 83443.03,
+    "VelocityUnitConversion" : 83443.03,
+    "AccelerationUnitConversion" : 83443.03,
+    "JerkUnitConversion" : 83443.03,
+    "TorqueUnitConversion" : 32.26,
+    "CurrentUnitConversion" : 294.12,
+    "PDOConfiguration" : {
+        "RxPDOAssign" : [
+            {"Idx" : "160A"},
+            {"Idx" : "160B"},
+            {"Idx" : "160F"},
+            {"Idx" : "161C"},
+            {"Idx" : "160C"}
+        ],
+        "TxPDOAssign" : [
+            {"Idx" : "1A0A"},
+            {"Idx" : "1A0B"},
+            {"Idx" : "1A0E"},
+            {"Idx" : "1A11"},
+            {"Idx" : "1A00",
+                "Map" : [
+                    {"Idx" : "3B69", "SubIdx" : "00", "BitLength" : "20" },
+                    {"Idx" : "6078", "SubIdx" : "00", "BitLength" : "10" }
+                ]
+            }
+        ]
+    },
+    "QuickStopOptionCode" : "SlowDownRampAndQuickStopActive",
+    "MaxMotorSpeed" : 1.55,
+    "ModesOfOperation" : {
+        "ProfilePositionMode" : {
+            "MaxProfileVelocity" : 1.5,
+            "QuickStopDeceleration" : 5.5,
+            "MaxAcceleration" : 4,
+            "MaxDeceleration" : 4,
+            "MotionProfileType" : "Trapezoidal"
+        },
+        "ProfileVelocityMode" : {
+            "MaxProfileVelocity" : 1.5,
+            "QuickStopDeceleration" : 5.5,
+            "MaxAcceleration" : 4,
+            "MaxDeceleration" : 4,
+            "MotionProfileType" : "Trapezoidal"
+        },
+        "ProfileTorqueMode" : {
+            "PositiveTorqueLimitValue" : 31,
+            "NegativeTorqueLimitValue" : 31
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "Model" : "UST20LX",
+    "ScanIntervalUs": 25000,
+    "ScanSize": 1081,
+    "Range": {
+        "Minimum": 0.06,
+        "Maximum": 20.0
+        },
+    "AngularResolution": 0.25,
+    "Angle": {
+        "Minimum": -135,
+        "Maximum": 135
+    }
+}

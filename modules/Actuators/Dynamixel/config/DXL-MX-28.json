@@ -1,0 +1,27 @@
+{
+    "NumberOfMotors" : 2,
+    "dxl_id" : [3, 5],
+    "MotorType" : "MX-28",
+    "Limits" : [ 
+        {
+            "MinPosValue" : 0,
+            "MaxPosValue" : 4096,
+            "StartValue"  : 2048
+        },
+        {
+            "MinPosValue" : 0,
+            "MaxPosValue" : 2048,
+            "StartValue"  : 1024
+        }
+    ],
+    "Baud_Rate" : 1000000,
+    "Unit_degree" : 0.088,
+    "PulseMovement" : 10,
+    "AddrMX" : {
+        "TorqueEnable" : 24,
+        "GoalPosition" : 30,
+        "PresentPosition" : 36,
+        "Moving" : 46
+    },
+    "ProtocolVersion" : 1.0
+}

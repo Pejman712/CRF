@@ -1,0 +1,25 @@
+{
+    "MaxCurrent" : 50000,
+    "MaxTorque" : 50000,
+    "RadToCountRatio" : 11408.5627,
+    "JointSpaceDegreeOfFreedom" : 4,
+    "TaskSpaceDegreeOfFreedom": 3,
+    "ControllerLoopTimeMs": 4,
+    "JointLimits" : {
+        "MaxPosition" : ["inf", "inf", "inf", "inf"],
+        "MinPosition" : ["-inf", "-inf", "-inf", "-inf"],
+        "MaxVelocity" : [47.12, 47.12, 47.12, 47.12],
+        "MaxAcceleration" : [17.45, 17.45, 17.45, 17.45],
+        "MaxTorque" : [20, 20, 20, 20]
+    },
+    "TaskLimits" : {
+        "MaxVelocity" : {"data": [3.58, 3.58, 11.19], "custom" : true},
+        "MaxAcceleration" :  {"data": [1.32, 1.32, 4.14],  "custom" : true}
+    },
+    "ProfileParameters" : {
+        "JointVelocities" : [20, 20, 20, 20],
+        "JointAccelerations" : [10, 10, 10, 10],
+        "TaskVelocity" : {"data" : [2, 2, 5], "custom" : true},
+        "TaskAcceleration" : {"data" : [1, 1, 2], "custom" : true}
+    }
+}

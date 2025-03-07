@@ -1,0 +1,76 @@
+#######################################################################################################################
+##                                                                                                                   ##
+## © Copyright CERN 2023. All rights reserved. This software is released under a CERN proprietary software license.  ##
+## Any permission to use it shall be granted in writing. Requests shall be addressed to CERN through mail-KT@cern.ch ##
+##                                                                                                                   ##
+## Author: Jorge Playan Garai CERN BE/CEM/MRO 2023                                                                   ##
+##                                                                                                                   ##
+#######################################################################################################################
+
+master:
+    node_id: 1
+    sync_period: 50000  # us
+    heartbeat_producer: 50  # ms
+
+.ERB415_motor: &motor
+    dcf: "ERB415.eds"
+    dcf_path: "cpproboticframework/modules/Actuators/Robot/config/CiA402Robot/PRBT6"
+    heartbeat_producer: 50  # ms
+
+    rpdo:
+        1:  # 0x200 + ID
+            enabled: true
+            cob_id: auto
+            transmission: 0x01  # SYNC
+            mapping:  # Max 8 byte
+                - {index: 0x6040,  sub_index: 0x00}  # control word, 2 byte
+                - {index: 0x6060,  sub_index: 0x00}  # mode of operation, 1 byte
+
+        2:  # 0x300 + ID
+            enabled: true
+            cob_id: auto
+            transmission: 0x01  # SYNC
+            mapping:  # Max 8 byte
+                - {index: 0x60C1,  sub_index: 0x01}  # interpolated position, 4 byte
+                - {index: 0x6042,  sub_index: 0x00}  # target velocity, 2 byte
+
+    tpdo:
+        1:  # 0x180 + ID
+            enabled: true
+            cob_id: auto
+            transmission: 0x01  # SYNC
+            mapping:  # Max 8 byte
+                - {index: 0x6041, sub_index: 0x00}  # status word, 2 byte
+                - {index: 0x6061,  sub_index: 0x00} # mode of operation display, 1 byte
+        2:  # 0x280 + ID
+            enabled: true
+            cob_id: auto
+            transmission: 0x01  # SYNC
+            mapping:  # Max 8 byte
+                - {index: 0x6064, sub_index: 0x00}  # actual position value register, 4 byte
+                - {index: 0x6044,  sub_index: 0x00} # actual velocity value register, 2 byte
+                - {index: 0x6077,  sub_index: 0x00} # actual torque value register, 2 byte
+
+slave_joint1:
+    node_id: 3
+    <<: *motor
+
+slave_joint2:
+    node_id: 4
+    <<: *motor
+
+slave_joint3:
+    node_id: 5
+    <<: *motor
+
+slave_joint4:
+    node_id: 6
+    <<: *motor
+
+slave_joint5:
+    node_id: 7
+    <<: *motor
+
+slave_joint6:
+    node_id: 8
+    <<: *motor

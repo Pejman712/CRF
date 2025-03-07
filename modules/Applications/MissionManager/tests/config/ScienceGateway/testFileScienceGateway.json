@@ -1,0 +1,12 @@
+{
+    "Communications" : {
+        "Priority" : 60,
+        "MotionController" : {
+            "Host" : "localhost",
+            "Port" : 3000
+        }
+    },
+    "Movement" : {
+        "RobotTrajectories" : "cpproboticframework/modules/Applications/MissionManager/config/ScienceGateway/scienceGatewayTrajectories.json"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "Object_Detector" : {
+        "Camera_Server_Address"     : "tcp://localhost:5555",
+        "Inference_Server_Address"  : "tcp://localhost:5559",
+        "Scale"                     : 0.25
+    },
+    "Fetch_Write_Client" : {
+        "PCL_Socket_Address"    : "192.168.0.40",
+        "Port"                  : 2001
+    },
+    "Packet" : {
+        "Data_Block_Number" : 224,
+        "Start_Address"     : 0,
+        "End_Address"       : 2
+    }
+}

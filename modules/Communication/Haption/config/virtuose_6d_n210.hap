@@ -1,0 +1,179 @@
+# Configuration file of virtuose n°210
+#-------------------------------------
+#-------------------------------------
+
+
+virtuose_mod_activation_panne								1
+virtuose_mod_activation_panne_sur_vitesse					1
+virtuose_mod_activation_panne_sur_vitesse_cartesienne		1
+virtuose_mod_activation_inhibition_sur_butees_virtuose		0
+virtuose_mod_activation_recor								0
+virtuose_mod_activation_verrouillage_pince					1
+virtuose_mod_activation_plateau_tournant					0
+virtuose_mod_activation_poignee_TREH_inverse_rev_C			0
+virtuose_mod_activation_poignee_TREH						1
+
+
+virtuose_mod_seuil_vitesse_cartesienne_trans				2.0
+virtuose_mod_seuil_vitesse_arti							3.2 	3.2		3.2		17.0	17.0	17.0
+
+
+
+# info sur le service haptique
+#-----------------------------
+virtuose_caracs_numero_service						1
+virtuose_caracs_numero_carte_maitre_ethercat		0		# cifX0
+
+
+# paramètres moteurs 
+#-------------------
+
+# rev.F
+virtuose_es_Kconv_I		0.0019073486328		0.0019073486328		0.0019073486328	\
+						0.0006103515625		0.0006103515625 	0.0006103515625
+
+# rev.F
+virtuose_es_Kp_P		0.0  	0.0  	0.0			0.0  	0.0  	0.0
+virtuose_es_Kd_P		0.0  	0.0  	0.0			0.0  	0.0  	0.0
+virtuose_es_Kp_V		0.5  	0.5  	0.5			0.03 	0.03 	0.03
+virtuose_es_Kp_I		0.013 	0.013 	0.013		0.1  	0.1  	0.1
+virtuose_es_Ki_I		0.071  	0.071  	0.071 		0.11 	0.11 	0.11
+
+
+virtuose_phys_inv_gain_p_boucle_vit_moteur_negative		208.0 208.0 208.0 3892.0 3892.0 3892.0 	
+virtuose_phys_gain_p_boucle_vit_moteur_negative			0.0048076 0.0048076 0.0048076 0.0002569373 0.0002569373 0.0002569373
+
+virtuose_phys_inv_gain_p_boucle_vit_moteur_positive		208.0 208.0 208.0 3892.0 3892.0 3892.0 	
+virtuose_phys_gain_p_boucle_vit_moteur_positive			0.0048076 0.0048076 0.0048076 0.0002569373 0.0002569373 0.0002569373
+
+
+# calibration
+#-------------
+
+virtuose_es_mode_debug						0
+virtuose_es_calibration_automatique			0
+
+virtuose_phys_position_d_initialisation      30.561   -43.28	91.161 		93.918 	1.263 	-78.403
+
+
+virtuose_es_vitesse_calibration				0.0 0.0 0.0 	0.0 0.0 0.0
+virtuose_es_seuil_courant_calibration		0.0 0.0 0.0		0.0 0.0 0.0
+
+
+
+# compensation tools - TREH Handle
+#---------------------------------
+
+virtuose_mod_activation_poids_en_translation			0
+virtuose_mod_activation_poids_en_rotation				1
+
+virtuose_mod_masse_outil			0.5122 
+virtuose_mod_cdg_outil_x			0.06
+virtuose_mod_cdg_outil_y			0.0 
+virtuose_mod_cdg_outil_z			0.10
+virtuose_mod_vecteur_gravite_x		0.0
+virtuose_mod_vecteur_gravite_y		0.0
+virtuose_mod_vecteur_gravite_z		1.0
+
+virtuose_phys_masse_axe4			0.8
+
+
+
+# commande en vitesse
+#--------------------
+
+virtuose_speed_position_centre				0.5		-0.0425		0.1		0.0		0.0		0.0		1.0
+
+# en translation
+virtuose_speed_enable_translation				0
+virtuose_speed_rapport_vitesse_en_translation	2.0	
+virtuose_speed_rayon							0.1			# m
+virtuose_speed_effort_rappel					5.0			# N
+
+
+# en rotation
+virtuose_speed_enable_rotation				0
+virtuose_speed_rapport_vitesse_rotation		2.0
+virtuose_speed_angle						0.52359877		# en radian
+virtuose_speed_moment_rappel				0.1				# Nm
+
+
+
+# position physique du peripherique
+#----------------------------------
+
+virtuose_phys_H_bm_p_obs		0.0	0.0	0.0		0.0	0.0	0.0	1.0
+
+
+# butées logicielles
+#-------------------
+
+virtuose_mod_butees_logicielles				1
+
+#													axe 1	axe 2	axe 3	axe 4	axe 5	 axe 6
+#													----------------------------------------------
+virtuose_phys_butees_arti_inf 						-0.75	-1.60	-0.01	-2.85   -1.05	 -1.97
+virtuose_phys_butees_arti_sup 		 				0.75	-0.10	1.63	 2.82   0.95   	 2.58 
+
+virtuose_mod_butees_arti_inf 						-0.75	-1.60	-0.01	-2.85   -1.05	 -1.97
+virtuose_mod_butees_arti_sup 		 				0.75	-0.10	1.63	 2.82   0.95   	 2.58
+
+
+# frottements
+# -----------
+#													axe 1	axe 2	axe 3	axe 4	axe 5	axe 6
+#													----------------------------------------------
+virtuose_mod_gain_fs_arti_amplitude_vit_positive 	0.3 	0.1 	0.1     0.02 	0.02 	0.02
+virtuose_mod_gain_fs_arti_pente_vit_positive 		20.0 	20.0 	20.0 	20.0 	20.0 	20.0
+virtuose_mod_gain_fv_arti_vit_positive 				0.0 	0.0 	0.0		0.005 	0.005	0.005
+
+virtuose_mod_gain_fs_arti_amplitude_vit_negative 	0.3 	0.1 	0.1 	0.02 	0.02 	0.02
+virtuose_mod_gain_fs_arti_pente_vit_negative 		20.0 	20.0 	20.0 	20.0 	20.0 	20.0
+virtuose_mod_gain_fv_arti_vit_negative 				0.0 	0.0 	0.0		0.005 	0.005	0.005
+
+
+# fréquences de coupure
+#---------------------
+
+virtuose_mod_fc_pos_arti_pince 			10.0
+virtuose_mod_fc_vit_moteur_pince		100.0
+virtuose_mod_fc_vit_moteur_brut_pince	100.0
+virtuose_mod_fc_inhibition_variateur	0.5
+
+
+# potentiometres
+#---------------					
+#	
+virtuose_es_numero_voie_gachette			1
+								
+virtuose_es_gain_potentiometre				0.0			6.5			0.0		0.0		0.0		0.0		0.0		0.0
+virtuose_es_offset_potentiometre			0.0			-0.63		0.0		0.0		0.0		0.0		0.0		0.0
+
+
+# inertie moteur
+#---------------
+
+virtuose_mod_alpha_inertie				1.0 	1.0		1.0		1.0		1.0		1.0
+
+
+# entrees sorties
+#----------------
+
+virtuose_mod_logique_inverse_homme_mort					1
+
+# sorties TOR
+#virtuose_es_bit_relais_48v				 				0
+virtuose_es_bit_led_pince               				1
+#virtuose_es_bit_led_arret_mode           				2
+#virtuose_es_bit_led_pause                				3
+
+# entrees TOR
+virtuose_es_bit_retour_puissance						0
+virtuose_es_bit_homme_mort                              1
+virtuose_es_bit_bouton_decalage                			2
+virtuose_es_bit_bouton_verrouillage_pince          		3
+virtuose_es_bit_bouton_arret_mode                       7
+virtuose_es_bit_bouton_pause_reprise		            8
+virtuose_es_bit_bouton_calibration                      15
+
+

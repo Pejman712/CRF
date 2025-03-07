@@ -1,0 +1,1304 @@
+[
+    {
+        "name": "deviceType",
+        "index": "0x1000",
+        "size": 4
+    },
+    {
+        "name": "errorRegister",
+        "index": "0x1001",
+        "size": 1
+    },
+    {
+        "name": "manufacturerStatusRegister",
+        "index": "0x1002",
+        "size": 4
+    },
+    {
+        "name": "preDefiniedErrorField",
+        "index": "0x1003",
+        "subregisters": [
+            {
+                "name": "nbOfErrors",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "standardErrorField1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "standardErrorField2",
+                "subindex": "0x02",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "cobIDsyncMessage",
+        "index": "0x1005",
+        "size": 4
+    },
+    {
+        "name": "manufacturerDeviceName",
+        "index": "0x1008",
+        "size": 4
+    },
+    {
+        "name": "manufacturerHardwareVersion",
+        "index": "0x1009",
+        "size": 4
+    },
+    {
+        "name": "manufacturerSoftwareVersion",
+        "index": "0x100A",
+        "size": 4
+    },
+    {
+        "name": "guardTime",
+        "index": "0x100C",
+        "size": 2
+    },
+    {
+        "name": "lifeTimeFactor",
+        "index": "0x100D",
+        "size": 1
+    },
+    {
+        "name": "cobIDemcyMessage",
+        "index": "0x1014",
+        "size": 4
+    },
+    {
+        "name": "consumerHeartbeatTime",
+        "index": "0x1016",
+        "subregisters": [
+            {
+                "name": "consumer1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "consumer2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "consumer3",
+                "subindex": "0x03",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "producerHeartbeatTime",
+        "index": "0x1017",
+        "size": 2
+    },
+    {
+        "name": "identityObject",
+        "index": "0x1018",
+        "subregisters": [
+            {
+                "name": "vendorID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "productCode",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "revisionNumber",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "serialNumber",
+                "subindex": "0x04",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "serveurSDO1Parameter",
+        "index": "0x1200",
+        "subregisters": [
+            {
+                "name": "nbOfSupportedEntries",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "cobIDclientToServer",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "cobIDserverToClient",
+                "subindex": "0x02",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "serveurSDO2Parameter",
+        "index": "0x1201",
+        "subregisters": [
+            {
+                "name": "nbOfEntries",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "cobIDclientToServer",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "cobIDserverToClient",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "nodeIDofSDOclient",
+                "subindex": "0x03",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "name": "receivePDO1Parameter",
+        "index": "0x1400",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "name": "receivePDO2Parameter",
+        "index": "0x1401",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "name": "receivePDO1Mapping",
+        "index": "0x1600",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "receivePDO2Mapping",
+        "index": "0x1601",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO1Parameter",
+        "index": "0x1800",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            },
+            {
+                "name": "eventTimer",
+                "subindex": "0x05",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO2Parameter",
+        "index": "0x1801",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            },
+            {
+                "name": "eventTimer",
+                "subindex": "0x05",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO3Parameter",
+        "index": "0x1802",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            },
+            {
+                "name": "eventTimer",
+                "subindex": "0x05",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO4Parameter",
+        "index": "0x1803",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            },
+            {
+                "name": "eventTimer",
+                "subindex": "0x05",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO1Mapping",
+        "index": "0x1A00",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO2Mapping",
+        "index": "0x1A01",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO3Mapping",
+        "index": "0x1A02",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO4Mapping",
+        "index": "0x1A03",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "ManufacturerDebugFlags",
+        "index": "0x2000",
+        "size": 4
+    },
+    {
+        "name": "debuValues",
+        "index": "0x2001",
+        "subregisters": [
+            {
+                "name": "nbDebugValues",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "debuValues1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "debuValues2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "debuValues3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "debuValues4",
+                "subindex": "0x04",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "debuValuesFloat",
+        "index": "0x2002",
+        "subregisters": [
+            {
+                "name": "nbDebugValuesFloat",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "debuValuesFloat1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "debuValuesFloat2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "debuValuesFloat3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "debuValuesFloat4",
+                "subindex": "0x04",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "debugMessage",
+        "index": "0x2003",
+        "size": 4
+    },
+    {
+        "name": "logging",
+        "index": "0x2004",
+        "subregisters": [
+            {
+                "name": "nbLogging",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "State",
+                "subindex": "0x01",
+                "size": 2
+            },
+            {
+                "name": "TriggerTime",
+                "subindex": "0x02",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "buildInformation",
+        "index": "0x2005",
+        "subregisters": [
+            {
+                "name": "nbOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "No",
+                "subindex": "0x01",
+                "size": 2
+            },
+            {
+                "name": "Date",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "Compiler",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "Host",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "User",
+                "subindex": "0x05",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "EEPROMparameters",
+        "index": "0x2007",
+        "subregisters": [
+            {
+                "name": "nbOfEntries",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "SectConfig",
+                "subindex": "0x01",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "Password",
+        "index": "0x2008",
+        "size": 4
+    },
+    {
+        "name": "User",
+        "index": "0x2009",
+        "size": 1
+    },
+    {
+        "name": "Disconnect_reset",
+        "index": "0x200A",
+        "size": 1
+    },
+    {
+        "name": "errorDetails",
+        "index": "0x200B",
+        "subregisters": [
+            {
+                "name": "nbOfEntries",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "detail",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "file",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "line",
+                "subindex": "0x03",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "name": "communicationMode",
+        "index": "0x200C",
+        "size": 1
+    },
+    {
+        "name": "pcbTemperature",
+        "index": "0x200D",
+        "subregisters": [
+            {
+                "name": "nbOfEntries",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "actualPCBtemperature",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "pcbTemperatureUpdatePeriodMs",
+                "subindex": "0x02",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "syncTimeoutFactor",
+        "index": "0x200E",
+        "size": 1
+    },
+    {
+        "name": "KRcurrent",
+        "index": "0x2010",
+        "size": 4
+    },
+    {
+        "name": "TNcurrent",
+        "index": "0x2011",
+        "size": 4
+    },
+    {
+        "name": "TDcurrent",
+        "index": "0x2012",
+        "size": 4
+    },
+    {
+        "name": "KCcurrent",
+        "index": "0x2013",
+        "size": 4
+    },
+    {
+        "name": "KRspeed",
+        "index": "0x2020",
+        "size": 4
+    },
+    {
+        "name": "TNspeed",
+        "index": "0x2021",
+        "size": 4
+    },
+    {
+        "name": "TDspeed",
+        "index": "0x2022",
+        "size": 4
+    },
+    {
+        "name": "KCspeed",
+        "index": "0x2023",
+        "size": 4
+    },
+    {
+        "name": "KSfeedForward",
+        "index": "0x2024",
+        "size": 4
+    },
+    {
+        "name": "KRpos",
+        "index": "0x2030",
+        "size": 4
+    },
+    {
+        "name": "TNpos",
+        "index": "0x2031",
+        "size": 4
+    },
+    {
+        "name": "TDpos",
+        "index": "0x2032",
+        "size": 4
+    },
+    {
+        "name": "KCpos",
+        "index": "0x2033",
+        "size": 4
+    },
+    {
+        "name": "KPfeedForward",
+        "index": "0x2034",
+        "size": 4
+    },
+    {
+        "name": "deltaPosition",
+        "index": "0x2041",
+        "size": 4
+    },
+    {
+        "name": "posSystemOffset",
+        "index": "0x2042",
+        "size": 4
+    },
+    {
+        "name": "extendedStatus",
+        "index": "0x2050",
+        "size": 1
+    },
+    {
+        "name": "extendedIndexPulseInfo",
+        "index": "0x2051",
+        "subregisters": [
+            {
+                "name": "Mode",
+                "subindex": "0x01",
+                "size": 1
+            },
+            {
+                "name": "extendedIndexPulseInfo_",
+                "subindex": "0x02",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "canErrorCounters",
+        "index": "0x2052",
+        "subregisters": [
+            {
+                "name": "HighestSubindex",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "NbFormError",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "NbBitError",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "NbStuckAtDominantError",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "NbcrcfError",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "NbStuffError",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "NbAcknowledgeError",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "NbBusOff",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "NbErrorPassive",
+                "subindex": "0x08",
+                "size": 4
+            },
+            {
+                "name": "NbWarning",
+                "subindex": "0x09",
+                "size": 4
+            },
+            {
+                "name": "NbMessageLostIf",
+                "subindex": "0x0A",
+                "size": 4
+            },
+            {
+                "name": "NbBusOffIf",
+                "subindex": "0x0B",
+                "size": 4
+            },
+            {
+                "name": "NbWriteDeniedIf",
+                "subindex": "0x0C",
+                "size": 4
+            },
+            {
+                "name": "NberrorPassiveIf",
+                "subindex": "0x0D",
+                "size": 4
+            },
+            {
+                "name": "NbAbortAcknowledgeIf",
+                "subindex": "0x0E",
+                "size": 4
+            },
+            {
+                "name": "CANTEC",
+                "subindex": "0x0F",
+                "size": 1
+            },
+            {
+                "name": "CANREC",
+                "subindex": "0x10",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "name": "controlWord",
+        "index": "0x6040",
+        "size": 2
+    },
+    {
+        "name": "statusWord",
+        "index": "0x6041",
+        "size": 2
+    },
+    {
+        "name": "vlTargetVelocity",
+        "index": "0x6042",
+        "size": 2
+    },
+    {
+        "name": "vlVelocityDemand",
+        "index": "0x6043",
+        "size": 2
+    },
+    {
+        "name": "vlVelocityActualValue",
+        "index": "0x6044",
+        "size": 2
+    },
+    {
+        "name": "vlVelocityMinMaxAmount",
+        "index": "0x6046",
+        "subregisters": [
+            {
+                "name": "MinAmount",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "MaxAmount",
+                "subindex": "0x02",
+                "size": 4
+            }
+        ]
+        
+    },
+    {
+        "name": "vlVelocityAcceleration",
+        "index": "0x6048",
+        "subregisters": [
+            {
+                "name": "DeltaSpeed",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "DeltaTime",
+                "subindex": "0x02",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "name": "vlVelocityDeceleration",
+        "index": "0x6049",
+        "subregisters": [
+            {
+                "name": "DeltaSpeed",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "DeltaTime",
+                "subindex": "0x02",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "name": "vlDimensionFactor",
+        "index": "0x604C",
+        "subregisters": [
+            {
+                "name": "Numerator",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "Denominator",
+                "subindex": "0x02",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "modesOfOperation",
+        "index": "0x6060",
+        "size": 1
+    },
+    {
+        "name": "modesOfOperationDisplay",
+        "index": "0x6061",
+        "size": 1
+    },
+    {
+        "name": "positionDemandValue",
+        "index": "0x6062",
+        "size": 4
+    },
+    {
+        "name": "actualPosition",
+        "index": "0x6064",
+        "size": 4
+    },
+    {
+        "name": "followingErrorWindow",
+        "index": "0x6065",
+        "size": 4
+    },
+    {
+        "name": "velocityDemandValue",
+        "index": "0x606B",
+        "size": 4
+    },
+    {
+        "name": "actualVelocity",
+        "index": "0x606C",
+        "size": 4
+    },
+    {
+        "name": "maxCurrent",
+        "index": "0x6073",
+        "size": 2
+    },
+    {
+        "name": "motorRatedCurrent",
+        "index": "0x6075",
+        "size": 4
+    },
+    {
+        "name": "actualTorque",
+        "index": "0x6077",
+        "size": 2
+    },
+    {
+        "name": "actualCurrent",
+        "index": "0x6078",
+        "size": 2
+    },
+    {
+        "name": "targetPosition",
+        "index": "0x607A",
+        "size": 4
+    },
+    {
+        "name": "homeOffset",
+        "index": "0x607C",
+        "size": 4
+    },
+    {
+        "name": "softwarePositionLimit",
+        "index": "0x607D",
+        "subregisters": [
+            {
+                "name": "minimum",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "maximum",
+                "subindex": "0x02",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "profileVelocity",
+        "index": "0x6081",
+        "size": 4
+    },
+    {
+        "name": "profileAcceleration",
+        "index": "0x6083",
+        "size": 4
+    },
+    {
+        "name": "motionProfileType",
+        "index": "0x6086",
+        "size": 2
+    },
+    {
+        "name": "torqueOffset",
+        "index": "0x60B2",
+        "size": 2
+    },
+    {
+        "name": "interpolationDataRecord",
+        "index": "0x60C1",
+        "subregisters": [
+            {
+                "name": "setpoint1",
+                "subindex": "0x01",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "interpolationTimePeriod",
+        "index": "0x60C2",
+        "subregisters": [
+            {
+                "name": "value",
+                "subindex": "0x01",
+                "size": 1
+            },
+            {
+                "name": "index",
+                "subindex": "0x02",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "name": "interpolationSyncDefinition",
+        "index": "0x60C3",
+        "subregisters": [
+            {
+                "name": "syncronizeOnGroup",
+                "subindex": "0x01",
+                "size": 1
+            },
+            {
+                "name": "ipSyncEveryNevent",
+                "subindex": "0x02",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "name": "interpolationDataConfig",
+        "index": "0x60C4",
+        "subregisters": [
+            {
+                "name": "maxBufferSIze",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "actualBufferSIze",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "bufferOrganization",
+                "subindex": "0x03",
+                "size": 1
+            },
+            {
+                "name": "bufferPosition",
+                "subindex": "0x04",
+                "size": 2
+            },
+            {
+                "name": "sizeOfDataRecord",
+                "subindex": "0x05",
+                "size": 1
+            },
+            {
+                "name": "bufferClear",
+                "subindex": "0x06",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "name": "followingErrorActualValue",
+        "index": "0x60F4",
+        "size": 4
+    },
+    {
+        "name": "digitalInputs",
+        "index": "0x60FD",
+        "size": 4
+    },
+    {
+        "name": "digitalOutputs",
+        "index": "0x60FE",
+        "subregisters": [
+            {
+                "name": "phisicalOutputs",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "bitMask",
+                "subindex": "0x02",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "supportedDriveModes",
+        "index": "0x6502",
+        "size": 4
+    }
+]

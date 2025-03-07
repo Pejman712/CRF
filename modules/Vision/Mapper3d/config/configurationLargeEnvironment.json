@@ -1,0 +1,68 @@
+{
+    "pointCloudParameters" : {
+        "maxNumberOfPoints": 200000000
+    },
+    "octreeParameters" : {
+        "updateOctree": true,
+        "maxNumberOfNodes": 50000000,
+        "enableChangeDetection": false,
+        "octreeResolutionInMeters": 0.02,
+        "probabilityHit": 0.65,
+        "probabilityMiss": 0.4,
+        "clampingThresholdMin": 0.12,
+        "clampingThresholdMax": 0.97,
+        "occupancyThreshold": 0.7
+    },
+    "filterSelection" : {
+        "passThrough": true,
+        "statisticalOutlier": false,
+        "fastBilateral": false,
+        "voxelGrid": true,
+        "mls": false
+    },
+    "filterParameters" : {
+        "passThroughMinLimit": 0.40,
+        "passThroughMaxLimit": 10,
+        "statisticalOutlierMeanK": 20,
+        "statisticalOutlierStddevMulThresh": 2.5,
+        "fastBilateralSigmaR": 0.005,
+        "fastBilateralSigmaS": 5,
+        "voxelGridLeafSizeX": 0.02,
+        "voxelGridLeafSizeY": 0.02,
+        "voxelGridLeafSizeZ": 0.02,
+        "mlsPolynomialOrder": 2,
+        "mlsSearchRadius": 0.008
+    },
+    "icpParameters" : {
+        "icpRefinement": true,
+        "icpStepsVisualization": false,
+        "icpSourceNormalsVisualization": false,
+        "weightedTransformEstimation": true,
+        "randomSampling": false,
+        "normalMaxDepthChangeFactor": 0.1,
+        "normalSmoothingSize": 25.0,
+        "normalSamplingTotalPointsDivision": 50,
+        "randomlSamplingTotalPointsDivision": 50,
+        "normalSamplingBinSize": 16,
+        "correspondencesMaximumDistance": 0.1,
+        "correspondencesMaximumMedianDistanceFactor": 3.0,
+        "correspondencesMaximunAngleInRad": 0.3,
+        "translationThreshold": 9e-04,
+        "rotationThreshold": 0.01,
+        "maximumIterations": 100
+    },
+    "initialAlignmentParameters" : {
+        "icpInitialAlignment": false,
+        "icpInitialAligmentVisualization": false,
+        "sampleConsensusInlierThreshold": 0.02,
+        "sampleConsensusMaximumIterations": 1000000,
+        "sampleConsensusRefineModel": false,
+        "subsamplingSideLength": 0.01,
+        "normalEstimationSearchRadius": 0.03,
+        "FPFHPersintenceAlpha": 1.3,
+        "multiscaleFeaturePersistenceScaleValue1": 0.06,
+        "multiscaleFeaturePersistenceScaleValue2": 0.07,
+        "multiscaleFeaturePersistenceScaleValue3": 0.08
+    }
+}
+

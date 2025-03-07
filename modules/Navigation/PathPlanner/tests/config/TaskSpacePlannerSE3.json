@@ -1,0 +1,17 @@
+{
+    "ValidityCheckingResolution" : 0.03,
+    "MaximumPlanningTimeSeconds" : 0.3,
+    "MaximumSimplificationTimeSeconds" : 1,
+    "SimplifyPath" : true,
+    "StateConfiguration" : [
+        {
+            "Type" : "SE3",
+            "Dimension" : 3,
+            "Weight" : 1,
+            "Bounds" : {
+                "Max" : 10,
+                "Min" : 0
+            }
+        }
+    ]
+}

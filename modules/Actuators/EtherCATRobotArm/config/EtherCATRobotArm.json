@@ -1,0 +1,76 @@
+{
+    "NumberOfJoints" : 3,
+    "LoopTimeMs": 5,
+    "KinematicChain" :
+    {
+        "format": "DH",
+        "parameters": [
+            {
+                "D" : 0.0,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : 0.0,
+                "Type" : "Rotational"
+            },
+            {
+                "D" : 0.0,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : 0.0,
+                "Type" : "Rotational"
+            },
+            {
+                "D" : 0.0,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : 0.0,
+                "Type" : "Linear"
+            }
+        ]
+    },
+    "Joints" : [
+        {
+            "Maximum": 1.57,
+            "Minimum": -0.034,
+            "MaximumVelocity": 0.254,
+            "MaximumAcceleration": 0.104,
+            "MaximumTorque": 0.0,
+            "Direction": 1.0,
+            "Offset" : 0.0,
+            "Kp": 1,
+            "Ki": 0.1,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 0.03,
+            "Minimum": -1.57,
+            "MaximumVelocity": 0.2544,
+            "MaximumAcceleration": 0.104,
+            "MaximumTorque": 0.0,
+            "Direction": 1.0,
+            "Offset" : 0.0,
+            "Kp": 1,
+            "Ki": 0.1,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 0.750,
+            "Minimum": 0.0,
+            "MaximumVelocity": 0.090,
+            "MaximumAcceleration": 0.090,
+            "MaximumTorque": 0.0,
+            "Direction": 1.0,
+            "Offset" : 0.0,
+            "Kp": 1,
+            "Ki": 0.1,
+            "Kd": 0.001
+        }
+    ],
+    "Task": {
+        "MaximumVelocity": [0.1, 0.1, 0.1, 1.0, 1.0, 1.0],
+        "MaximumAcceleration": [0.1, 0.1, 0.1, 1.0, 1.0, 1.0],
+        "Kp": [2, 2, 2, 1, 1, 1],
+        "Ki": [0.1, 0.1, -0.3, 0.1, 0.1, 0.1],
+        "Kd": [0.001, 0.001, 0.001, 0, 0, 0]
+    }
+}

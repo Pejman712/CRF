@@ -1,0 +1,35 @@
+{
+    "VisualizeSolution" : true,
+    "Space" :
+    {
+        "Volume" :
+        {
+            "X" : 300,
+            "Y" : 300,
+            "Z" : 150
+        },
+        "Resolution" : 0.01
+    },
+    "CenterPosition" :
+    {
+        "X" : 1.5,
+        "Y" : 1.5,
+        "Z" : 0.0
+    },
+    "Robot" :
+    {
+        "MotionResolution" : 0.1,
+        "Representation" : "Probabilistic VoxelMap"
+    },
+    "Environment" :
+    {
+        "Type" : 3,
+        "CubesNumber" : 1,
+        "Cube1" : 
+        {
+            "LowerCorner" : [-0.06, 0.16, -0.08],
+            "HigherCorner" : [0.06, 0.39, 0.22]
+        },
+        "Representation" : "Probabilistic VoxelMap"
+    }
+}

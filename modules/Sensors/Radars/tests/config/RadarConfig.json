@@ -1,0 +1,14 @@
+{
+    "ADC_VREF" : 5,
+    "ADC_ResBit" : 16,
+    "PLL_HelpVCO_Freq" : 24.8e9,
+    "PLL_PFD_Freq" : 33.33333333333e6,
+    "ADC_fa" : 1e6,
+    "PLL_StartFreq" : 68.0e9,
+    "PLL_StopFreq" : 92.0e9,
+    "PLL_RampLength" : 4e-3,
+    "IF_Gain" : 10,
+    "Ramp_Count" : 10,
+    "selfReflectionBins" : 50,
+    "radarSampleTime" : 0.05
+}

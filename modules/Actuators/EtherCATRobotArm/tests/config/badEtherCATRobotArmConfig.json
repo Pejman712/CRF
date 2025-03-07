@@ -1,0 +1,68 @@
+{
+    "NumberOfJoints" : 4,
+    "LoopTimeMs": 1,
+    "KinematicChain" : {
+        "format": "DH",
+        "parameters": [
+            {
+                "D" : 0,
+                "Theta" : 0,
+                "A" : 0.0,
+                "Alpha" : 0,
+                "Type" : "Rotational"
+            },
+            {
+                "D" : 0,
+                "Theta" : 0,
+                "A" : 0.0,
+                "Alpha" : 0,
+                "Type" : "Rotational"
+            },
+            {
+                "D" : 0,
+                "Theta" : 0,
+                "A" : 0.0,
+                "Alpha" : 0,
+                "Type" : "Linear"
+            }]
+    },
+    "Joints" : [
+        {
+            "Maximum": 3.1415998935699463,
+            "Minimum": -3.1415998935699463,
+            "MaximumVelocity": 0.628000020980835,
+            "MaximumAcceleration": 0.6000000238418579,
+            "MaximumTorque": 20.0,
+            "Kp": 1,
+            "Ki": 0.1,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 2.4000000953674316,
+            "Minimum": -2.4000000953674316,
+            "MaximumVelocity": 0.628000020980835,
+            "MaximumAcceleration": 0.6000000238418579,
+            "MaximumTorque": 20.0,
+            "Kp": 1,
+            "Ki": 0.1,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 2.859999895095825,
+            "Minimum": -2.859999895095825,
+            "MaximumVelocity": 0.628000020980835,
+            "MaximumAcceleration": 0.6000000238418579,
+            "MaximumTorque": 20.0,
+            "Kp": 1,
+            "Ki": 0.1,
+            "Kd": 0.001
+        }
+    ],
+    "Task": {
+        "MaximumVelocity": [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 1.0, 1.0, 1.0],
+        "MaximumAcceleration": [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 1.0, 1.0, 1.0],
+        "Kp": [2, 2, 2, -1.27, -0.5, 1.27],
+        "Ki": [0.1, 0.1, -0.3, 0.43, -0.1, 0.43],
+        "Kd": [0.001, 0.001, 0.001, 0.01, 0.01, 0.01]
+    }
+}

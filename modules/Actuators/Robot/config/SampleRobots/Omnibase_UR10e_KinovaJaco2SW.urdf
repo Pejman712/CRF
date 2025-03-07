@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="omnibase + ur10e + kinova" ip="0.0.0.0">
+
+    <material name="yellow">
+        <color rgba="0.8 0.8 0.0 1.0"/>
+    </material>
+    <material name="black">
+        <color rgba="0.15 0.15 0.15 1.0"/>
+    </material>
+    <material name="dark_grey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+    </material>
+    <material name="light_grey">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+    </material>
+    <material name="blue">
+        <color rgba="0.0 0.0 0.8 1.0"/>
+    </material>
+    <material name="green">
+        <color rgba="0.0 0.8 0.0 1.0"/>
+    </material>
+    <material name="grey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+    </material>
+    <material name="orange">
+        <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+    </material>
+    <material name="brown">
+        <color rgba="0.870588235294 0.811764705882 0.764705882353 1.0"/>
+    </material>
+    <material name="red">
+        <color rgba="0.8 0.0 0.0 1.0"/>
+    </material>
+    <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+
+  <link name="base_footprint"/>
+  <joint name="base_link_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.05"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+  </joint>
+  <link name="base_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/nexus_base_link.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+      <material name="yellow"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/nexus_base_link_collision.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <!-- Inertia from CAD model, filled box assumption -->
+      <origin rpy="0 0 0" xyz="-0.01103 0 0.002"/>
+      <mass value="2.844"/>
+      <inertia ixx="0.018819942" ixy="0" ixz="-0.000101519" iyy="0.057333716" iyz="0" izz="0.074201740"/>
+    </inertial>
+  </link>
+  <joint name="upper_left_wheel_shaft_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.450 0.360 0.0"/>
+    <parent link="base_link"/>
+    <child link="upper_left_wheel_shaft"/>
+  </joint>
+  <link name="upper_left_wheel_shaft">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/wheel_shaft.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/wheel_shaft.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0.01221 0"/>
+      <mass value="0.055"/>
+      <inertia ixx="0.000021370" ixy="0" ixz="0" iyy="0.000009966" iyz="0" izz="0.000021370"/>
+    </inertial>
+  </link>
+  <joint name="lower_left_wheel_shaft_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.450 0.360 0.0"/>
+    <parent link="base_link"/>
+    <child link="lower_left_wheel_shaft"/>
+  </joint>
+  <link name="lower_left_wheel_shaft">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/wheel_shaft.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/wheel_shaft.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0.01221 0"/>
+      <mass value="0.055"/>
+      <inertia ixx="0.000021370" ixy="0" ixz="0" iyy="0.000009966" iyz="0" izz="0.000021370"/>
+    </inertial>
+  </link>
+  <joint name="upper_right_wheel_shaft_joint" type="fixed">
+    <origin rpy="3.14159265359 0 0" xyz="0.450 -0.360 0.0"/>
+    <parent link="base_link"/>
+    <child link="upper_right_wheel_shaft"/>
+  </joint>
+  <link name="upper_right_wheel_shaft">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/wheel_shaft.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/wheel_shaft.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0.01221 0"/>
+      <mass value="0.055"/>
+      <inertia ixx="0.000021370" ixy="0" ixz="0" iyy="0.000009966" iyz="0" izz="0.000021370"/>
+    </inertial>
+  </link>
+  <joint name="lower_right_wheel_shaft_joint" type="fixed">
+    <origin rpy="3.14159265359 0 0" xyz="-0.450 -0.360 0.0"/>
+    <parent link="base_link"/>
+    <child link="lower_right_wheel_shaft"/>
+  </joint>
+  <link name="lower_right_wheel_shaft">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/wheel_shaft.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/wheel_shaft.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0.01221 0"/>
+      <mass value="0.055"/>
+      <inertia ixx="0.000021370" ixy="0" ixz="0" iyy="0.000009966" iyz="0" izz="0.000021370"/>
+    </inertial>
+  </link>
+  <joint name="upper_left_wheel_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0.042 0"/>
+    <parent link="upper_left_wheel_shaft"/>
+    <child link="upper_left_wheel"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="upper_left_wheel">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/mecanum_wheel_left.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+      <material name="light_grey"/>
+    </visual>
+    <collision>
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.0505" radius="0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.3844"/>
+      <!-- Inertia based on cylinder -->
+      <inertia ixx="0.000324824" ixy="0" ixz="0" iyy="0.000480000" iyz="0" izz="0.000324824"/>
+    </inertial>
+  </link>
+  <joint name="lower_left_wheel_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0.042 0"/>
+    <parent link="lower_left_wheel_shaft"/>
+    <child link="lower_left_wheel"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="lower_left_wheel">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/mecanum_wheel_right.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+      <material name="light_grey"/>
+    </visual>
+    <collision>
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.0505" radius="0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.3844"/>
+      <!-- Inertia based on cylinder -->
+      <inertia ixx="0.000324824" ixy="0" ixz="0" iyy="0.000480000" iyz="0" izz="0.000324824"/>
+    </inertial>
+  </link>
+  <joint name="upper_right_wheel_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0.042 0"/>
+    <parent link="upper_right_wheel_shaft"/>
+    <child link="upper_right_wheel"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="upper_right_wheel">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/mecanum_wheel_right.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+      <material name="light_grey"/>
+    </visual>
+    <collision>
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.0505" radius="0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.3844"/>
+      <!-- Inertia based on cylinder -->
+      <inertia ixx="0.000324824" ixy="0" ixz="0" iyy="0.000480000" iyz="0" izz="0.000324824"/>
+    </inertial>
+  </link>
+  <joint name="lower_right_wheel_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0.042 0"/>
+    <parent link="lower_right_wheel_shaft"/>
+    <child link="lower_right_wheel"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="lower_right_wheel">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/mecanum_wheel_left.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+      <material name="light_grey"/>
+    </visual>
+    <collision>
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.0505" radius="0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.3844"/>
+      <!-- Inertia based on cylinder -->
+      <inertia ixx="0.000324824" ixy="0" ixz="0" iyy="0.000480000" iyz="0" izz="0.000324824"/>
+    </inertial>
+  </link>sensorf
+  <joint name="left_sensor_joint" type="fixed">
+    <origin rpy="0 0 1.57079632679" xyz="0 0.315 0.010"/>
+    <parent link="base_link"/>
+    <child link="left_sensor"/>
+  </joint>
+  <link name="left_sensor">
+    <visual>
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/urm04.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+  <joint name="front_sensor_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.601 0 0.010"/>
+    <parent link="base_link"/>
+    <child link="front_sensor"/>
+  </joint>
+  <link name="front_sensor">
+    <visual>
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/urm04.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+  <joint name="right_sensor_joint" type="fixed">
+    <origin rpy="0 0 -1.57079632679" xyz="0 -0.315 0.010"/>
+    <parent link="base_link"/>
+    <child link="right_sensor"/>
+  </joint>
+  <link name="right_sensor">
+    <visual>
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/urm04.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+  <joint name="rear_sensor_joint" type="fixed">
+    <origin rpy="0 0 3.14159265359" xyz="-0.601 0 0.010"/>
+    <parent link="base_link"/>
+    <child link="rear_sensor"/>
+  </joint>
+  <link name="rear_sensor">
+    <visual>
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://nexus_4wd_mecanum_description/meshes/urm04.STL" scale="0.003 0.003 0.003"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="arm_base_link_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.2 0 0.07"/>
+    <parent link="base_link"/>
+    <child link="arm_base_link"/>
+  </joint>
+
+  <link name="arm_base_link">
+    <visual>
+      <geometry>
+        <mesh filename="../meshes/ur10e_base.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="../meshes/ur10e/collision/base.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="4.0"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.0061063308908" ixy="0.0" ixz="0.0" iyy="0.0061063308908" iyz="0.0" izz="0.01125"/>
+    </inertial>
+  </link>
+
+  <joint name="shoulder_pan_joint" type="revolute">
+    <parent link="arm_base_link"/>
+    <child link="shoulder_link"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.181"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="330.0" lower="-3.14159265359" upper="3.14159265359" velocity="3.14"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+  <link name="shoulder_link">
+    <visual>
+      <geometry>
+        <mesh filename="../meshes/ur10e_shoulder.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="../meshes/ur10e/collision/shoulder.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="7.778"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.0314743125769" ixy="0.0" ixz="0.0" iyy="0.0314743125769" iyz="0.0" izz="0.021875625"/>
+    </inertial>
+  </link>
+
+  <joint name="shoulder_lift_joint" type="revolute">
+    <parent link="shoulder_link"/>
+    <child link="upper_arm_link"/>
+    <origin rpy="0.0 1.57079632679 0.0" xyz="0.0 0.176 0.0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="330.0" lower="-3.14159265359" upper="3.14159265359" velocity="3.14"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <link name="upper_arm_link">
+    <visual>
+      <geometry>
+        <mesh filename="../meshes/ur10e_upperarm.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="../meshes/ur10e/collision/upperarm.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="12.93"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.3065"/>
+      <inertia ixx="0.42307374077" ixy="0.0" ixz="0.0" iyy="0.42307374077" iyz="0.0" izz="0.036365625"/>
+    </inertial>
+  </link>
+
+  <joint name="elbow_joint" type="revolute">
+    <parent link="upper_arm_link"/>
+    <child link="forearm_link"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.137 0.613"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="150.0" lower="-3.14159265359" upper="3.14159265359" velocity="3.14"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <link name="forearm_link">
+    <visual>
+      <geometry>
+        <mesh filename="../meshes/ur10e_forearm.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="../meshes/ur10e/collision/forearm.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="3.87"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.2855"/>
+      <inertia ixx="0.110590365764" ixy="0.0" ixz="0.0" iyy="0.110590365764" iyz="0.0" izz="0.010884375"/>
+    </inertial>
+  </link>
+
+  <joint name="wrist_1_joint" type="revolute">
+    <parent link="forearm_link"/>
+    <child link="wrist_1_link"/>
+    <origin rpy="0.0 1.57079632679 0.0" xyz="0.0 0.0 0.571"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="54.0" lower="-3.14159265359" upper="3.14159265359" velocity="6.28"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <link name="wrist_1_link">
+    <visual>
+      <geometry>
+        <mesh filename="../meshes/ur10e_wrist1.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="../meshes/ur10e/collision/wrist1.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.96"/>
+      <origin rpy="0 0 0" xyz="0.0 0.135 0.0"/>
+      <inertia ixx="0.0051082479567" ixy="0.0" ixz="0.0" iyy="0.0051082479567" iyz="0.0" izz="0.0055125"/>
+    </inertial>
+  </link>
+
+  <joint name="wrist_2_joint" type="revolute">
+    <parent link="wrist_1_link"/>
+    <child link="wrist_2_link"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.135 0.0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="54.0" lower="-3.14159265359" upper="3.14159265359" velocity="6.28"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <link name="wrist_2_link">
+    <visual>
+      <geometry>
+        <mesh filename="../meshes/ur10e_wrist2.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="../meshes/ur10e/collision/wrist2.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.96"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.12"/>
+      <inertia ixx="0.0051082479567" ixy="0.0" ixz="0.0" iyy="0.0051082479567" iyz="0.0" izz="0.0055125"/>
+    </inertial>
+  </link>
+
+  <joint name="wrist_3_joint" type="revolute">
+    <parent link="wrist_2_link"/>
+    <child link="wrist_3_link"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.12"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="54.0" lower="-3.14159265359" upper="3.14159265359" velocity="6.28"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <link name="wrist_3_link">
+    <visual>
+      <geometry>
+        <mesh filename="../meshes/ur10e_wrist3.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="../meshes/ur10e/collision/wrist3.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.202"/>
+      <origin rpy="1.57079632679 0 0" xyz="0.0 0.092 0.0"/>
+      <inertia ixx="0.000144345775595" ixy="0.0" ixz="0.0" iyy="0.000144345775595" iyz="0.0" izz="0.000204525"/>
+    </inertial>
+  </link>
+
+  <joint name="tool_joint" type="fixed">
+    <origin rpy="0.0 0.0 1.57079632679" xyz="0.0 0.212 0.0"/>
+    <parent link="wrist_3_link"/>
+    <child link="tool0"/>
+  </joint>
+
+  <link name="tool0">
+    <inertial>
+      <mass value="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+
+  <joint name="j2s6s300_base_link_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.2 0 0.08"/>
+    <parent link="base_link"/>
+    <child link="base"/>
+  </joint>
+
+    <link name="base">
+      <inertial>
+        <mass value="0.0"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+    </link>
+
+    <link name="jaco_front_hatch_support_v2">
+      <inertial>
+        <mass value="0.0"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/jaco_front_hatch_support_v2.dae"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="base_to_jaco_support" type="fixed">
+        <parent link="base"/>
+        <child link="jaco_front_hatch_support_v2"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+    </joint>
+
+    <link name="jaco_mounting_block">
+      <inertial>
+        <mass value="0.0"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+
+      <visual>
+        <geometry>
+          <mesh filename="../meshes/jaco_mounting_block.dae"/>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="jaco_support_to_jaco_mounting_block" type="fixed">
+        <parent link="jaco_front_hatch_support_v2"/>
+        <child link="jaco_mounting_block"/>
+        <origin rpy="0 0 0" xyz="0.045 0.00 -0.007626"/>
+    </joint>
+
+    <link name="j2s6s200_link_base">
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/base.dae"/>
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../meshes/base.dae"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.46784"/>
+            <origin rpy="0 0 0" xyz="0 0 0.1255"/>
+            <inertia ixx="0.000951270861568" ixy="0" ixz="0" iyy="0.000951270861568" iyz="0" izz="0.000374272"/>
+        </inertial>
+    </link>
+    <joint name="jaco_mounting_block_to_j2s6s200_link_base" type="fixed">
+        <parent link="jaco_mounting_block"/>
+        <child link="j2s6s200_link_base"/>
+        <axis xyz="0 0 0"/>
+        <limit effort="0" lower="0" upper="0" velocity="0"/>
+        <origin rpy="0 0 1.57079632679" xyz="0.000 0.000 0.000"/>
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <link name="j2s6s200_link_1">
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/shoulder.dae"/>
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/ring_big.dae"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../meshes/shoulder.dae"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.7477"/>
+            <origin xyz="0 -0.002 -0.0605"/>
+            <inertia ixx="0.00152031725204" ixy="0" ixz="0" iyy="0.00152031725204" iyz="0" izz="0.00059816"/>
+        </inertial>
+    </link>
+    <joint name="j2s6s200_joint_1" type="continuous">
+        <parent link="j2s6s200_link_base"/>
+        <child link="j2s6s200_link_1"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="40" lower="-6.28318530718" upper="6.28318530718" velocity="0.628318530718"/>
+        <origin rpy="0 3.14159265359 0" xyz="0 0 0.15675"/>
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <transmission name="j2s6s200_joint_1_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_1_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>160</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <link name="j2s6s200_link_2">
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/arm.dae"/>
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/ring_big.dae"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../meshes/arm.dae"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.99"/>
+            <origin xyz="0 -0.2065 -0.01"/>
+            <inertia ixx="0.010502207991" ixy="0" ixz="0" iyy="0.000792" iyz="0" izz="0.010502207991"/>
+        </inertial>
+    </link>
+    <joint name="j2s6s200_joint_2" type="revolute">
+        <parent link="j2s6s200_link_1"/>
+        <child link="j2s6s200_link_2"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="80" lower="0.820304748437" upper="5.46288055874" velocity="0.628318530718"/>
+        <origin rpy="-1.57079632679 0 3.14159265359" xyz="0 0.0016 -0.11875"/>
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <transmission name="j2s6s200_joint_2_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_2_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>160</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <link name="j2s6s200_link_3">
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/forearm.dae"/>
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/ring_big.dae"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../meshes/forearm.dae"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.6763"/>
+            <origin xyz="0 0.081 -0.0086"/>
+            <inertia ixx="0.00142022431908" ixy="0" ixz="0" iyy="0.000304335" iyz="0" izz="0.00142022431908"/>
+        </inertial>
+    </link>
+    <joint name="j2s6s200_joint_3" type="revolute">
+        <parent link="j2s6s200_link_2"/>
+        <child link="j2s6s200_link_3"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="40" lower="0.331612557879" upper="5.9515727493" velocity="0.628318530718"/>
+        <origin rpy="0 3.14159265359 0" xyz="0 -0.410 0"/>
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <transmission name="j2s6s200_joint_3_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_3">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_3_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>160</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <link name="j2s6s200_link_4">
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/wrist_spherical_1.dae"/>
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/ring_small.dae"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../meshes/wrist_spherical_1.dae"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.463"/>
+            <origin xyz="0 0.0028848942 -0.0541932613"/>
+            <inertia ixx="0.0004321316048" ixy="0" ixz="0" iyy="0.0004321316048" iyz="0" izz="9.26e-05"/>
+        </inertial>
+    </link>
+    <joint name="j2s6s200_joint_4" type="continuous">
+        <parent link="j2s6s200_link_3"/>
+        <child link="j2s6s200_link_4"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="20" lower="-6.28318530718" upper="6.28318530718" velocity="0.837758040957"/>
+        <origin rpy="-1.57079632679 0 3.14159265359" xyz="0 0.2073 -0.0114"/>
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <transmission name="j2s6s200_joint_4_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_4">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_4_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>160</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <link name="j2s6s200_link_5">
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/wrist_spherical_2.dae"/>
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/ring_small.dae"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../meshes/wrist_spherical_2.dae"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.463"/>
+            <origin xyz="0 0.0497208855 -0.0028562765"/>
+            <inertia ixx="0.0004321316048" ixy="0" ixz="0" iyy="9.26e-05" iyz="0" izz="0.0004321316048"/>
+        </inertial>
+    </link>
+    <joint name="j2s6s200_joint_5" type="revolute">
+        <parent link="j2s6s200_link_4"/>
+        <child link="j2s6s200_link_5"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="20" lower="0.523598775598" upper="5.75958653158" velocity="0.837758040957"/>
+        <origin rpy="1.57079632679 0 3.14159265359" xyz="0 0 -0.10375"/>
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <transmission name="j2s6s200_joint_5_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_5">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_5_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>160</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <link name="j2s6s200_link_6">
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/hand_2finger.dae"/>
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/ring_small.dae"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../meshes/hand_2finger.dae"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.99"/>
+            <origin xyz="0 0 -0.06"/>
+            <inertia ixx="0.0003453236187" ixy="0" ixz="0" iyy="0.0003453236187" iyz="0" izz="0.0005816"/>
+        </inertial>
+    </link>
+    <joint name="j2s6s200_joint_6" type="continuous">
+        <parent link="j2s6s200_link_5"/>
+        <child link="j2s6s200_link_6"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="20" lower="-6.28318530718" upper="6.28318530718" velocity="0.837758040957"/>
+        <origin rpy="-1.57079632679 0 3.14159265359" xyz="0 0.10375 0"/>
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <transmission name="j2s6s200_joint_6_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_6">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_6_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>160</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <link name="j2s6s200_end_effector">
+      <inertial>
+        <mass value="0.0"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+    </link>
+    <joint name="j2s6s200_joint_end_effector" type="fixed">
+        <parent link="j2s6s200_link_6"/>
+        <child link="j2s6s200_end_effector"/>
+        <axis xyz="0 0 0"/>
+        <limit effort="2000" lower="0" upper="0" velocity="1"/>
+        <!-- <origin rpy="3.14159265359 0 1.57079632679" xyz="0 0 -0.1600"/> -->
+        <origin rpy="3.14159265359 1.57079632679 0" xyz="0 0 -0.1600"/>
+    </joint>
+    <link name="j2s6s200_link_finger_1">
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/finger_proximal.dae"/>
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../meshes/finger_proximal.dae"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.01"/>
+            <origin xyz="0.022 0 0"/>
+            <inertia ixx="7.8999684e-07" ixy="0" ixz="0" iyy="7.8999684e-07" iyz="0" izz="8e-08"/>
+        </inertial>
+    </link>
+    <joint name="j2s6s200_joint_finger_1" type="fixed">
+        <parent link="j2s6s200_link_6"/>
+        <child link="j2s6s200_link_finger_1"/>
+        <axis xyz="0 0 1"/>
+        <origin rpy="-1.570796327 .649262481663582 1.57079632679490" xyz="-0.0025 0.03095 -0.11482"/>
+        <limit effort="2" lower="0" upper="1.51" velocity="1"/>
+    </joint>
+    <transmission name="j2s6s200_joint_finger_1_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_finger_1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_finger_1_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <link name="j2s6s200_link_finger_tip_1">
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/finger_distal.dae"/>
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../meshes/finger_distal.dae"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.01"/>
+            <origin xyz="0.022 0 0"/>
+            <inertia ixx="7.8999684e-07" ixy="0" ixz="0" iyy="7.8999684e-07" iyz="0" izz="8e-08"/>
+        </inertial>
+    </link>
+    <joint name="j2s6s200_joint_finger_tip_1" type="fixed">
+        <parent link="j2s6s200_link_finger_1"/>
+        <child link="j2s6s200_link_finger_tip_1"/>
+        <axis xyz="0 0 1"/>
+        <origin rpy="0 0 0" xyz="0.044 -0.003 0"/>
+        <limit effort="2" lower="0" upper="2" velocity="1"/>
+    </joint>
+    <transmission name="j2s6s200_joint_finger_tip_1_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_finger_tip_1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_finger_tip_1_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <link name="j2s6s200_link_finger_2">
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/finger_proximal.dae"/>
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../meshes/finger_proximal.dae"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.01"/>
+            <origin xyz="0.022 0 0"/>
+            <inertia ixx="7.8999684e-07" ixy="0" ixz="0" iyy="7.8999684e-07" iyz="0" izz="8e-08"/>
+        </inertial>
+    </link>
+    <joint name="j2s6s200_joint_finger_2" type="fixed">
+        <parent link="j2s6s200_link_6"/>
+        <child link="j2s6s200_link_finger_2"/>
+        <axis xyz="0 0 1"/>
+        <origin rpy="-1.570796327 .649262481663582 -1.57079632679490" xyz="-0.0025 -0.03095 -0.11482"/>
+        <limit effort="2" lower="0" upper="1.51" velocity="1"/>
+    </joint>
+    <transmission name="j2s6s200_joint_finger_2_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_finger_2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_finger_2_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <link name="j2s6s200_link_finger_tip_2">
+        <visual>
+            <geometry>
+                <mesh filename="../meshes/finger_distal.dae"/>
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../meshes/finger_distal.dae"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.01"/>
+            <origin xyz="0.022 0 0"/>
+            <inertia ixx="7.8999684e-07" ixy="0" ixz="0" iyy="7.8999684e-07" iyz="0" izz="8e-08"/>
+        </inertial>
+    </link>
+    <joint name="j2s6s200_joint_finger_tip_2" type="fixed">
+        <parent link="j2s6s200_link_finger_2"/>
+        <child link="j2s6s200_link_finger_tip_2"/>
+        <axis xyz="0 0 1"/>
+        <origin rpy="0 0 0" xyz="0.044 -0.003 0"/>
+        <limit effort="2" lower="0" upper="2" velocity="1"/>
+    </joint>
+    <transmission name="j2s6s200_joint_finger_tip_2_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_finger_tip_2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_finger_tip_2_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+
+  <gazebo>
+    <!--<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>-->
+    <plugin filename="libnexus_ros_force_based_move.so" name="nexus_ros_force_based_move">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>25.0</odometryRate>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+      <cmdVelTimeOut>0.25</cmdVelTimeOut>
+      <publishOdometryTf>0</publishOdometryTf>
+      <yaw_velocity_p_gain>1.0</yaw_velocity_p_gain>
+      <x_velocity_p_gain>15.0</x_velocity_p_gain>
+      <y_velocity_p_gain>15.0</y_velocity_p_gain>
+      <max_x_velocity>0.6</max_x_velocity>
+      <max_y_velocity>0.6</max_y_velocity>
+      <max_yaw_velocity>0.5</max_yaw_velocity>
+    </plugin>
+  </gazebo>
+  <!-- All static links get collapsed down to base_link in Gazebo, so that's
+       the one to apply the colour to (in Gazebo 5+). -->
+  <gazebo reference="base_footprint">
+    <material>Gazebo/Yellow</material>
+    <gravity>true</gravity>
+  </gazebo>
+  <gazebo reference="base_link">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  <gazebo reference="left_sensor">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="front_sensor">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="right_sensor">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="rear_sensor">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="upper_left_wheel_shaft">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="lower_left_wheel_shaft">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="upper_right_wheel_shaft">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="lower_right_wheel_shaft">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <!-- Wheel friction to zero, as movement is handled by applying forces at the body level. -->
+  <gazebo reference="upper_left_wheel">
+    <material>Gazebo/Grey</material>
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+  </gazebo>
+  <gazebo reference="lower_left_wheel">
+    <material>Gazebo/Grey</material>
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+  </gazebo>
+  <gazebo reference="upper_right_wheel">
+    <material>Gazebo/Grey</material>
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+  </gazebo>
+  <gazebo reference="lower_right_wheel">
+    <material>Gazebo/Grey</material>
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+  </gazebo>
+  <gazebo reference="front_sensor">
+    <sensor name="front_sensor" type="ray">
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>2</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.52</min_angle>
+            <max_angle> 0.52</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>2</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.02</min_angle>
+            <max_angle> 0.02</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.04</min>
+          <max>2.5</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <plugin filename="libhector_gazebo_ros_sonar.so" name="gazebo_ros_front_sensor">
+        <gaussianNoise>0.005</gaussianNoise>
+        <topicName>front_sensor</topicName>
+        <frameId>front_sensor</frameId>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="left_sensor">
+    <sensor name="left_sensor" type="ray">
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>2</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.52</min_angle>
+            <max_angle> 0.52</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>2</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.02</min_angle>
+            <max_angle> 0.02</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.04</min>
+          <max>2.5</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <plugin filename="libhector_gazebo_ros_sonar.so" name="gazebo_ros_left_sensor">
+        <gaussianNoise>0.005</gaussianNoise>
+        <topicName>left_sensor</topicName>
+        <frameId>left_sensor</frameId>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="right_sensor">
+    <sensor name="right_sensor" type="ray">
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>2</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.52</min_angle>
+            <max_angle> 0.52</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>2</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.02</min_angle>
+            <max_angle> 0.02</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.04</min>
+          <max>2.5</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <plugin filename="libhector_gazebo_ros_sonar.so" name="gazebo_ros_right_sensor">
+        <gaussianNoise>0.005</gaussianNoise>
+        <topicName>right_sensor</topicName>
+        <frameId>right_sensor</frameId>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="rear_sensor">
+    <sensor name="rear_sensor" type="ray">
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>2</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.52</min_angle>
+            <max_angle> 0.52</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>2</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.02</min_angle>
+            <max_angle> 0.02</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.04</min>
+          <max>2.5</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <plugin filename="libhector_gazebo_ros_sonar.so" name="gazebo_ros_rear_sensor">
+        <gaussianNoise>0.005</gaussianNoise>
+        <topicName>rear_sensor</topicName>
+        <frameId>rear_sensor</frameId>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>

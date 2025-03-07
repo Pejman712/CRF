@@ -1,0 +1,41 @@
+{
+    "LinksDirectory" : "cpproboticframework/modules/Algorithms/CollisionDetector/models/KinovaJaco2SW/",
+    "LinkFileNames" :
+    {
+        "Link0" : "Base.binvox",
+        "Link1" : "Shoulder.binvox",
+        "Link2" : "Arm.binvox",
+        "Link3" : "Forearm.binvox",
+        "Link4" : "FirstWrist.binvox",
+        "Link5" : "SecondWrist.binvox",
+        "Link6" : "Empty.xyz"
+    },
+    "HomeState" :
+    {
+        "Joint1" : 0.0,
+        "Joint2" : 0.0,
+        "Joint3" : 0.0,
+        "Joint4" : 0.0,
+        "Joint5" : 0.0,
+        "Joint6" : 0.0
+    },
+    "StateOffset" :
+    {
+        "Joint1" : 1.57,
+        "Joint2" : 0.0,
+        "Joint3" : 0.0,
+        "Joint4" : 0.0,
+        "Joint5" : 3.14,
+        "Joint6" : 0.0
+    },
+    "SelfCollisionMatrix" :
+    {
+        "Link0" : [0, 0, 1, 1, 1, 1, 1],
+        "Link1" : [0, 0, 0, 1, 1, 1, 1],
+        "Link2" : [1, 0, 0, 0, 1, 1, 1],
+        "Link3" : [1, 1, 0, 0, 0, 1, 1],
+        "Link4" : [1, 1, 1, 0, 0, 0, 1],
+        "Link5" : [1, 1, 1, 1, 0, 0, 0],
+        "Link6" : [1, 1, 1, 1, 1, 0, 0]
+    }
+}

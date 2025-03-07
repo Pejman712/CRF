@@ -1,0 +1,16 @@
+{
+    "unitFactor": 333772.107215033,
+    "velocityProfile": 0.174533,
+    "accelerationProfile": 0.122173,
+    "decelerationProfile": -0.122173,
+    "cavityReferenceEncoder": 466009,
+    "maxVelocity": 0.261799388,
+    "minVelocity": -0.261799388,
+    "maxCurrentMotor": 50000,
+    "maxTorqueMotor": 50000,
+    "motorOrientation" : -1,
+    "positionCommandTimeoutSeconds": 45,
+    "velocityCommandTimeoutSeconds": 10,
+    "stopCommandTimeoutSeconds": 5,
+    "updateIntervalMilliseconds": 100
+}

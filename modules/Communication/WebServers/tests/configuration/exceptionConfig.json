@@ -1,0 +1,23 @@
+{
+    "ports": 8080,
+    "initalizeTimeoutSec": 10,
+    "context" : "/",
+    "timsCount": 1,
+    "tim": [
+        {
+            "id": 4,
+            "type": "S30",
+            "configFilename": "/home/survey-nuc/CERNRoboticFramework/modules/Robots/TIM/configurations/TIM4.json",
+            "cameras": [
+                {
+                    "name": "front",
+                    "address": "192.168.0.20"
+                },
+                {
+                    "name": "back",
+                    "address": "192.168.0.25"
+                }
+            ]
+        }
+    ]
+}

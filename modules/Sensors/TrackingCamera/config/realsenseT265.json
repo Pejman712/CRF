@@ -1,0 +1,28 @@
+{
+    "RealSense" : {
+        "serialNumber" : "905312110159",
+        "wheelsOdometryCalibr": "config/wheelsOdometryCalibration.json",
+        "pose": {
+            "width" : 848,
+            "height" : 800,
+            "fps" : 200
+        },
+        "accel" : {
+            "fps" : 62
+        },
+        "gyro" : {
+            "fps" : 200
+        },
+        "fisheye1" : {
+            "width" : 848,
+            "height" : 800,
+            "fps" : 30
+        },
+        "fisheye2" : {
+            "width" : 848,
+            "height" : 800,
+            "fps" : 30
+        }
+    }
+}
+

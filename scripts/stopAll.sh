@@ -1,0 +1,11 @@
+#!/bin/sh
+
+sudo killall KinovaArmControllerPoint
+sudo killall SchunkArmControllerPoint
+sudo killall SchunkPowerCubeControllerPoint
+sudo killall EtherCATRobotArmControllerPoint
+sudo killall TIMArmControllerPoint
+
+sudo killall CERNBotControllerPoint
+sudo killall CERNBot2ControllerPoint
+sudo killall CHARMBotControllerPoint

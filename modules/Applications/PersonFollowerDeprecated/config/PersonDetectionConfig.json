@@ -1,0 +1,11 @@
+{
+    "PersonDetectorConfig": {
+        "inferenceServerAddress": "tcp://localhost:5559",
+        "uvcCameraConnectionPort": "/dev/video0",
+        "laserIP": "192.168.2.11",
+        "laserCommPoint": "/tmp/LaserPublisher",
+        "laserConfigFile": "cpproboticframework/modules/Applications/PersonFollower/config/HokuyoLaserParameters.json",
+        "robotConfigFile": "cpproboticframework/modules/Robots/CHARMBot/config/charmBotConfig.json",
+        "canInterface": "can0"
+    }
+}

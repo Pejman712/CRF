@@ -1,0 +1,36 @@
+{
+    "PLC" : {
+        "IP" : "192.168.58.220",
+        "Rack" : 0,
+        "Slot" : 2,
+        "UpdateIntervalInSeconds" : 1,
+        "commandWaitingTimeInSeconds" : 15.0
+    },
+    "Datablocks" : {
+        "Commands" : {
+            "DatablockNumber" : 509,
+            "DatablockLength" : 7,
+            "Variables" : {
+                "EnableRPArmManualControl" :           {"RegisterOffset" : 5,  "BitNumber" : 4},
+                "RetractRPArm" :                       {"RegisterOffset" : 5,  "BitNumber" : 1},
+                "DeployRPArm" :                        {"RegisterOffset" : 5,  "BitNumber" : 2},
+                "MoveRPArmUp" :                        {"RegisterOffset" : 5,  "BitNumber" : 5},
+                "MoveRPArmDown" :                      {"RegisterOffset" : 5,  "BitNumber" : 6},
+                "ReleaseLockRPArm" :                   {"RegisterOffset" : 5,  "BitNumber" : 7},
+                "StopRPArm" :                          {"RegisterOffset" : 6,  "BitNumber" : 0},
+                "AcknowledgeErrors" :                  {"RegisterOffset" : 5,  "BitNumber" : 3},
+                "ResetRPArmDriver" :                   {"RegisterOffset" : 6,  "BitNumber" : 1}
+            }
+        },
+        "Status" : {
+            "DatablockNumber" : 511,
+            "DatablockLength" : 37,
+            "Variables" : {
+                "RPArmRetracted" :                     {"RegisterOffset" : 36, "BitNumber" : 4},
+                "RPArmInTheMiddle" :                   {"RegisterOffset" : 36, "BitNumber" : 6},
+                "RPArmDeployed" :                      {"RegisterOffset" : 36, "BitNumber" : 3},
+                "RPArmError" :                         {"RegisterOffset" : 36, "BitNumber" : 5}
+            }
+        }
+    }
+}

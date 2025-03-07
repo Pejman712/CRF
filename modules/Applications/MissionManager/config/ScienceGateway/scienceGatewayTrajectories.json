@@ -1,0 +1,42 @@
+{
+    "RetractToDeploy" : [
+        {
+            "Name" : "Retracted Position",
+            "Position" : [0.0, 1.57, 2.16, 2.44, -1.05, 0.44, -0.70],
+            "Velocity" : [0.0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+        },
+        {
+            "Name" : "Middle Position 1",
+            "Position" : [0.0, 1.57, 2.16, 2.44, -1.05, 0.44, 0],
+            "Velocity" : [0.0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+        },
+        {
+            "Name" : "Middle Position 2",
+            "Position" : [0.0, 1.57, 2.16, 2.44, -1.05, 0.0, 0.0],
+            "Velocity" : [0.0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+        },
+        {
+            "Name" : "Middle Position 3",
+            "Position" : [0.0, 1.57, 2.16, 2.44, 0.0, 0.0, 0.0],
+            "Velocity" : [0.0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+        },
+        {
+            "Name" : "Middle Position 4",
+            "Position" : [0.0, 0.0, 2.16, 2.44, 0.0, 0.0, 0.0],
+            "Velocity" : [0.0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+        },
+        {
+            "Name" : "Middle Position 5",
+            "Position" : [0.0, 0.0, 1.05, 1.57, 0.0, 0.0, 0.0],
+            "Velocity" : [0.0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+        },
+        {
+            "Name": "Deployed Position",
+            "Position" : [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            "Velocity" : [0.0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+        }
+    ],
+    "DeployedPosition" : [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "RetractedPosition" : [0.0, 1.57, 2.16, 2.44, -1.05, 0.44, -0.70],
+    "ArmPositionMargin" : 0.05
+}

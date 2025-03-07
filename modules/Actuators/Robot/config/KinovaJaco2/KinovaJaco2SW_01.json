@@ -1,0 +1,133 @@
+{
+    "SerialNumber" : "",
+    "EthernetCommunication" : {
+        "IPAdress" : "192.168.0.111",
+        "SubnetMask" : "255.255.255.0",
+        "Port" : 55000,
+        "LocalPcIPAddress": "192.168.0.40"
+    },
+    "JointSpaceDegreeOfFreedom" : 6,
+    "TaskSpaceDegreeOfFreedom" : 6,
+    "ControllerLoopTimeMs": 10,
+    "JointLimits" : {
+        "MaxPosition" : ["inf", 5.54, 5.98, "inf", 5.09, "inf"],
+        "MinPosition" : ["-inf", 0.75,  0.3, "-inf", 1.2, "-inf"],
+        "MaxVelocity" : [0.628, 0.628, 0.628, 0.837, 0.837, 0.837],
+        "MaxAcceleration" : [20, 20, 20, 30, 30, 30],
+        "MaxTorque" : [20, 20, 20, 20, 20, 20]
+    },
+    "TaskLimits" : {
+        "MaxVelocity": [0.2, 0.2, 0.2, 2, 2, 2],
+        "MaxAcceleration": [0.1, 0.1, 0.1, 0.2, 0.2, 0.2]
+    },
+    "ProfileParameters" : {
+        "JointVelocities" : [0.3, 0.3, 0.3, 0.4, 0.4, 0.4],
+        "JointAccelerations" : [1.5, 1.5, 1.5, 1.5, 1.5, 1.5],
+        "TaskVelocity" : [0.2, 0.2, 0.2, 1, 1, 1],
+        "TaskAcceleration" : [1, 1, 1, 8, 8, 8]
+    },
+    "Kinematics" : {
+        "Type" : "URDF",
+        "DH" : {
+            "D" :     [0.2755, 0.0,    -0.0098, -0.3111, 0.0,    0.2495],
+            "Theta" : [0.0,    1.5708, -1.5708, 0.0,     0.0,    3.1416],
+            "A" :     [0.0,    0.4100, 0.0,     0.0,     0.0,    0.0],
+            "Alpha" : [1.5708, 3.1416, 1.5708,  1.5708,  1.5708, 0.0]
+        },
+        "URDF" : {
+            "RobotURDFPath" : "cpproboticframework/modules/Actuators/Robot/config/KinovaJaco2/KinovaJaco2SW.urdf",
+            "EndEffectorName" : "j2s6s200_end_effector"
+        },
+        "MathExpressions" : {
+            "Lengths" : {
+                "lx" : [0.0, 0.0, 0.0, 0.0133, 0.0, 0.0],
+                "ly" : [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                "lz" : [0.2755, 0.0, 0.41, 0.2073, 0.1038, 0.1038]
+            },
+            "ForwardKinematics" : {
+                "RIE" : {
+                    "Row0" : {
+                        "Col0" : "(((cos(q5) * cos(q4) * cos(q3) + sin(q5) * sin(q3)) * cos(q2) + sin(q2) * (cos(q5) * cos(q4) * sin(q3) - sin(q5) * cos(q3))) * sin(q6) - cos(q6) * sin(q4) * (sin(q2) * sin(q3) + cos(q2) * cos(q3))) * sin(q1) + cos(q1) * (cos(q5) * sin(q4) * sin(q6) + cos(q4) * cos(q6))",
+                        "Col1" : "(((-cos(q5) * cos(q4) * cos(q3) - sin(q5) * sin(q3)) * cos(q2) - sin(q2) * (cos(q5) * cos(q4) * sin(q3) - sin(q5) * cos(q3))) * cos(q6) - sin(q4) * sin(q6) * (sin(q2) * sin(q3) + cos(q2) * cos(q3))) * sin(q1) + cos(q1) * (-cos(q5) * sin(q4) * cos(q6) + cos(q4) * sin(q6))",
+                        "Col2" : "(cos(q4) * (sin(q2) * sin(q3) + cos(q2) * cos(q3)) * sin(q5) + cos(q5) * (sin(q2) * cos(q3) - cos(q2) * sin(q3))) * sin(q1) + cos(q1) * sin(q5) * sin(q4)"
+                    },
+                    "Row1" : {
+                        "Col0" : "(((cos(q5) * cos(q4) * cos(q3) + sin(q5) * sin(q3)) * cos(q2) + sin(q2) * (cos(q5) * cos(q4) * sin(q3) - sin(q5) * cos(q3))) * sin(q6) - cos(q6) * sin(q4) * (sin(q2) * sin(q3) + cos(q2) * cos(q3))) * cos(q1) - sin(q1) * (cos(q5) * sin(q4) * sin(q6) + cos(q4) * cos(q6))",
+                        "Col1" : "(((-cos(q5) * cos(q4) * cos(q3) - sin(q5) * sin(q3)) * cos(q2) - sin(q2) * (cos(q5) * cos(q4) * sin(q3) - sin(q5) * cos(q3))) * cos(q6) - sin(q4) * sin(q6) * (sin(q2) * sin(q3) + cos(q2) * cos(q3))) * cos(q1) - sin(q1) * (-cos(q5) * sin(q4) * cos(q6) + cos(q4) * sin(q6))",
+                        "Col2" : "(cos(q4) * (sin(q2) * sin(q3) + cos(q2) * cos(q3)) * sin(q5) + cos(q5) * (sin(q2) * cos(q3) - cos(q2) * sin(q3))) * cos(q1) - sin(q1) * sin(q5) * sin(q4)"
+                    },
+                    "Row2" : {
+                        "Col0" : "((-cos(q5) * cos(q4) * sin(q3) + sin(q5) * cos(q3)) * cos(q2) + sin(q2) * (cos(q5) * cos(q4) * cos(q3) + sin(q5) * sin(q3))) * sin(q6) - cos(q6) * sin(q4) * (sin(q2) * cos(q3) - cos(q2) * sin(q3))",
+                        "Col1" : "((cos(q5) * cos(q4) * sin(q3) - sin(q5) * cos(q3)) * cos(q2) - sin(q2) * (cos(q5) * cos(q4) * cos(q3) + sin(q5) * sin(q3))) * cos(q6) - sin(q4) * sin(q6) * (sin(q2) * cos(q3) - cos(q2) * sin(q3))",
+                        "Col2" : "-sin(q5) * (-sin(q2) * cos(q3) + cos(q2) * sin(q3)) * cos(q4) - (sin(q2) * sin(q3) + cos(q2) * cos(q3)) * cos(q5)"
+                    }
+                },
+                "IrIE" : {
+                    "0" : "(((l6z * cos(q5) - l4z - l5z) * cos(q3) + l6z * cos(q4) * sin(q3) * sin(q5) + l3z) * sin(q2) + (l6z * cos(q3) * cos(q4) * sin(q5) - sin(q3) * (l6z * cos(q5) - l4z - l5z)) * cos(q2)) * sin(q1) + cos(q1) * (l6z * sin(q4) * sin(q5) - l4x)",
+                    "1" : "(((l6z * cos(q5) - l4z - l5z) * cos(q3) + l6z * cos(q4) * sin(q3) * sin(q5) + l3z) * sin(q2) + (l6z * cos(q3) * cos(q4) * sin(q5) - sin(q3) * (l6z * cos(q5) - l4z - l5z)) * cos(q2)) * cos(q1) - sin(q1) * (l6z * sin(q4) * sin(q5) - l4x)",
+                    "2" : "((-l6z * cos(q5) + l4z + l5z) * cos(q3) - l6z * cos(q4) * sin(q3) * sin(q5) - l3z) * cos(q2) + cos(q3) * cos(q4) * sin(q5) * sin(q2) * l6z - sin(q3) * (l6z * cos(q5) - l4z - l5z) * sin(q2) + l1z"
+                },
+                "IvIE" : {
+                    "0" : "(((-sin(q5) * sin(q4) * l6z * qd4 + l6z * qd5 * cos(q4) * cos(q5) + (qd2 - qd3) * (l6z * cos(q5) - l4z - l5z)) * cos(q3) + (cos(q4) * (qd2 - qd3) + qd5) * l6z * sin(q5) * sin(q3) + l3z * qd2) * cos(q2) + (-(cos(q4) * (qd2 - qd3) + qd5) * l6z * sin(q5) * cos(q3) + sin(q3) * (-sin(q5) * sin(q4) * l6z * qd4 + l6z * qd5 * cos(q4) * cos(q5) + (qd2 - qd3) * (l6z * cos(q5) - l4z - l5z))) * sin(q2) - qd1 * (l6z * sin(q4) * sin(q5) - l4x)) * sin(q1) + (qd1 * (l6z * cos(q3) * cos(q4) * sin(q5) - sin(q3) * (l6z * cos(q5) - l4z - l5z)) * cos(q2) + ((l6z * cos(q5) - l4z - l5z) * cos(q3) + l6z * cos(q4) * sin(q3) * sin(q5) + l3z) * qd1 * sin(q2) + l6z * (qd4 * cos(q4) * sin(q5) + qd5 * cos(q5) * sin(q4))) * cos(q1)",
+                    "1" : "(((-sin(q5) * sin(q4) * l6z * qd4 + l6z * qd5 * cos(q4) * cos(q5) + (qd2 - qd3) * (l6z * cos(q5) - l4z - l5z)) * cos(q3) + (cos(q4) * (qd2 - qd3) + qd5) * l6z * sin(q5) * sin(q3) + l3z * qd2) * cos(q2) + (-(cos(q4) * (qd2 - qd3) + qd5) * l6z * sin(q5) * cos(q3) + sin(q3) * (-sin(q5) * sin(q4) * l6z * qd4 + l6z * qd5 * cos(q4) * cos(q5) + (qd2 - qd3) * (l6z * cos(q5) - l4z - l5z))) * sin(q2) - qd1 * (l6z * sin(q4) * sin(q5) - l4x)) * cos(q1) - sin(q1) * (qd1 * (l6z * cos(q3) * cos(q4) * sin(q5) - sin(q3) * (l6z * cos(q5) - l4z - l5z)) * cos(q2) + ((l6z * cos(q5) - l4z - l5z) * cos(q3) + l6z * cos(q4) * sin(q3) * sin(q5) + l3z) * qd1 * sin(q2) + l6z * (qd4 * cos(q4) * sin(q5) + qd5 * cos(q5) * sin(q4)))",
+                    "2" : "((-sin(q5) * sin(q4) * l6z * qd4 + l6z * qd5 * cos(q4) * cos(q5) - (l6z * cos(q5) - l4z - l5z) * (-qd2 + qd3)) * cos(q3) - ((-qd2 + qd3) * cos(q4) - qd5) * l6z * sin(q5) * sin(q3) + l3z * qd2) * sin(q2) - cos(q2) * (((-qd2 + qd3) * cos(q4) - qd5) * l6z * sin(q5) * cos(q3) - (sin(q5) * sin(q4) * l6z * qd4 - l6z * qd5 * cos(q4) * cos(q5) + (l6z * cos(q5) - l4z - l5z) * (-qd2 + qd3)) * sin(q3))"
+                },
+                "IwIE" : {
+                    "0" : "(((-qd6 * cos(q4) * sin(q5) - sin(q4) * qd5) * cos(q3) + sin(q3) * (cos(q5) * qd6 - qd4)) * cos(q2) - ((cos(q5) * qd6 - qd4) * cos(q3) + sin(q3) * (qd6 * cos(q4) * sin(q5) + sin(q4) * qd5)) * sin(q2)) * sin(q1) - cos(q1) * (qd6 * sin(q4) * sin(q5) - qd5 * cos(q4) - qd2 + qd3)",
+                    "1" : "(((-qd6 * cos(q4) * sin(q5) - sin(q4) * qd5) * cos(q3) + sin(q3) * (cos(q5) * qd6 - qd4)) * cos(q2) - ((cos(q5) * qd6 - qd4) * cos(q3) + sin(q3) * (qd6 * cos(q4) * sin(q5) + sin(q4) * qd5)) * sin(q2)) * cos(q1) + sin(q1) * (qd6 * sin(q4) * sin(q5) - qd5 * cos(q4) - qd2 + qd3)",
+                    "2" : "((cos(q5) * qd6 - qd4) * cos(q3) + sin(q3) * (qd6 * cos(q4) * sin(q5) + sin(q4) * qd5)) * cos(q2) - sin(q2) * (qd6 * cos(q4) * sin(q5) + sin(q4) * qd5) * cos(q3) + sin(q3) * (cos(q5) * qd6 - qd4) * sin(q2) - qd1"
+                }
+            },
+            "Jacobian" : {
+                "Row0" : {
+                    "Col0" : "(((l6z * cos(q5) - l4z - l5z) * cos(q3) + l6z * cos(q4) * sin(q3) * sin(q5) + l3z) * sin(q2) + (l6z * cos(q3) * cos(q4) * sin(q5) - sin(q3) * (l6z * cos(q5) - l4z - l5z)) * cos(q2)) * cos(q1) - sin(q1) * (l6z * sin(q4) * sin(q5) - l4x)",
+                    "Col1" : "(((l6z * cos(q5) - l4z - l5z) * cos(q3) + l6z * cos(q4) * sin(q3) * sin(q5) + l3z) * cos(q2) - sin(q2) * (l6z * cos(q3) * cos(q4) * sin(q5) - sin(q3) * (l6z * cos(q5) - l4z - l5z))) * sin(q1)",
+                    "Col2" : "sin(q1) * (((-l6z * cos(q5) + l4z + l5z) * cos(q3) - l6z * cos(q4) * sin(q3) * sin(q5)) * cos(q2) + sin(q2) * (l6z * cos(q3) * cos(q4) * sin(q5) - sin(q3) * (l6z * cos(q5) - l4z - l5z)))",
+                    "Col3" : "(cos(q1) * cos(q4) - sin(q1) * (sin(q2) * sin(q3) + cos(q2) * cos(q3)) * sin(q4)) * l6z * sin(q5)",
+                    "Col4" : "l6z * ((cos(q4) * (sin(q2) * sin(q3) + cos(q2) * cos(q3)) * cos(q5) - sin(q5) * (sin(q2) * cos(q3) - cos(q2) * sin(q3))) * sin(q1) + cos(q1) * cos(q5) * sin(q4))",
+                    "Col5" : "0"
+                },
+                "Row1" : {
+                    "Col0" : "(((-l6z * cos(q5) + l4z + l5z) * cos(q3) - l6z * cos(q4) * sin(q3) * sin(q5) - l3z) * sin(q2) - (l6z * cos(q3) * cos(q4) * sin(q5) - sin(q3) * (l6z * cos(q5) - l4z - l5z)) * cos(q2)) * sin(q1) - cos(q1) * (l6z * sin(q4) * sin(q5) - l4x)",
+                    "Col1" : "(((l6z * cos(q5) - l4z - l5z) * cos(q3) + l6z * cos(q4) * sin(q3) * sin(q5) + l3z) * cos(q2) - sin(q2) * (l6z * cos(q3) * cos(q4) * sin(q5) - sin(q3) * (l6z * cos(q5) - l4z - l5z))) * cos(q1)",
+                    "Col2" : "-cos(q1) * (((l6z * cos(q5) - l4z - l5z) * cos(q3) + l6z * cos(q4) * sin(q3) * sin(q5)) * cos(q2) - sin(q2) * (l6z * cos(q3) * cos(q4) * sin(q5) - sin(q3) * (l6z * cos(q5) - l4z - l5z)))",
+                    "Col3" : "-(cos(q1) * (sin(q2) * sin(q3) + cos(q2) * cos(q3)) * sin(q4) + sin(q1) * cos(q4)) * l6z * sin(q5)",
+                    "Col4" : "((cos(q4) * (sin(q2) * sin(q3) + cos(q2) * cos(q3)) * cos(q5) - sin(q5) * (sin(q2) * cos(q3) - cos(q2) * sin(q3))) * cos(q1) - sin(q1) * cos(q5) * sin(q4)) * l6z",
+                    "Col5" : "0"
+                },
+                "Row2" : {
+                    "Col0" : "0",
+                    "Col1" : "((l6z * cos(q5) - l4z - l5z) * cos(q3) + l6z * cos(q4) * sin(q3) * sin(q5) + l3z) * sin(q2) + (l6z * cos(q3) * cos(q4) * sin(q5) - sin(q3) * (l6z * cos(q5) - l4z - l5z)) * cos(q2)",
+                    "Col2" : "(-l6z * cos(q3) * cos(q4) * sin(q5) + sin(q3) * (l6z * cos(q5) - l4z - l5z)) * cos(q2) - ((l6z * cos(q5) - l4z - l5z) * cos(q3) + l6z * cos(q4) * sin(q3) * sin(q5)) * sin(q2)",
+                    "Col3" : "l6z * sin(q4) * sin(q5) * (-sin(q2) * cos(q3) + cos(q2) * sin(q3))",
+                    "Col4" : "((sin(q2) * cos(q3) - cos(q2) * sin(q3)) * cos(q4) * cos(q5) + (sin(q2) * sin(q3) + cos(q2) * cos(q3)) * sin(q5)) * l6z",
+                    "Col5" : "0"
+                },
+                "Row3" : {
+                    "Col0" : "0",
+                    "Col1" : "cos(q1)",
+                    "Col2" : "-cos(q1)",
+                    "Col3" : "sin(q1) * (sin(q2) * cos(q3) - cos(q2) * sin(q3))",
+                    "Col4" : "cos(q1) * cos(q4) - sin(q1) * (sin(q2) * sin(q3) + cos(q2) * cos(q3)) * sin(q4)",
+                    "Col5" : "(-cos(q4) * (sin(q2) * sin(q3) + cos(q2) * cos(q3)) * sin(q5) - cos(q5) * (sin(q2) * cos(q3) - cos(q2) * sin(q3))) * sin(q1) - cos(q1) * sin(q5) * sin(q4)"
+                },
+                "Row4" : {
+                    "Col0" : "0",
+                    "Col1" : "-sin(q1)",
+                    "Col2" : "sin(q1)",
+                    "Col3" : "cos(q1) * (sin(q2) * cos(q3) - cos(q2) * sin(q3))",
+                    "Col4" : "-sin(q1) * cos(q4) - cos(q1) * (sin(q2) * sin(q3) + cos(q2) * cos(q3)) * sin(q4)",
+                    "Col5" : "(-cos(q4) * (sin(q2) * sin(q3) + cos(q2) * cos(q3)) * sin(q5) - cos(q5) * (sin(q2) * cos(q3) - cos(q2) * sin(q3))) * cos(q1) + sin(q1) * sin(q5) * sin(q4)"
+                },
+                "Row5" : {
+                    "Col0" : "-1",
+                    "Col1" : "0",
+                    "Col2" : "0",
+                    "Col3" : "-sin(q2) * sin(q3) - cos(q2) * cos(q3)",
+                    "Col4" : "(-sin(q2) * cos(q3) + cos(q2) * sin(q3)) * sin(q4)",
+                    "Col5" : "sin(q5) * (-sin(q2) * cos(q3) + cos(q2) * sin(q3)) * cos(q4) + (sin(q2) * sin(q3) + cos(q2) * cos(q3)) * cos(q5)"
+                }
+            }
+        }
+    }
+}

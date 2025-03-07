@@ -1,0 +1,13 @@
+{
+    "mapperConfigFile": "../modules/Applications/GraphOptimization/config/mapperConfigFileRGBDCamera.json",
+    "graphConfigFile": "../modules/Applications/GraphOptimization/config/graphConfigRGBDCamera.json",
+    "canPort": "can0",
+    "charmbotConfigFile": "../modules/Robots/CHARMBot/config/charmBotConfig.json",
+    "protocol": "tcp",
+    "port": 3021,
+    "inputFifo": "none",
+    "outputMmap": "none",
+    "sensorConfigFile": "../modules/Sensors/RGBDCamera/config/carlosD415-1.json",
+    "resultName": "resultsMonday",
+    "maxIterations": 20
+}

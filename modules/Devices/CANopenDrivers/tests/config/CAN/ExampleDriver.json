@@ -1,0 +1,23 @@
+{
+    "SlaveID" : 1,
+    "PositionUnitConversion" : 9126.58,
+    "VelocityUnitConversion" : 9126.58,
+    "AccelerationUnitConversion" : 9126.58,
+    "JerkUnitConversion" : 9126.58,
+    "TorqueUnitConversion" : 7.14,
+    "CurrentUnitConversion" : 7.14,
+    "ModesOfOperation" : {
+        "ProfilePositionMode" : {
+            "MaxProfileVelocity" : 100,
+            "QuickStopDeceleration" : 100,
+            "MaxAcceleration" : 100,
+            "MotionProfileType" : "Trapezoidal"
+        },
+        "ProfileVelocityMode" : {
+            "MaxProfileVelocity" : 100,
+            "QuickStopDeceleration" : 100,
+            "MaxAcceleration" : 100,
+            "MotionProfileType" : "Trapezoidal"
+        }
+    }
+}

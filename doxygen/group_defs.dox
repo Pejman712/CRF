@@ -1,0 +1,569 @@
+/*!
+ * @defgroup group_main cpproboticframework Modules
+ * @brief All project modules and their submodules. We can add a more in depth description later
+ */
+    /*!
+    *  @defgroup group_actuators Actuators
+    *  @ingroup group_main
+    *  @brief All Actuators modules and their implementations
+    */
+        /*!
+        *  @defgroup group_gripper Gripper
+        *  @ingroup group_actuators
+        */
+            /*!
+            *  @defgroup group_ecbpmiserial ECBPMiSerial
+            *  @ingroup group_gripper
+            */
+        /*!
+        *  @defgroup group_robot Robot
+        *  @ingroup group_actuators
+        */
+            /*!
+            *  @defgroup group_ethercat_robot EtherCATRobot
+            *  @ingroup group_robot
+            */
+                /*!
+                *  @defgroup group_cernbot_sps_three CERNBotSPS3
+                *  @ingroup group_ethercat_robot
+                */
+        /*!
+        *  @defgroup group_linear_stage LinearStage
+        *  @ingroup group_actuators
+        */
+            /*!
+            *  @defgroup group_can_open_linear_stage CANOpenLinearStage
+            *  @ingroup group_linear_stage
+            */
+            /*!
+            *  @defgroup group_ether_cat_linear_actuator EtherCATLinearActuator
+            *  @ingroup group_linear_stage
+            */
+            /*!
+            *  @defgroup group_linear_actuator_communication_point LinearActuatorCommunicationPoint
+            *  @ingroup group_linear_stage
+            */
+    /*!
+    *  @defgroup group_applications Applications
+    *  @ingroup group_main
+    *  @brief All Applications modules and their implementations
+    */
+    /*!
+    *  @defgroup group_communication Communication
+    *  @ingroup group_main
+    *  @brief All Communication modules and their implementations
+    */
+        /*!
+        * @defgroup group_kortexapi KortexAPI
+        * @ingroup group_communication
+        */
+        /*!
+        * @defgroup group_soemapi SOEMAPI
+        * @ingroup group_communication
+        */
+        /*!
+        * @defgroup group_vicon_api ViconAPI
+        * @ingroup group_communication
+        */
+    /*!
+    *  @defgroup group_control Control
+    *  @ingroup group_main
+    *  @brief All Control modules and their implementations
+    */
+        /*!
+        * @defgroup group_controller Controller
+        * @ingroup group_control
+        */
+            /*!
+            * @defgroup group_direct_open_loop_velocity DirectOpenLoopVelocity
+            * @ingroup group_controller
+            */
+            /*!
+            * @defgroup group_position_ctrl_velocity_ff PositionCtrlVelocityFF
+            * @ingroup group_controller
+            */
+        /*!
+        * @defgroup group_motion_controller MotionController
+        * @ingroup group_control
+        */
+            /*!
+            * @defgroup group_motion_controller_communication_point MotionControllerCommunicationPoint
+            * @ingroup group_motion_controller
+            */
+            /*!
+            * @defgroup group_path_follower PathFollower
+            * @ingroup group_motion_controller
+            */
+            /*!
+            * @defgroup group_teleoperation Teleoperation
+            * @ingroup group_motion_controller
+            */
+        /*!
+        *  @defgroup group_trajectory_generator TrajectoryGenerator
+        *  @ingroup group_control
+        */
+            /*!
+            *  @defgroup group_cubic_task_trajectory CubicTaskTrajectory
+            *  @ingroup group_trajectory_generator
+            */
+    /*!
+    *  @defgroup group_devices Devices
+    *  @ingroup group_main
+    *  @brief All Devices modules and their implementations
+    */
+        /*!
+        * @defgroup group_can_open_drivers CANopenDrivers
+        * @ingroup group_devices
+        */
+            /*!
+            * @defgroup group_canopen_master CANopenMaster
+            * @ingroup group_can_open_drivers
+            */
+            /*!
+            * @defgroup group_coe_master CoEMaster
+            * @ingroup group_can_open_drivers
+            */
+            /*!
+            * @defgroup group_cia_four_zero_two CiA402
+            * @ingroup group_can_open_drivers
+            */
+            /*!
+            * @defgroup group_cia_four_zero_two_communication_point CiA402CommunicationPoint
+            * @ingroup group_can_open_drivers
+            */
+                /*!
+                * @defgroup group_lely_library LelyLibrary
+                * @ingroup group_cia_four_zero_two
+                */
+                /*!
+                * @defgroup group_can_drivers CANDrivers
+                * @ingroup group_cia_four_zero_two
+                */
+                    /*!
+                    * @defgroup group_cia_four_zero_two_can_driver CiA402CANDriver
+                    * @ingroup group_can_drivers
+                    */
+                    /*!
+                    * @defgroup group_erb_can_driver ERB415CANDriver
+                    * @ingroup group_can_drivers
+                    */
+                    /*!
+                    * @defgroup group_maxon_epos_two_can_driver MaxonEPOS2CANDriver
+                    * @ingroup group_can_drivers
+                    */
+                    /*!
+                    * @defgroup group_maxon_epos_four_can_driver MaxonEPOS4CANDriver
+                    * @ingroup group_can_drivers
+                    */
+                /*!
+                * @defgroup group_coe_drivers EtherCATDrivers
+                * @ingroup group_cia_four_zero_two
+                */
+                    /*!
+                    * @defgroup group_cia_four_zero_two_coe_driver CiA402EtherCATDriver
+                    * @ingroup group_coe_drivers
+                    */
+                    /*!
+                    * @defgroup group_elmo_gold ELMOGold
+                    * @ingroup group_coe_drivers
+                    */
+                    /*!
+                    * @defgroup group_erob80h eRob80H
+                    * @ingroup group_coe_drivers
+                    */
+                /*!
+                * @defgroup group_modes_of_operation Modes Of Operation
+                * @ingroup group_cia_four_zero_two
+                */
+                    /*!
+                    * @defgroup group_csp CSP
+                    * @ingroup group_modes_of_operation
+                    */
+                    /*!
+                    * @defgroup group_cst CST
+                    * @ingroup group_modes_of_operation
+                    */
+                    /*!
+                    * @defgroup group_csv CSV
+                    * @ingroup group_modes_of_operation
+                    */
+                    /*!
+                    * @defgroup group_ipm IPM
+                    * @ingroup group_modes_of_operation
+                    */
+                    /*!
+                    * @defgroup group_ppm PPM
+                    * @ingroup group_modes_of_operation
+                    */
+                    /*!
+                    * @defgroup group_ptm PTM
+                    * @ingroup group_modes_of_operation
+                    */
+                    /*!
+                    * @defgroup group_pvm PVM
+                    * @ingroup group_modes_of_operation
+                    */
+                    /*!
+                    * @defgroup group_vom VOM
+                    * @ingroup group_modes_of_operation
+                    */
+        /*!
+        * @defgroup group_ethercat_drivers EtherCATDrivers
+        * @ingroup group_devices
+        */
+            /*!
+            * @defgroup group_basic_ethercat_driver BasicEtherCATDriver
+            * @ingroup group_ethercat_drivers
+            */
+            /*!
+            * @defgroup group_ethercat_master EtherCATMaster
+            * @ingroup group_ethercat_drivers
+            */
+        /*!
+        * @defgroup group_tool Tool
+        * @ingroup group_devices
+        */
+            /*!
+            * @defgroup group_active_tool ActiveTool
+            * @ingroup group_tool
+            */
+    /*!
+    *  @defgroup group_math Math
+    *  @ingroup group_main
+    *  @brief All Math modules and their implementations
+    */
+        /*!
+        * @defgroup group_digital_filter DigitalFilter
+        * @ingroup group_math
+        */
+            /*!
+            * @defgroup group_iir_filter IIRFilter
+            * @ingroup group_digital_filter
+            */
+        /*!
+        * @defgroup group_distance_measures DistanceMeasures
+        * @ingroup group_math
+        */
+            /*!
+            * @defgroup group_distance_measures_rotation DistanceMeasuresRotation
+            * @ingroup group_distance_measures
+            */
+            /*!
+            * @defgroup group_distance_measures_task_pose DistanceMeasuresTaskPose
+            * @ingroup group_distance_measures
+            */
+        /*!
+        * @defgroup group_fourier_transform FourierTransform
+        * @ingroup group_math
+        */
+        /*!
+        * @defgroup group_geometric_methods GeometricMethods
+        * @ingroup group_math
+        */
+            /*!
+            * @defgroup group_cubic_polynomial CubicPolynomial
+            * @ingroup group_geometric_methods
+            */
+            /*!
+            * @defgroup group_cubic_orientation_spline CubicOrientationSpline
+            * @ingroup group_geometric_methods
+            */
+            /*!
+            * @defgroup group_de_boor DeBoor
+            * @ingroup group_geometric_methods
+            */
+            /*!
+            * @defgroup group_point_to_point PointToPoint
+            * @ingroup group_geometric_methods
+            */
+            /*!
+            * @defgroup group_sinusoid Sinusoid
+            * @ingroup group_geometric_methods
+            */
+        /*!
+        * @defgroup group_input_shaper InputShaper
+        * @ingroup group_math
+        */
+            /*!
+            * @defgroup group_cubic_polynomial_shaper CubicPolynomialShaper
+            * @ingroup group_input_shaper
+            */
+        /*!
+        * @defgroup group_jacobian Jacobian
+        * @ingroup group_math
+        */
+            /*!
+            * @defgroup group_kinchain_jacobian KinchainJacobian
+            * @ingroup group_jacobian
+            */
+        /*!
+        * @defgroup group_kalman_filter KalmanFilter
+        * @ingroup group_math
+        */
+        /*!
+        * @defgroup group_kinematic_chain KinematicChain
+        * @ingroup group_math
+        */
+            /*!
+            * @defgroup group_urdf_kinematic_chain URDFKinematicChain
+            * @ingroup group_kinematic_chain
+            */
+            /*!
+            * @defgroup group_i_kinematic_chain IKinematicChain
+            * @ingroup group_kinematic_chain
+            */
+        /*!
+        * @defgroup group_mass_spring_damper MassSpringDamper
+        * @ingroup group_math
+        */
+            /*!
+            * @defgroup group_mass_spring_damper_r1 MassSpringDamperR1
+            * @ingroup group_mass_spring_damper
+            */
+                /*!
+                * @defgroup group_iim_mass_spring_damper_r1 MSDR1ImpulseInvarianceIIR
+                * @ingroup group_mass_spring_damper_r1
+                */
+                /*!
+                * @defgroup group_sim_mass_spring_damper_r1 MSDR1StepInvarianceIIR
+                * @ingroup group_mass_spring_damper_r1
+                */
+                /*!
+                * @defgroup group_btm_mass_spring_damper_r1 MSDR1BilinearTransformIIR
+                * @ingroup group_mass_spring_damper_r1
+                */
+            /*!
+            * @defgroup group_mass_spring_damper_rn MassSpringDamperRn
+            * @ingroup group_mass_spring_damper
+            */
+        /*!
+        * @defgroup group_rotation Rotation
+        * @ingroup group_math
+        */
+            /*!
+            * @defgroup group_rotation_arithmetic Arithmetic
+            * @ingroup group_rotation
+            */
+            /*!
+            * @defgroup group_rotation_comparison Comparison
+            * @ingroup group_rotation
+            */
+            /*!
+            * @defgroup group_rotation_conversions Conversions
+            * @ingroup group_rotation
+            */
+            /*!
+            * @defgroup group_rotation_euler_angles EulerAngles
+            * @ingroup group_rotation
+            */
+            /*!
+            * @defgroup group_rotation_is_valid_rotation IsValidRotation
+            * @ingroup group_rotation
+            */
+            /*!
+            * @defgroup group_rotation_json_converters JSONConverters
+            * @ingroup group_rotation
+            */
+            /*!
+            * @defgroup group_rotation_representations Representations
+            * @ingroup group_rotation
+            */
+            /*!
+            * @defgroup group_rotation_rotation_class RotationClass
+            * @ingroup group_rotation
+            */
+        /*!
+        * @defgroup group_peak_detection PeakDetection
+        * @ingroup group_math
+        */
+    /*!
+    *  @defgroup group_navigation Navigation
+    *  @ingroup group_main
+    *  @brief All Navigation modules and their implementations
+    */
+        /*!
+        * @defgroup group_path_planner PathPlanner
+        * @ingroup group_navigation
+        */
+            /*!
+            * @defgroup group_ompl_geometric_planner OMPLGeometricPlanner
+            * @ingroup group_path_planner
+            */
+                /*!
+                * @defgroup group_ompl_state_space OMPLStateSpace
+                * @ingroup group_ompl_geometric_planner
+                */
+                /*!
+                * @defgroup group_ompl_state_validator_bridge OMPLStateValidatorBridge
+                * @ingroup group_ompl_geometric_planner
+                */
+                /*!
+                * @defgroup group_ompl_motion_validator_bridge OMPLMotionValidatorBridge
+                * @ingroup group_ompl_geometric_planner
+                */
+            /*!
+            * @defgroup group_state_validator StateValidator
+            * @ingroup group_path_planner
+            */
+            /*!
+            * @defgroup group_motion_validator MotionValidator
+            * @ingroup group_path_planner
+            */
+    /*!
+    *  @defgroup group_sensors Sensors
+    *  @ingroup group_main
+    *  @brief All Sensors modules and their implementations
+    */
+        /*!
+        * @defgroup group_cameras Cameras
+        * @ingroup group_sensors
+        */
+            /*!
+            * @defgroup group_uvc_cameras UVCCameras
+            * @ingroup group_cameras
+            */
+            /*!
+            * @defgroup group_camera_communication_point CameraCommunicationPoint
+            * @ingroup group_cameras
+            */
+            /*!
+            * @defgroup group_camera_client CameraClient
+            * @ingroup group_cameras
+            */
+        /*!
+        * @defgroup group_imu IMU
+        * @ingroup group_sensors
+        */
+            /*!
+            * @defgroup group_gable Gable
+            * @ingroup group_imu
+            */
+                /*!
+                * @defgroup group_gable_se1 GableSE1
+                * @ingroup group_gable
+                */
+                /*!
+                * @defgroup group_gable_se2se3 GableSE2SE3
+                * @ingroup group_gable
+                */
+            /*!
+            * @defgroup group_vmu931 VMU931
+            * @ingroup group_imu
+            */
+            /*!
+            * @defgroup group_xsensemt XsensMT
+            * @ingroup group_imu
+            */
+            /*!
+            * @defgroup group_imu_communication_point IMUCommunicationPoint
+            * @ingroup group_imu
+            */
+        /*!
+        * @defgroup group_motion_capture MotionCapture
+        * @ingroup group_sensors
+        */
+            /*!
+            * @defgroup group_vicon Vicon
+            * @ingroup group_motion_capture
+            */
+        /*!
+        * @defgroup group_rgbdcameras RGBDCameras
+        * @ingroup group_sensors
+        */
+            /*!
+            * @defgroup group_real_sense_camera RealSenseCamera
+            * @ingroup group_rgbdcameras
+            */
+            /*!
+            * @defgroup group_rgbdcamera_communication_point RGBDCameraCommunicationPoint
+            * @ingroup group_rgbdcameras
+            */
+            /*!
+            * @defgroup group_rgbdcamera_client RGBDCameraClient
+            * @ingroup group_rgbdcameras
+            */
+    /*!
+    *  @defgroup group_utility Utility
+    *  @ingroup group_main
+    *  @brief All Utility modules and their implementations
+    */
+        /*!
+        *  @defgroup group_comunication_utility CommunicationUtility
+        *  @ingroup group_utility
+        */
+            /*!
+            *  @defgroup group_std_json_converters StdJsonConverters
+            *  @ingroup group_comunication_utility
+            */
+        /*!
+        *  @defgroup group_device_manager Device Manager
+        *  @ingroup group_utility
+        */
+            /*!
+            *  @defgroup group_priority_access_client Priority Access Client
+            *  @ingroup group_device_manager
+            */
+            /*!
+            *  @defgroup group_status_streamer_client Status Streamer Access Client
+            *  @ingroup group_device_manager
+            */
+            /*!
+            *  @defgroup group_priority_access_communication_point Priority Access Communication Point
+            *  @ingroup group_device_manager
+            */
+            /*!
+            *  @defgroup status_streamer_communication_point Status Streamer Communication Point
+            *  @ingroup group_device_manager
+            */
+            /*!
+            *  @defgroup device_manager_with_auto_initialization Device Manager With Auto Initialization
+            *  @ingroup group_device_manager
+            */
+            /*!
+            *  @defgroup device_manager_with_priority_access Device Manager With Priority Access
+            *  @ingroup group_device_manager
+            */
+        /*!
+        *  @defgroup group_error_handler Error Handler
+        *  @ingroup group_utility
+        */
+        /*!
+        *  @defgroup group_types Types
+        *  @ingroup group_utility
+        */
+            /*!
+            *  @defgroup group_jacobian Jacobian
+            *  @ingroup group_types
+            */
+            /*!
+            *  @defgroup group_joint_types JointTypes
+            *  @ingroup group_types
+            */
+            /*!  @defgroup group_task_types TaskTypes
+            *  @ingroup group_types
+            */
+            /*!
+            *  @defgroup group_types_arithmetic Arithmetic
+            *  @ingroup group_types
+            */
+            /*!
+            *  @defgroup group_types_comparison Comparison
+            *  @ingroup group_types
+            */
+            /*!
+            *  @defgroup group_types_conversions Conversions
+            *  @ingroup group_types
+            */
+            /*!
+            *  @defgroup group_types_json_converters JSONConverters
+            *  @ingroup group_types
+            */
+            /*!
+            *  @defgroup group_types_signals Signals
+            *  @ingroup group_types
+            */
+    /*!
+    *  @defgroup group_vision Vision
+    *  @ingroup group_main
+    *  @brief All Vision modules and their implementations
+    */

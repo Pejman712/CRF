@@ -1,0 +1,29 @@
+{
+    "PositionUnitConversion" : 1000000,
+    "VelocityUnitConversion" : 1000,
+    "AccelerationUnitConversion" : 1000,
+    "TorqueUnitConversion": 1,
+    "GearboxRatio": 1,
+    "ModesOfOperation" : {
+        "InterpolatedPositionMode" : {
+            "InterpolationTimePeriod" :  {
+                "InterpolationTimePeriodValue" : 50,
+                "InterpolationTimeIndex" : -3
+            },
+            "PositionWindow": 10,
+            "PositionWindowTime" : 10
+        },
+        "VelocityMode": {
+            "VelocityMinMaxAmount" : {
+                "Min": 0,
+                "Max": 82000
+            }
+        },
+        "ProfilePositionMode" : {
+            "MaxProfileVelocity" : 82,
+            "QuickStopDeceleration" : 328,
+            "MaxAcceleration" : 328,
+            "MotionProfileType" : "Trapezoidal"
+        }
+    }
+}

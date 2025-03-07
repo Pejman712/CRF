@@ -1,0 +1,1246 @@
+{
+    "NumberOfMotors" : 6,
+    "JointSpaceDegreeOfFreedom" : 6,
+    "TaskSpaceDegreeOfFreedom" : 6,
+    "PositionMode" : "ProfilePosition",
+    "VelocityMode" : "VelocityMode",
+    "TorqueMode" : "ProfileTorque",
+    "ControllerLoopTimeMs" : 2,
+    "JointLimits" : {
+        "MaxPosition" : [6.28, 6.28, 6.28, 6.28, 6.28, 6.28],
+        "MinPosition" : [-6.28, -6.28, -6.28, -6.28, -6.28, -6.28],
+        "MaxVelocity" : [3.14, 3.14, 3.14, 3.14, 3.14, 3.14],
+        "MaxAcceleration" : [3, 3, 3, 3, 3, 3],
+        "MaxTorque" : [1, 1, 1, 1, 1, 1]
+    },
+    "TaskLimits" : {
+        "MaxVelocity" : [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        "MaxAcceleration" : [1, 1, 1, 1, 1, 1]
+    },
+    "ProfileParameters" : {
+        "JointVelocities" : [1, 1, 1, 1, 1, 1],
+        "JointAccelerations" : [1.4, 1.4, 1.4, 1.4, 1.4, 1.4],
+        "TaskVelocity" : [0.2, 0.2, 0.2, 0.1, 0.1, 0.1],
+        "TaskAcceleration" : [1, 1, 1, 0.8, 0.8, 0.8]
+    },
+    "Kinematics" : {
+        "Type" : "MathExpressions",
+        "DH" : {
+            "D" : [0.2755, 0.0, -0.0098, -0.3111, 0.0, 0.2495, 0, 0, 0],
+            "Theta" : [0.0, 1.5708, -1.5708, 0.0, 0.0,3.1416, 0, 0, 0],
+            "A" : [0.0, 0.4100, 0.0, 0.0, 0.0, 0.0, 0, 0, 0],
+            "Alpha" : [1.5708, 3.1416, 1.5708, 1.5708, 1.5708, 0.0, 0, 0, 0]
+        },
+        "RobotURDFPath" : "/",
+        "MathExpressions" : {
+            "Lengths" : {
+                "lx" : [0.0, 0.0, 0.6127, 0.57155],
+                "ly" : [0.0, 0.0, 0.0, 0.0, 0.0, 0.11655],
+                "lz" : [0.0, 0.1807, 0.0, 0.0, 0.17415, 0.11985]
+            },
+            "Jacobian" : {
+                "Row0" : {
+                    "Col0" : "(((cos(q4) * sin(q5) * l6y - l6z * sin(q4) + l4x) * cos(q3) + (-sin(q4) * sin(q5) * l6y - l6z * cos(q4)) * sin(q3) + l3x) * cos(q2) - ((sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * cos(q3) - sin(q3) * (-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x)) * sin(q2)) * sin(q1) + cos(q1) * (cos(q5) * l6y + l5z)",
+                    "Col1" : "(((cos(q4) * sin(q5) * l6y - l6z * sin(q4) + l4x) * cos(q3) + (-sin(q4) * sin(q5) * l6y - l6z * cos(q4)) * sin(q3) + l3x) * sin(q2) + ((sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * cos(q3) + sin(q3) * (cos(q4) * sin(q5) * l6y - l6z * sin(q4) + l4x)) * cos(q2)) * cos(q1)",
+                    "Col2" : "(((sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * cos(q3) + sin(q3) * (cos(q4) * sin(q5) * l6y - l6z * sin(q4) + l4x)) * cos(q2) + ((cos(q4) * sin(q5) * l6y - l6z * sin(q4) + l4x) * cos(q3) - (sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * sin(q3)) * sin(q2)) * cos(q1)",
+                    "Col3" : "cos(q1) * (((sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * cos(q3) + (cos(q4) * sin(q5) * l6y - l6z * sin(q4)) * sin(q3)) * cos(q2) + ((cos(q4) * sin(q5) * l6y - l6z * sin(q4)) * cos(q3) - (sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * sin(q3)) * sin(q2))",
+                    "Col4" : "l6y * (((sin(q3) * sin(q4) - cos(q3) * cos(q4)) * cos(q2) + sin(q2) * (sin(q3) * cos(q4) + sin(q4) * cos(q3))) * cos(q5) * cos(q1) - sin(q1) * sin(q5))",
+                    "Col5" : "0"
+                },
+                "Row1" : {
+                    "Col0" : "(((-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x) * cos(q3) + (sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * sin(q3) - l3x) * cos(q2) + ((sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * cos(q3) - sin(q3) * (-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x)) * sin(q2)) * cos(q1) + sin(q1) * (cos(q5) * l6y + l5z)",
+                    "Col1" : "sin(q1) * (((cos(q4) * sin(q5) * l6y - l6z * sin(q4) + l4x) * cos(q3) + (-sin(q4) * sin(q5) * l6y - l6z * cos(q4)) * sin(q3) + l3x) * sin(q2) + ((sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * cos(q3) + sin(q3) * (cos(q4) * sin(q5) * l6y - l6z * sin(q4) + l4x)) * cos(q2))",
+                    "Col2" : "(((sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * cos(q3) + sin(q3) * (cos(q4) * sin(q5) * l6y - l6z * sin(q4) + l4x)) * cos(q2) + ((cos(q4) * sin(q5) * l6y - l6z * sin(q4) + l4x) * cos(q3) - (sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * sin(q3)) * sin(q2)) * sin(q1)",
+                    "Col3" : "-(((-sin(q4) * sin(q5) * l6y - l6z * cos(q4)) * cos(q3) - (cos(q4) * sin(q5) * l6y - l6z * sin(q4)) * sin(q3)) * cos(q2) + ((-cos(q4) * sin(q5) * l6y + l6z * sin(q4)) * cos(q3) + (sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * sin(q3)) * sin(q2)) * sin(q1)",
+                    "Col4" : "(((sin(q3) * sin(q4) - cos(q3) * cos(q4)) * cos(q2) + sin(q2) * (sin(q3) * cos(q4) + sin(q4) * cos(q3))) * sin(q1) * cos(q5) + cos(q1) * sin(q5)) * l6y",
+                    "Col5" : "0"
+                },
+                "Row2" : {
+                    "Col0" : "0",
+                    "Col1" : "((-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x) * cos(q3) + (sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * sin(q3) - l3x) * cos(q2) + sin(q2) * ((sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * cos(q3) + sin(q3) * (cos(q4) * sin(q5) * l6y - l6z * sin(q4) + l4x))",
+                    "Col2" : "((-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x) * cos(q3) + (sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * sin(q3)) * cos(q2) + sin(q2) * ((sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * cos(q3) + sin(q3) * (cos(q4) * sin(q5) * l6y - l6z * sin(q4) + l4x))",
+                    "Col3" : "((-cos(q4) * sin(q5) * l6y + l6z * sin(q4)) * cos(q3) + (sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * sin(q3)) * cos(q2) - sin(q2) * ((-sin(q4) * sin(q5) * l6y - l6z * cos(q4)) * cos(q3) + sin(q3) * (-cos(q4) * sin(q5) * l6y + l6z * sin(q4)))",
+                    "Col4" : "l6y * (sin(q4) * (sin(q2) * sin(q3) - cos(q2) * cos(q3)) - (sin(q2) * cos(q3) + cos(q2) * sin(q3)) * cos(q4)) * cos(q5)",
+                    "Col5" : "0"
+                },
+                "Row3" : {
+                    "Col0" : "0",
+                    "Col1" : "sin(q1)",
+                    "Col2" : "sin(q1)",
+                    "Col3" : "sin(q1)",
+                    "Col4" : "-cos(q1) * (sin(q4) * (sin(q2) * sin(q3) - cos(q2) * cos(q3)) - (sin(q2) * cos(q3) + cos(q2) * sin(q3)) * cos(q4))",
+                    "Col5" : "sin(q5) * ((sin(q3) * sin(q4) - cos(q3) * cos(q4)) * cos(q2) + sin(q2) * (sin(q3) * cos(q4) + sin(q4) * cos(q3))) * cos(q1) + sin(q1) * cos(q5)"
+                },
+                "Row4" : {
+                    "Col0" : "0",
+                    "Col1" : "-cos(q1)",
+                    "Col2" : "-cos(q1)",
+                    "Col3" : "-cos(q1)",
+                    "Col4" : "-sin(q1) * (sin(q4) * (sin(q2) * sin(q3) - cos(q2) * cos(q3)) - (sin(q2) * cos(q3) + cos(q2) * sin(q3)) * cos(q4))",
+                    "Col5" : "sin(q5) * ((sin(q3) * sin(q4) - cos(q3) * cos(q4)) * cos(q2) + sin(q2) * (sin(q3) * cos(q4) + sin(q4) * cos(q3))) * sin(q1) - cos(q1) * cos(q5)"
+                },
+                "Row5" : {
+                    "Col0" : "1",
+                    "Col1" : "0",
+                    "Col2" : "0",
+                    "Col3" : "0",
+                    "Col4" : "(sin(q2) * cos(q3) + cos(q2) * sin(q3)) * sin(q4) - (-sin(q2) * sin(q3) + cos(q2) * cos(q3)) * cos(q4)",
+                    "Col5" : "-((sin(q2) * cos(q3) + cos(q2) * sin(q3)) * cos(q4) + (-sin(q2) * sin(q3) + cos(q2) * cos(q3)) * sin(q4)) * sin(q5)"
+                },
+                "Row6" : {
+                    "Col0" : "0",
+                    "Col1" : "sin(q1)",
+                    "Col2" : "sin(q1)",
+                    "Col3" : "sin(q1)",
+                    "Col4" : "-cos(q1) * (sin(q4) * (sin(q2) * sin(q3) - cos(q2) * cos(q3)) - (sin(q2) * cos(q3) + cos(q2) * sin(q3)) * cos(q4))",
+                    "Col5" : "sin(q5) * ((sin(q3) * sin(q4) - cos(q3) * cos(q4)) * cos(q2) + sin(q2) * (sin(q3) * cos(q4) + sin(q4) * cos(q3))) * cos(q1) + sin(q1) * cos(q5)"
+                },
+                "Row7" : {
+                    "Col0" : "0",
+                    "Col1" : "-cos(q1)",
+                    "Col2" : "-cos(q1)",
+                    "Col3" : "-cos(q1)",
+                    "Col4" : "-sin(q1) * (sin(q4) * (sin(q2) * sin(q3) - cos(q2) * cos(q3)) - (sin(q2) * cos(q3) + cos(q2) * sin(q3)) * cos(q4))",
+                    "Col5" : "sin(q5) * ((sin(q3) * sin(q4) - cos(q3) * cos(q4)) * cos(q2) + sin(q2) * (sin(q3) * cos(q4) + sin(q4) * cos(q3))) * sin(q1) - cos(q1) * cos(q5)"
+                },
+                "Row8" : {
+                    "Col0" : "1",
+                    "Col1" : "0",
+                    "Col2" : "0",
+                    "Col3" : "0",
+                    "Col4" : "(sin(q2) * cos(q3) + cos(q2) * sin(q3)) * sin(q4) - (-sin(q2) * sin(q3) + cos(q2) * cos(q3)) * cos(q4)",
+                    "Col5" : "-((sin(q2) * cos(q3) + cos(q2) * sin(q3)) * cos(q4) + (-sin(q2) * sin(q3) + cos(q2) * cos(q3)) * sin(q4)) * sin(q5)"
+                }
+            },
+            "ForwardKinematics" : {
+                "RIE" : {
+                    "Row0" :
+                    {
+                        "Col0" : "(-((sin(q3) * sin(q4) - cos(q3) * cos(q4)) * cos(q2) + sin(q2) * (sin(q3) * cos(q4) + sin(q4) * cos(q3))) * cos(q5) * cos(q6) - ((sin(q3) * cos(q4) + sin(q4) * cos(q3)) * cos(q2) + sin(q2) * (cos(q3) * cos(q4) - sin(q3) * sin(q4))) * sin(q6)) * cos(q1) + sin(q5) * cos(q6) * sin(q1)",
+                        "Col1" : "(((sin(q3) * sin(q4) - cos(q3) * cos(q4)) * cos(q2) + sin(q2) * (sin(q3) * cos(q4) + sin(q4) * cos(q3))) * cos(q5) * sin(q6) - cos(q6) * ((sin(q3) * cos(q4) + sin(q4) * cos(q3)) * cos(q2) + sin(q2) * (cos(q3) * cos(q4) - sin(q3) * sin(q4)))) * cos(q1) - sin(q5) * sin(q6) * sin(q1)",
+                        "Col2" : "sin(q5) * ((sin(q3) * sin(q4) - cos(q3) * cos(q4)) * cos(q2) + sin(q2) * (sin(q3) * cos(q4) + sin(q4) * cos(q3))) * cos(q1) + sin(q1) * cos(q5)"
+                    },
+                    "Row1" :
+                    {
+                        "Col0" : "(-((sin(q3) * sin(q4) - cos(q3) * cos(q4)) * cos(q2) + sin(q2) * (sin(q3) * cos(q4) + sin(q4) * cos(q3))) * cos(q5) * cos(q6) - ((sin(q3) * cos(q4) + sin(q4) * cos(q3)) * cos(q2) + sin(q2) * (cos(q3) * cos(q4) - sin(q3) * sin(q4))) * sin(q6)) * sin(q1) - sin(q5) * cos(q6) * cos(q1)",
+                        "Col1" : "(((sin(q3) * sin(q4) - cos(q3) * cos(q4)) * cos(q2) + sin(q2) * (sin(q3) * cos(q4) + sin(q4) * cos(q3))) * cos(q5) * sin(q6) - cos(q6) * ((sin(q3) * cos(q4) + sin(q4) * cos(q3)) * cos(q2) + sin(q2) * (cos(q3) * cos(q4) - sin(q3) * sin(q4)))) * sin(q1) + sin(q5) * sin(q6) * cos(q1)",
+                        "Col2" : "sin(q5) * ((sin(q3) * sin(q4) - cos(q3) * cos(q4)) * cos(q2) + sin(q2) * (sin(q3) * cos(q4) + sin(q4) * cos(q3))) * sin(q1) - cos(q1) * cos(q5)"
+                    },
+                    "Row2" :
+                    {
+                        "Col0" : "((cos(q6) * sin(q4) * cos(q5) + sin(q6) * cos(q4)) * cos(q3) + sin(q3) * (cos(q6) * cos(q5) * cos(q4) - sin(q6) * sin(q4))) * cos(q2) - ((-cos(q6) * cos(q5) * cos(q4) + sin(q6) * sin(q4)) * cos(q3) + sin(q3) * (cos(q6) * sin(q4) * cos(q5) + sin(q6) * cos(q4))) * sin(q2)",
+                        "Col1" : "((-sin(q4) * sin(q6) * cos(q5) + cos(q6) * cos(q4)) * cos(q3) - sin(q3) * (sin(q6) * cos(q5) * cos(q4) + cos(q6) * sin(q4))) * cos(q2) - sin(q2) * ((sin(q6) * cos(q5) * cos(q4) + cos(q6) * sin(q4)) * cos(q3) + sin(q3) * (-sin(q4) * sin(q6) * cos(q5) + cos(q6) * cos(q4)))",
+                        "Col2" : "-((sin(q2) * cos(q3) + cos(q2) * sin(q3)) * cos(q4) + (-sin(q2) * sin(q3) + cos(q2) * cos(q3)) * sin(q4)) * sin(q5)"
+                    }
+                },
+                "IrIE" : {
+                    "0" : "(((-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x) * cos(q3) + (sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * sin(q3) - l3x) * cos(q2) + ((sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * cos(q3) - sin(q3) * (-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x)) * sin(q2)) * cos(q1) + sin(q1) * (cos(q5) * l6y + l5z)",
+                    "1" : "(((-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x) * cos(q3) + (sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * sin(q3) - l3x) * cos(q2) + ((sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * cos(q3) - sin(q3) * (-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x)) * sin(q2)) * sin(q1) - cos(q1) * (cos(q5) * l6y + l5z)",
+                    "2" : "((-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x) * cos(q3) + (sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * sin(q3) - l3x) * sin(q2) + ((-sin(q4) * sin(q5) * l6y - l6z * cos(q4)) * cos(q3) - sin(q3) * (cos(q4) * sin(q5) * l6y - l6z * sin(q4) + l4x)) * cos(q2) + l2z"
+                },
+                "IwIE" : {
+                    "0" : "(((-qd6 * cos(q4) * sin(q5) + sin(q4) * qd5) * cos(q3) + sin(q3) * (qd6 * sin(q4) * sin(q5) + qd5 * cos(q4))) * cos(q2) + ((qd6 * sin(q4) * sin(q5) + qd5 * cos(q4)) * cos(q3) + sin(q3) * (qd6 * cos(q4) * sin(q5) - sin(q4) * qd5)) * sin(q2)) * cos(q1) + sin(q1) * (qd6 * cos(q5) + qd2 + qd3 + qd4)",
+                    "1" : "(((-qd6 * cos(q4) * sin(q5) + sin(q4) * qd5) * cos(q3) + sin(q3) * (qd6 * sin(q4) * sin(q5) + qd5 * cos(q4))) * cos(q2) + ((qd6 * sin(q4) * sin(q5) + qd5 * cos(q4)) * cos(q3) + sin(q3) * (qd6 * cos(q4) * sin(q5) - sin(q4) * qd5)) * sin(q2)) * sin(q1) - cos(q1) * (qd6 * cos(q5) + qd2 + qd3 + qd4)",
+                    "2" : "((-qd6 * sin(q4) * sin(q5) - qd5 * cos(q4)) * cos(q3) - sin(q3) * (qd6 * cos(q4) * sin(q5) - sin(q4) * qd5)) * cos(q2) - sin(q2) * (qd6 * cos(q4) * sin(q5) - sin(q4) * qd5) * cos(q3) + sin(q5) * sin(q4) * sin(q3) * sin(q2) * qd6 + cos(q4) * sin(q3) * sin(q2) * qd5 + qd1"
+                },
+                "IvIE" : {
+                    "0" : "((((-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * cos(q4) + sin(q4) * sin(q5) * l6y * (qd2 + qd3 + qd4)) * cos(q3) - sin(q3) * (-sin(q5) * l6y * (qd2 + qd3 + qd4) * cos(q4) + (-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * sin(q4) - l4x * (qd2 + qd3))) * cos(q2) + ((sin(q5) * l6y * (qd2 + qd3 + qd4) * cos(q4) + (qd5 * cos(q5) * l6y - l6z * (qd2 + qd3 + qd4)) * sin(q4) + l4x * (qd2 + qd3)) * cos(q3) + ((qd5 * cos(q5) * l6y - l6z * (qd2 + qd3 + qd4)) * cos(q4) - sin(q4) * sin(q5) * l6y * (qd2 + qd3 + qd4)) * sin(q3) + qd2 * l3x) * sin(q2) + qd1 * (cos(q5) * l6y + l5z)) * cos(q1) - sin(q1) * (((-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x) * cos(q3) + (sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * sin(q3) - l3x) * qd1 * cos(q2) + ((sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * cos(q3) - sin(q3) * (-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x)) * qd1 * sin(q2) + qd5 * sin(q5) * l6y)",
+                    "1" : "((((-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * cos(q4) + sin(q4) * sin(q5) * l6y * (qd2 + qd3 + qd4)) * cos(q3) - sin(q3) * (-sin(q5) * l6y * (qd2 + qd3 + qd4) * cos(q4) + (-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * sin(q4) - l4x * (qd2 + qd3))) * cos(q2) + ((sin(q5) * l6y * (qd2 + qd3 + qd4) * cos(q4) + (qd5 * cos(q5) * l6y - l6z * (qd2 + qd3 + qd4)) * sin(q4) + l4x * (qd2 + qd3)) * cos(q3) + ((qd5 * cos(q5) * l6y - l6z * (qd2 + qd3 + qd4)) * cos(q4) - sin(q4) * sin(q5) * l6y * (qd2 + qd3 + qd4)) * sin(q3) + qd2 * l3x) * sin(q2) + qd1 * (cos(q5) * l6y + l5z)) * sin(q1) + cos(q1) * (((-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x) * cos(q3) + (sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * sin(q3) - l3x) * qd1 * cos(q2) + ((sin(q4) * sin(q5) * l6y + l6z * cos(q4)) * cos(q3) - sin(q3) * (-cos(q4) * sin(q5) * l6y + l6z * sin(q4) - l4x)) * qd1 * sin(q2) + qd5 * sin(q5) * l6y)",
+                    "2" : "((-sin(q5) * l6y * (qd2 + qd3 + qd4) * cos(q4) + (-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * sin(q4) - l4x * (qd2 + qd3)) * cos(q3) + ((-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * cos(q4) + sin(q4) * sin(q5) * l6y * (qd2 + qd3 + qd4)) * sin(q3) - qd2 * l3x) * cos(q2) + sin(q2) * (((-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * cos(q4) + sin(q4) * sin(q5) * l6y * (qd2 + qd3 + qd4)) * cos(q3) + (sin(q5) * l6y * (qd2 + qd3 + qd4) * cos(q4) + (qd5 * cos(q5) * l6y - l6z * (qd2 + qd3 + qd4)) * sin(q4) + l4x * (qd2 + qd3)) * sin(q3))"
+                },
+                "IalphaIE" : {
+                    "0" : "((((-qdd6 * sin(q5) - qd5 * (qd6 * cos(q5) - qd2 - qd3 - qd4)) * cos(q4) + (qd6 * (qd2 + qd3 + qd4) * sin(q5) + qdd5) * sin(q4)) * cos(q3) + sin(q3) * ((qd6 * (qd2 + qd3 + qd4) * sin(q5) + qdd5) * cos(q4) + (qdd6 * sin(q5) + qd5 * (qd6 * cos(q5) - qd2 - qd3 - qd4)) * sin(q4))) * cos(q2) + ((qd6 * (qd2 + qd3 + qd4) * sin(q5) + qdd5) * cos(q4) + (qdd6 * sin(q5) + qd5 * (qd6 * cos(q5) - qd2 - qd3 - qd4)) * sin(q4)) * sin(q2) * cos(q3) + sin(q3) * (qdd6 * sin(q5) + qd5 * (qd6 * cos(q5) - qd2 - qd3 - qd4)) * sin(q2) * cos(q4) - sin(q3) * (qd6 * (qd2 + qd3 + qd4) * sin(q5) + qdd5) * sin(q4) * sin(q2) + qd1 * (qd6 * cos(q5) + qd2 + qd3 + qd4)) * cos(q1) - sin(q1) * (((-qd6 * cos(q4) * sin(q5) + sin(q4) * qd5) * cos(q3) + sin(q3) * (qd6 * sin(q4) * sin(q5) + qd5 * cos(q4))) * qd1 * cos(q2) + sin(q2) * qd1 * (qd6 * sin(q4) * sin(q5) + qd5 * cos(q4)) * cos(q3) + qd6 * cos(q4) * sin(q2) * sin(q3) * sin(q5) * qd1 - qd5 * sin(q2) * sin(q3) * sin(q4) * qd1 + qd6 * qd5 * sin(q5) - qdd6 * cos(q5) - qdd2 - qdd3 - qdd4)",
+                    "1" : "((((-qdd6 * sin(q5) - qd5 * (qd6 * cos(q5) - qd2 - qd3 - qd4)) * cos(q4) + (qd6 * (qd2 + qd3 + qd4) * sin(q5) + qdd5) * sin(q4)) * cos(q3) + sin(q3) * ((qd6 * (qd2 + qd3 + qd4) * sin(q5) + qdd5) * cos(q4) + (qdd6 * sin(q5) + qd5 * (qd6 * cos(q5) - qd2 - qd3 - qd4)) * sin(q4))) * cos(q2) + ((qd6 * (qd2 + qd3 + qd4) * sin(q5) + qdd5) * cos(q4) + (qdd6 * sin(q5) + qd5 * (qd6 * cos(q5) - qd2 - qd3 - qd4)) * sin(q4)) * sin(q2) * cos(q3) + sin(q3) * (qdd6 * sin(q5) + qd5 * (qd6 * cos(q5) - qd2 - qd3 - qd4)) * sin(q2) * cos(q4) - sin(q3) * (qd6 * (qd2 + qd3 + qd4) * sin(q5) + qdd5) * sin(q4) * sin(q2) + qd1 * (qd6 * cos(q5) + qd2 + qd3 + qd4)) * sin(q1) + cos(q1) * (((-qd6 * cos(q4) * sin(q5) + sin(q4) * qd5) * cos(q3) + sin(q3) * (qd6 * sin(q4) * sin(q5) + qd5 * cos(q4))) * qd1 * cos(q2) + sin(q2) * qd1 * (qd6 * sin(q4) * sin(q5) + qd5 * cos(q4)) * cos(q3) + qd6 * cos(q4) * sin(q2) * sin(q3) * sin(q5) * qd1 - qd5 * sin(q2) * sin(q3) * sin(q4) * qd1 + qd6 * qd5 * sin(q5) - qdd6 * cos(q5) - qdd2 - qdd3 - qdd4)",
+                    "2" : "(((-qd6 * (qd2 + qd3 + qd4) * sin(q5) - qdd5) * cos(q4) - (qdd6 * sin(q5) + qd5 * (qd6 * cos(q5) - qd2 - qd3 - qd4)) * sin(q4)) * cos(q3) + ((-qdd6 * sin(q5) - qd5 * (qd6 * cos(q5) - qd2 - qd3 - qd4)) * cos(q4) + (qd6 * (qd2 + qd3 + qd4) * sin(q5) + qdd5) * sin(q4)) * sin(q3)) * cos(q2) + sin(q2) * ((-qdd6 * sin(q5) - qd5 * (qd6 * cos(q5) - qd2 - qd3 - qd4)) * cos(q4) + (qd6 * (qd2 + qd3 + qd4) * sin(q5) + qdd5) * sin(q4)) * cos(q3) + sin(q2) * (qd6 * (qd2 + qd3 + qd4) * sin(q5) + qdd5) * sin(q3) * cos(q4) + sin(q4) * (qdd6 * sin(q5) + qd5 * (qd6 * cos(q5) - qd2 - qd3 - qd4)) * sin(q3) * sin(q2) + qdd1"
+                },
+                "IaIE" : {
+                    "0" : "(((((qd1 ^ 2 + qd2 ^ 2 + (2 * qd3 + 2 * qd4) * qd2 + qd3 ^ 2 + 2 * qd3 * qd4 + qd4 ^ 2 + qd5 ^ 2) * l6y * sin(q5) - qdd5 * cos(q5) * l6y + l6z * (qdd2 + qdd3 + qdd4)) * cos(q4) + (l6y * (qdd2 + qdd3 + qdd4) * sin(q5) + 2 * qd5 * l6y * (qd2 + qd3 + qd4) * cos(q5) - l6z * (qd1 ^ 2 + (qd2 + qd3 + qd4) ^ 2)) * sin(q4) + ((qd1 ^ 2 + (qd2 + qd3) ^ 2) * l4x)) * cos(q3) + ((l6y * (qdd2 + qdd3 + qdd4) * sin(q5) + 2 * qd5 * l6y * (qd2 + qd3 + qd4) * cos(q5) - l6z * (qd1 ^ 2 + (qd2 + qd3 + qd4) ^ 2)) * cos(q4) + (-(qd1 ^ 2 + qd2 ^ 2 + (2 * qd3 + 2 * qd4) * qd2 + qd3 ^ 2 + 2 * qd3 * qd4 + qd4 ^ 2 + qd5 ^ 2) * l6y * sin(q5) + qdd5 * cos(q5) * l6y - l6z * (qdd2 + qdd3 + qdd4)) * sin(q4) + l4x * (qdd2 + qdd3)) * sin(q3) + (l3x * (qd1 ^ 2 + qd2 ^ 2))) * cos(q2) + (((l6y * (qdd2 + qdd3 + qdd4) * sin(q5) + 2 * qd5 * l6y * (qd2 + qd3 + qd4) * cos(q5) - l6z * (qd1 ^ 2 + (qd2 + qd3 + qd4) ^ 2)) * cos(q4) + (-(qd1 ^ 2 + qd2 ^ 2 + (2 * qd3 + 2 * qd4) * qd2 + qd3 ^ 2 + 2 * qd3 * qd4 + qd4 ^ 2 + qd5 ^ 2) * l6y * sin(q5) + qdd5 * cos(q5) * l6y - l6z * (qdd2 + qdd3 + qdd4)) * sin(q4) + l4x * (qdd2 + qdd3)) * cos(q3) + ((-(qd1 ^ 2 + qd2 ^ 2 + (2 * qd3 + 2 * qd4) * qd2 + qd3 ^ 2 + 2 * qd3 * qd4 + qd4 ^ 2 + qd5 ^ 2) * l6y * sin(q5) + qdd5 * cos(q5) * l6y - l6z * (qdd2 + qdd3 + qdd4)) * cos(q4) + (-l6y * (qdd2 + qdd3 + qdd4) * sin(q5) - 2 * qd5 * l6y * (qd2 + qd3 + qd4) * cos(q5) + l6z * (qd1 ^ 2 + (qd2 + qd3 + qd4) ^ 2)) * sin(q4) - ((qd1 ^ 2 + (qd2 + qd3) ^ 2) * l4x)) * sin(q3) + qdd2 * l3x) * sin(q2) - 2 * qd1 * qd5 * sin(q5) * l6y + qdd1 * (cos(q5) * l6y + l5z)) * cos(q1) - 2 * sin(q1) * ((((-qdd1 * sin(q5) * l6y / 2 + (-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * qd1) * cos(q4) + (qd1 * l6y * (qd2 + qd3 + qd4) * sin(q5) + l6z * qdd1 / 2) * sin(q4) - qdd1 * l4x / 2) * cos(q3) + ((qd1 * l6y * (qd2 + qd3 + qd4) * sin(q5) + l6z * qdd1 / 2) * cos(q4) + (qdd1 * sin(q5) * l6y / 2 - (-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * qd1) * sin(q4) + (qd1 * l4x * (qd2 + qd3))) * sin(q3) - qdd1 * l3x / 2) * cos(q2) + (((qd1 * l6y * (qd2 + qd3 + qd4) * sin(q5) + l6z * qdd1 / 2) * cos(q4) + (qdd1 * sin(q5) * l6y / 2 - (-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * qd1) * sin(q4) + (qd1 * l4x * (qd2 + qd3))) * cos(q3) + ((qdd1 * sin(q5) * l6y / 2 - (-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * qd1) * cos(q4) + (-qd1 * l6y * (qd2 + qd3 + qd4) * sin(q5) - l6z * qdd1 / 2) * sin(q4) + qdd1 * l4x / 2) * sin(q3) + (qd1 * qd2 * l3x)) * sin(q2) + qdd5 * sin(q5) * l6y / 2 + l6y * (qd1 ^ 2 + qd5 ^ 2) * cos(q5) / 2 + (qd1 ^ 2) * l5z / 2)",
+                    "1" : "(((((qd1 ^ 2 + qd2 ^ 2 + (2 * qd3 + 2 * qd4) * qd2 + qd3 ^ 2 + 2 * qd3 * qd4 + qd4 ^ 2 + qd5 ^ 2) * l6y * sin(q5) - qdd5 * cos(q5) * l6y + l6z * (qdd2 + qdd3 + qdd4)) * cos(q4) + (l6y * (qdd2 + qdd3 + qdd4) * sin(q5) + 2 * qd5 * l6y * (qd2 + qd3 + qd4) * cos(q5) - l6z * (qd1 ^ 2 + (qd2 + qd3 + qd4) ^ 2)) * sin(q4) + ((qd1 ^ 2 + (qd2 + qd3) ^ 2) * l4x)) * cos(q3) + ((l6y * (qdd2 + qdd3 + qdd4) * sin(q5) + 2 * qd5 * l6y * (qd2 + qd3 + qd4) * cos(q5) - l6z * (qd1 ^ 2 + (qd2 + qd3 + qd4) ^ 2)) * cos(q4) + (-(qd1 ^ 2 + qd2 ^ 2 + (2 * qd3 + 2 * qd4) * qd2 + qd3 ^ 2 + 2 * qd3 * qd4 + qd4 ^ 2 + qd5 ^ 2) * l6y * sin(q5) + qdd5 * cos(q5) * l6y - l6z * (qdd2 + qdd3 + qdd4)) * sin(q4) + l4x * (qdd2 + qdd3)) * sin(q3) + (l3x * (qd1 ^ 2 + qd2 ^ 2))) * cos(q2) + (((l6y * (qdd2 + qdd3 + qdd4) * sin(q5) + 2 * qd5 * l6y * (qd2 + qd3 + qd4) * cos(q5) - l6z * (qd1 ^ 2 + (qd2 + qd3 + qd4) ^ 2)) * cos(q4) + (-(qd1 ^ 2 + qd2 ^ 2 + (2 * qd3 + 2 * qd4) * qd2 + qd3 ^ 2 + 2 * qd3 * qd4 + qd4 ^ 2 + qd5 ^ 2) * l6y * sin(q5) + qdd5 * cos(q5) * l6y - l6z * (qdd2 + qdd3 + qdd4)) * sin(q4) + l4x * (qdd2 + qdd3)) * cos(q3) + ((-(qd1 ^ 2 + qd2 ^ 2 + (2 * qd3 + 2 * qd4) * qd2 + qd3 ^ 2 + 2 * qd3 * qd4 + qd4 ^ 2 + qd5 ^ 2) * l6y * sin(q5) + qdd5 * cos(q5) * l6y - l6z * (qdd2 + qdd3 + qdd4)) * cos(q4) + (-l6y * (qdd2 + qdd3 + qdd4) * sin(q5) - 2 * qd5 * l6y * (qd2 + qd3 + qd4) * cos(q5) + l6z * (qd1 ^ 2 + (qd2 + qd3 + qd4) ^ 2)) * sin(q4) - ((qd1 ^ 2 + (qd2 + qd3) ^ 2) * l4x)) * sin(q3) + qdd2 * l3x) * sin(q2) - 2 * qd1 * qd5 * sin(q5) * l6y + qdd1 * (cos(q5) * l6y + l5z)) * sin(q1) + 2 * cos(q1) * ((((-qdd1 * sin(q5) * l6y / 2 + (-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * qd1) * cos(q4) + (qd1 * l6y * (qd2 + qd3 + qd4) * sin(q5) + l6z * qdd1 / 2) * sin(q4) - qdd1 * l4x / 2) * cos(q3) + ((qd1 * l6y * (qd2 + qd3 + qd4) * sin(q5) + l6z * qdd1 / 2) * cos(q4) + (qdd1 * sin(q5) * l6y / 2 - (-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * qd1) * sin(q4) + (qd1 * l4x * (qd2 + qd3))) * sin(q3) - qdd1 * l3x / 2) * cos(q2) + (((qd1 * l6y * (qd2 + qd3 + qd4) * sin(q5) + l6z * qdd1 / 2) * cos(q4) + (qdd1 * sin(q5) * l6y / 2 - (-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * qd1) * sin(q4) + (qd1 * l4x * (qd2 + qd3))) * cos(q3) + ((qdd1 * sin(q5) * l6y / 2 - (-qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4)) * qd1) * cos(q4) + (-qd1 * l6y * (qd2 + qd3 + qd4) * sin(q5) - l6z * qdd1 / 2) * sin(q4) + qdd1 * l4x / 2) * sin(q3) + (qd1 * qd2 * l3x)) * sin(q2) + qdd5 * sin(q5) * l6y / 2 + l6y * (qd1 ^ 2 + qd5 ^ 2) * cos(q5) / 2 + (qd1 ^ 2) * l5z / 2)",
+                    "2" : "(((-l6y * (qdd2 + qdd3 + qdd4) * sin(q5) + (qd2 + qd3 + qd4) * (-2 * qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4))) * cos(q4) + ((qd2 ^ 2 + (2 * qd3 + 2 * qd4) * qd2 + qd3 ^ 2 + 2 * qd3 * qd4 + qd4 ^ 2 + qd5 ^ 2) * l6y * sin(q5) - qdd5 * cos(q5) * l6y + l6z * (qdd2 + qdd3 + qdd4)) * sin(q4) - l4x * (qdd2 + qdd3)) * cos(q3) + (((qd2 ^ 2 + (2 * qd3 + 2 * qd4) * qd2 + qd3 ^ 2 + 2 * qd3 * qd4 + qd4 ^ 2 + qd5 ^ 2) * l6y * sin(q5) - qdd5 * cos(q5) * l6y + l6z * (qdd2 + qdd3 + qdd4)) * cos(q4) + (l6y * (qdd2 + qdd3 + qdd4) * sin(q5) - (qd2 + qd3 + qd4) * (-2 * qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4))) * sin(q4) + (l4x * (qd2 + qd3) ^ 2)) * sin(q3) - qdd2 * l3x) * cos(q2) + sin(q2) * ((((qd2 ^ 2 + (2 * qd3 + 2 * qd4) * qd2 + qd3 ^ 2 + 2 * qd3 * qd4 + qd4 ^ 2 + qd5 ^ 2) * l6y * sin(q5) - qdd5 * cos(q5) * l6y + l6z * (qdd2 + qdd3 + qdd4)) * cos(q4) + (l6y * (qdd2 + qdd3 + qdd4) * sin(q5) - (qd2 + qd3 + qd4) * (-2 * qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4))) * sin(q4) + (l4x * (qd2 + qd3) ^ 2)) * cos(q3) + ((l6y * (qdd2 + qdd3 + qdd4) * sin(q5) - (qd2 + qd3 + qd4) * (-2 * qd5 * cos(q5) * l6y + l6z * (qd2 + qd3 + qd4))) * cos(q4) + (-(qd2 ^ 2 + (2 * qd3 + 2 * qd4) * qd2 + qd3 ^ 2 + 2 * qd3 * qd4 + qd4 ^ 2 + qd5 ^ 2) * l6y * sin(q5) + qdd5 * cos(q5) * l6y - l6z * (qdd2 + qdd3 + qdd4)) * sin(q4) + l4x * (qdd2 + qdd3)) * sin(q3) + (l3x * qd2 ^ 2))"
+                }
+            }
+        }
+    },
+    "Motors" : [
+        {
+            "PositionUnitConversion" : 0,
+            "VelocityUnitConversion" : 0,
+            "AccelerationUnitConversion" : 0,
+            "TorqueUnitConversion": 0,
+            "GearboxRatio" : 0,
+            "ModesOfOperation" : {
+                "ProfilePositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "MaxProfileVelocity" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "EndVelocity" : 0
+                },
+                "ProfileVelocityMode" : {
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "MaxDeceleration" : 0,
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "SensorSelectionCode" : 0,
+                    "VelocityWindow" : 0,
+                    "VelocityWindowTime" : 0,
+                    "VelocityThreshold" : 0,
+                    "VelocityThresholdTime" : 0,
+                    "MaxSlippage" : 0,
+                    "MaxProfileVelocity" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0
+                },
+                "ProfileTorqueMode" : {
+                    "MaxTorque" : 0,
+                    "PositiveTorqueLimitValue" : 0,
+                    "NegativeTorqueLimitValue" : 0,
+                    "MaxCurrent" : 0,
+                    "MotorRatedCurrent" : 0,
+                    "MotorRatedTorque" : 0,
+                    "TorqueSlope" : 0,
+                    "TorqueProfileType" : "Linear | Sin^2"
+                },
+                "VelocityMode" : {
+                    "VelocityMinMaxAmount" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "VelocityQuickStop" : {
+                        "DeltaSpeed" : 0,
+                        "DeltaTime" : 0
+                    },
+                    "SetPointFactor" : {
+                        "Numerator" : 0,
+                        "Denominator" : 0
+                    },
+                    "DimensionFactor" : {
+                        "Numerator" : 0,
+                        "Denominator" : 0
+                    }
+                },
+                "InterpolatedPositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "HomeOffset" : 0,
+                    "InterpolationSubModeSelect" : 0,
+                    "InterpolationDataConfiguration" : {
+                        "MaximumBufferSize" : 0,
+                        "ActualBufferSize" : 0,
+                        "BufferOrganization" : 0,
+                        "BufferPosition" : 0,
+                        "SizeOfDataRecord" : 0,
+                        "BufferClear" : 0
+                    },
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "MaxMotorSpeed" : 0,
+                    "MaxProfileVelocity" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "EndVelocity" : 0,
+                    "PositionWindow": 0,
+                    "PositionWindowTime" : 0
+                },
+                "HomingMode" : {
+                },
+                "CyclicSynchronousPositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "FollowingErrorWindow" : 0,
+                    "FollowingErrorTimeOut" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    },
+                    "MotorRatedTorque" : 0,
+                    "MaxTorque" : 0,
+                    "ProfileDeceleration" : 0
+                },
+                "CyclicSynchronousVelocityMode" : {
+                    "QuickStopDeceleration" : 0,
+                    "ProfileDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "SoftwarePositionLimit" :  {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "MotorRatedTorque" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "Polarity" : "VelocityPolarity | GlobalPolarity",
+                    "MaxTorque" : 0,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    }
+                },
+                "CyclicSynchronousTorqueMode" : {
+                    "MaxMotorSpeed" : 0,
+                    "MotorRatedTorque" : 0,
+                    "MaxTorque" : 0,
+                    "PositiveTorqueLimitValue" : 0,
+                    "NegativeTorqueLimitValue" : 0,
+                    "TorqueSlope" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "LowVelocityLimitValue" : 0,
+                    "HighVelocityLimitValue" : 0,
+                    "TorqueLimitationOptionCode" : "NoLimit | TorqueReducedUntilZero | RampLimit | LimitAccordingToSign | MaxTorqueLimit",
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "QuickStopDeceleration" : 0,
+                    "ProfileDeceleration" : 0,
+                    "InterpolationTimePeriod" : {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    }
+                }
+            }
+        },
+        {
+            "PositionUnitConversion" : 0,
+            "VelocityUnitConversion" : 0,
+            "AccelerationUnitConversion" : 0,
+            "TorqueUnitConversion": 0,
+            "GearboxRatio" : 0,
+            "ModesOfOperation" : {
+                "ProfilePositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "MaxProfileVelocity" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "EndVelocity" : 0
+                },
+                "ProfileVelocityMode" : {
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "MaxDeceleration" : 0,
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "SensorSelectionCode" : 0,
+                    "VelocityWindow" : 0,
+                    "VelocityWindowTime" : 0,
+                    "VelocityThreshold" : 0,
+                    "VelocityThresholdTime" : 0,
+                    "MaxSlippage" : 0,
+                    "MaxProfileVelocity" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0
+                },
+                "ProfileTorqueMode" : {
+                    "MaxTorque" : 0,
+                    "PositiveTorqueLimitValue" : 0,
+                    "NegativeTorqueLimitValue" : 0,
+                    "MaxCurrent" : 0,
+                    "MotorRatedCurrent" : 0,
+                    "MotorRatedTorque" : 0,
+                    "TorqueSlope" : 0,
+                    "TorqueProfileType" : "Linear | Sin^2"
+                },
+                "VelocityMode" : {
+                    "VelocityMinMaxAmount" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "VelocityQuickStop" : {
+                        "DeltaSpeed" : 0,
+                        "DeltaTime" : 0
+                    },
+                    "SetPointFactor" : {
+                        "Numerator" : 0,
+                        "Denominator" : 0
+                    },
+                    "DimensionFactor" : {
+                        "Numerator" : 0,
+                        "Denominator" : 0
+                    }
+                },
+                "InterpolatedPositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "HomeOffset" : 0,
+                    "InterpolationSubModeSelect" : 0,
+                    "InterpolationDataConfiguration" : {
+                        "MaximumBufferSize" : 0,
+                        "ActualBufferSize" : 0,
+                        "BufferOrganization" : 0,
+                        "BufferPosition" : 0,
+                        "SizeOfDataRecord" : 0,
+                        "BufferClear" : 0
+                    },
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "MaxMotorSpeed" : 0,
+                    "MaxProfileVelocity" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "EndVelocity" : 0,
+                    "PositionWindow": 0,
+                    "PositionWindowTime" : 0
+                },
+                "HomingMode" : {
+                },
+                "CyclicSynchronousPositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "FollowingErrorWindow" : 0,
+                    "FollowingErrorTimeOut" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    },
+                    "MotorRatedTorque" : 0,
+                    "MaxTorque" : 0,
+                    "ProfileDeceleration" : 0
+                },
+                "CyclicSynchronousVelocityMode" : {
+                    "QuickStopDeceleration" : 0,
+                    "ProfileDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "SoftwarePositionLimit" :  {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "MotorRatedTorque" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "Polarity" : "VelocityPolarity | GlobalPolarity",
+                    "MaxTorque" : 0,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    }
+                },
+                "CyclicSynchronousTorqueMode" : {
+                    "MaxMotorSpeed" : 0,
+                    "MotorRatedTorque" : 0,
+                    "MaxTorque" : 0,
+                    "PositiveTorqueLimitValue" : 0,
+                    "NegativeTorqueLimitValue" : 0,
+                    "TorqueSlope" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "LowVelocityLimitValue" : 0,
+                    "HighVelocityLimitValue" : 0,
+                    "TorqueLimitationOptionCode" : "NoLimit | TorqueReducedUntilZero | RampLimit | LimitAccordingToSign | MaxTorqueLimit",
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "QuickStopDeceleration" : 0,
+                    "ProfileDeceleration" : 0,
+                    "InterpolationTimePeriod" : {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    }
+                }
+            }
+        },
+        {
+            "PositionUnitConversion" : 0,
+            "VelocityUnitConversion" : 0,
+            "AccelerationUnitConversion" : 0,
+            "TorqueUnitConversion": 0,
+            "GearboxRatio" : 0,
+            "ModesOfOperation" : {
+                "ProfilePositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "MaxProfileVelocity" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "EndVelocity" : 0
+                },
+                "ProfileVelocityMode" : {
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "MaxDeceleration" : 0,
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "SensorSelectionCode" : 0,
+                    "VelocityWindow" : 0,
+                    "VelocityWindowTime" : 0,
+                    "VelocityThreshold" : 0,
+                    "VelocityThresholdTime" : 0,
+                    "MaxSlippage" : 0,
+                    "MaxProfileVelocity" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0
+                },
+                "ProfileTorqueMode" : {
+                    "MaxTorque" : 0,
+                    "PositiveTorqueLimitValue" : 0,
+                    "NegativeTorqueLimitValue" : 0,
+                    "MaxCurrent" : 0,
+                    "MotorRatedCurrent" : 0,
+                    "MotorRatedTorque" : 0,
+                    "TorqueSlope" : 0,
+                    "TorqueProfileType" : "Linear | Sin^2"
+                },
+                "VelocityMode" : {
+                    "VelocityMinMaxAmount" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "VelocityQuickStop" : {
+                        "DeltaSpeed" : 0,
+                        "DeltaTime" : 0
+                    },
+                    "SetPointFactor" : {
+                        "Numerator" : 0,
+                        "Denominator" : 0
+                    },
+                    "DimensionFactor" : {
+                        "Numerator" : 0,
+                        "Denominator" : 0
+                    }
+                },
+                "InterpolatedPositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "HomeOffset" : 0,
+                    "InterpolationSubModeSelect" : 0,
+                    "InterpolationDataConfiguration" : {
+                        "MaximumBufferSize" : 0,
+                        "ActualBufferSize" : 0,
+                        "BufferOrganization" : 0,
+                        "BufferPosition" : 0,
+                        "SizeOfDataRecord" : 0,
+                        "BufferClear" : 0
+                    },
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "MaxMotorSpeed" : 0,
+                    "MaxProfileVelocity" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "EndVelocity" : 0,
+                    "PositionWindow": 0,
+                    "PositionWindowTime" : 0
+                },
+                "HomingMode" : {
+                },
+                "CyclicSynchronousPositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "FollowingErrorWindow" : 0,
+                    "FollowingErrorTimeOut" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    },
+                    "MotorRatedTorque" : 0,
+                    "MaxTorque" : 0,
+                    "ProfileDeceleration" : 0
+                },
+                "CyclicSynchronousVelocityMode" : {
+                    "QuickStopDeceleration" : 0,
+                    "ProfileDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "SoftwarePositionLimit" :  {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "MotorRatedTorque" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "Polarity" : "VelocityPolarity | GlobalPolarity",
+                    "MaxTorque" : 0,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    }
+                },
+                "CyclicSynchronousTorqueMode" : {
+                    "MaxMotorSpeed" : 0,
+                    "MotorRatedTorque" : 0,
+                    "MaxTorque" : 0,
+                    "PositiveTorqueLimitValue" : 0,
+                    "NegativeTorqueLimitValue" : 0,
+                    "TorqueSlope" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "LowVelocityLimitValue" : 0,
+                    "HighVelocityLimitValue" : 0,
+                    "TorqueLimitationOptionCode" : "NoLimit | TorqueReducedUntilZero | RampLimit | LimitAccordingToSign | MaxTorqueLimit",
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "QuickStopDeceleration" : 0,
+                    "ProfileDeceleration" : 0,
+                    "InterpolationTimePeriod" : {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    }
+                }
+            }
+        },
+        {
+            "PositionUnitConversion" : 0,
+            "VelocityUnitConversion" : 0,
+            "AccelerationUnitConversion" : 0,
+            "TorqueUnitConversion": 0,
+            "GearboxRatio" : 0,
+            "ModesOfOperation" : {
+                "ProfilePositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "MaxProfileVelocity" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "EndVelocity" : 0
+                },
+                "ProfileVelocityMode" : {
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "MaxDeceleration" : 0,
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "SensorSelectionCode" : 0,
+                    "VelocityWindow" : 0,
+                    "VelocityWindowTime" : 0,
+                    "VelocityThreshold" : 0,
+                    "VelocityThresholdTime" : 0,
+                    "MaxSlippage" : 0,
+                    "MaxProfileVelocity" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0
+                },
+                "ProfileTorqueMode" : {
+                    "MaxTorque" : 0,
+                    "PositiveTorqueLimitValue" : 0,
+                    "NegativeTorqueLimitValue" : 0,
+                    "MaxCurrent" : 0,
+                    "MotorRatedCurrent" : 0,
+                    "MotorRatedTorque" : 0,
+                    "TorqueSlope" : 0,
+                    "TorqueProfileType" : "Linear | Sin^2"
+                },
+                "VelocityMode" : {
+                    "VelocityMinMaxAmount" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "VelocityQuickStop" : {
+                        "DeltaSpeed" : 0,
+                        "DeltaTime" : 0
+                    },
+                    "SetPointFactor" : {
+                        "Numerator" : 0,
+                        "Denominator" : 0
+                    },
+                    "DimensionFactor" : {
+                        "Numerator" : 0,
+                        "Denominator" : 0
+                    }
+                },
+                "InterpolatedPositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "HomeOffset" : 0,
+                    "InterpolationSubModeSelect" : 0,
+                    "InterpolationDataConfiguration" : {
+                        "MaximumBufferSize" : 0,
+                        "ActualBufferSize" : 0,
+                        "BufferOrganization" : 0,
+                        "BufferPosition" : 0,
+                        "SizeOfDataRecord" : 0,
+                        "BufferClear" : 0
+                    },
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "MaxMotorSpeed" : 0,
+                    "MaxProfileVelocity" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "EndVelocity" : 0,
+                    "PositionWindow": 0,
+                    "PositionWindowTime" : 0
+                },
+                "HomingMode" : {
+                },
+                "CyclicSynchronousPositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "FollowingErrorWindow" : 0,
+                    "FollowingErrorTimeOut" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    },
+                    "MotorRatedTorque" : 0,
+                    "MaxTorque" : 0,
+                    "ProfileDeceleration" : 0
+                },
+                "CyclicSynchronousVelocityMode" : {
+                    "QuickStopDeceleration" : 0,
+                    "ProfileDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "SoftwarePositionLimit" :  {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "MotorRatedTorque" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "Polarity" : "VelocityPolarity | GlobalPolarity",
+                    "MaxTorque" : 0,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    }
+                },
+                "CyclicSynchronousTorqueMode" : {
+                    "MaxMotorSpeed" : 0,
+                    "MotorRatedTorque" : 0,
+                    "MaxTorque" : 0,
+                    "PositiveTorqueLimitValue" : 0,
+                    "NegativeTorqueLimitValue" : 0,
+                    "TorqueSlope" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "LowVelocityLimitValue" : 0,
+                    "HighVelocityLimitValue" : 0,
+                    "TorqueLimitationOptionCode" : "NoLimit | TorqueReducedUntilZero | RampLimit | LimitAccordingToSign | MaxTorqueLimit",
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "QuickStopDeceleration" : 0,
+                    "ProfileDeceleration" : 0,
+                    "InterpolationTimePeriod" : {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    }
+                }
+            }
+        },
+        {
+            "PositionUnitConversion" : 0,
+            "VelocityUnitConversion" : 0,
+            "AccelerationUnitConversion" : 0,
+            "TorqueUnitConversion": 0,
+            "GearboxRatio" : 0,
+            "ModesOfOperation" : {
+                "ProfilePositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "MaxProfileVelocity" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "EndVelocity" : 0
+                },
+                "ProfileVelocityMode" : {
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "MaxDeceleration" : 0,
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "SensorSelectionCode" : 0,
+                    "VelocityWindow" : 0,
+                    "VelocityWindowTime" : 0,
+                    "VelocityThreshold" : 0,
+                    "VelocityThresholdTime" : 0,
+                    "MaxSlippage" : 0,
+                    "MaxProfileVelocity" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0
+                },
+                "ProfileTorqueMode" : {
+                    "MaxTorque" : 0,
+                    "PositiveTorqueLimitValue" : 0,
+                    "NegativeTorqueLimitValue" : 0,
+                    "MaxCurrent" : 0,
+                    "MotorRatedCurrent" : 0,
+                    "MotorRatedTorque" : 0,
+                    "TorqueSlope" : 0,
+                    "TorqueProfileType" : "Linear | Sin^2"
+                },
+                "VelocityMode" : {
+                    "VelocityMinMaxAmount" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "VelocityQuickStop" : {
+                        "DeltaSpeed" : 0,
+                        "DeltaTime" : 0
+                    },
+                    "SetPointFactor" : {
+                        "Numerator" : 0,
+                        "Denominator" : 0
+                    },
+                    "DimensionFactor" : {
+                        "Numerator" : 0,
+                        "Denominator" : 0
+                    }
+                },
+                "InterpolatedPositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "HomeOffset" : 0,
+                    "InterpolationSubModeSelect" : 0,
+                    "InterpolationDataConfiguration" : {
+                        "MaximumBufferSize" : 0,
+                        "ActualBufferSize" : 0,
+                        "BufferOrganization" : 0,
+                        "BufferPosition" : 0,
+                        "SizeOfDataRecord" : 0,
+                        "BufferClear" : 0
+                    },
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "MaxMotorSpeed" : 0,
+                    "MaxProfileVelocity" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "EndVelocity" : 0,
+                    "PositionWindow": 0,
+                    "PositionWindowTime" : 0
+                },
+                "HomingMode" : {
+                },
+                "CyclicSynchronousPositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "FollowingErrorWindow" : 0,
+                    "FollowingErrorTimeOut" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    },
+                    "MotorRatedTorque" : 0,
+                    "MaxTorque" : 0,
+                    "ProfileDeceleration" : 0
+                },
+                "CyclicSynchronousVelocityMode" : {
+                    "QuickStopDeceleration" : 0,
+                    "ProfileDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "SoftwarePositionLimit" :  {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "MotorRatedTorque" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "Polarity" : "VelocityPolarity | GlobalPolarity",
+                    "MaxTorque" : 0,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    }
+                },
+                "CyclicSynchronousTorqueMode" : {
+                    "MaxMotorSpeed" : 0,
+                    "MotorRatedTorque" : 0,
+                    "MaxTorque" : 0,
+                    "PositiveTorqueLimitValue" : 0,
+                    "NegativeTorqueLimitValue" : 0,
+                    "TorqueSlope" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "LowVelocityLimitValue" : 0,
+                    "HighVelocityLimitValue" : 0,
+                    "TorqueLimitationOptionCode" : "NoLimit | TorqueReducedUntilZero | RampLimit | LimitAccordingToSign | MaxTorqueLimit",
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "QuickStopDeceleration" : 0,
+                    "ProfileDeceleration" : 0,
+                    "InterpolationTimePeriod" : {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    }
+                }
+            }
+        },
+        {
+            "PositionUnitConversion" : 0,
+            "VelocityUnitConversion" : 0,
+            "AccelerationUnitConversion" : 0,
+            "TorqueUnitConversion": 0,
+            "GearboxRatio" : 0,
+            "ModesOfOperation" : {
+                "ProfilePositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "MaxProfileVelocity" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "EndVelocity" : 0
+                },
+                "ProfileVelocityMode" : {
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "MaxDeceleration" : 0,
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "SensorSelectionCode" : 0,
+                    "VelocityWindow" : 0,
+                    "VelocityWindowTime" : 0,
+                    "VelocityThreshold" : 0,
+                    "VelocityThresholdTime" : 0,
+                    "MaxSlippage" : 0,
+                    "MaxProfileVelocity" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0
+                },
+                "ProfileTorqueMode" : {
+                    "MaxTorque" : 0,
+                    "PositiveTorqueLimitValue" : 0,
+                    "NegativeTorqueLimitValue" : 0,
+                    "MaxCurrent" : 0,
+                    "MotorRatedCurrent" : 0,
+                    "MotorRatedTorque" : 0,
+                    "TorqueSlope" : 0,
+                    "TorqueProfileType" : "Linear | Sin^2"
+                },
+                "VelocityMode" : {
+                    "VelocityMinMaxAmount" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "VelocityQuickStop" : {
+                        "DeltaSpeed" : 0,
+                        "DeltaTime" : 0
+                    },
+                    "SetPointFactor" : {
+                        "Numerator" : 0,
+                        "Denominator" : 0
+                    },
+                    "DimensionFactor" : {
+                        "Numerator" : 0,
+                        "Denominator" : 0
+                    }
+                },
+                "InterpolatedPositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "HomeOffset" : 0,
+                    "InterpolationSubModeSelect" : 0,
+                    "InterpolationDataConfiguration" : {
+                        "MaximumBufferSize" : 0,
+                        "ActualBufferSize" : 0,
+                        "BufferOrganization" : 0,
+                        "BufferPosition" : 0,
+                        "SizeOfDataRecord" : 0,
+                        "BufferClear" : 0
+                    },
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "MaxMotorSpeed" : 0,
+                    "MaxProfileVelocity" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "EndVelocity" : 0,
+                    "PositionWindow": 0,
+                    "PositionWindowTime" : 0
+                },
+                "HomingMode" : {
+                },
+                "CyclicSynchronousPositionMode" : {
+                    "PositionRangeLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "Polarity" : "PositionPolarity | GlobalPolarity",
+                    "FollowingErrorWindow" : 0,
+                    "FollowingErrorTimeOut" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "QuickStopDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    },
+                    "MotorRatedTorque" : 0,
+                    "MaxTorque" : 0,
+                    "ProfileDeceleration" : 0
+                },
+                "CyclicSynchronousVelocityMode" : {
+                    "QuickStopDeceleration" : 0,
+                    "ProfileDeceleration" : 0,
+                    "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+                    "ProfileJerkUse" : 0,
+                    "ProfileJerks" : 0,
+                    "SoftwarePositionLimit" :  {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "MotorRatedTorque" : 0,
+                    "MaxMotorSpeed" : 0,
+                    "Polarity" : "VelocityPolarity | GlobalPolarity",
+                    "MaxTorque" : 0,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    }
+                },
+                "CyclicSynchronousTorqueMode" : {
+                    "MaxMotorSpeed" : 0,
+                    "MotorRatedTorque" : 0,
+                    "MaxTorque" : 0,
+                    "PositiveTorqueLimitValue" : 0,
+                    "NegativeTorqueLimitValue" : 0,
+                    "TorqueSlope" : 0,
+                    "MaxAcceleration" : 0,
+                    "MaxDeceleration" : 0,
+                    "LowVelocityLimitValue" : 0,
+                    "HighVelocityLimitValue" : 0,
+                    "TorqueLimitationOptionCode" : "NoLimit | TorqueReducedUntilZero | RampLimit | LimitAccordingToSign | MaxTorqueLimit",
+                    "SoftwarePositionLimit" : {
+                        "Min" : 0,
+                        "Max" : 0
+                    },
+                    "QuickStopDeceleration" : 0,
+                    "ProfileDeceleration" : 0,
+                    "InterpolationTimePeriod" : {
+                        "InterpolationTimePeriodValue" : 0,
+                        "InterpolationTimeIndex" : 0
+                    }
+                }
+            }
+        }
+    ]
+}

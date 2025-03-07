@@ -1,0 +1,28 @@
+{
+    "serialNumber": "147322072674",
+    "lowIntensityBound": 0.2,
+    "highIntensityBound": 0.8,
+    "baseSpeed": 0.2,
+    "movementThreshold": 0.1,
+    "systemNoise": [
+      [0.01, 0, 0],
+      [0, 0.01, 0],
+      [0, 0, 0.01]
+    ],
+    "observationNoise": [
+      [0.1, 0, 0],
+      [0, 0.1, 0],
+      [0, 0, 0.1]
+    ],
+    "initialMean": [0, 0, 0],
+    "initialCovariance": [
+      [0.1, 0, 0],
+      [0, 0.1, 0],
+      [0, 0, 0.1]
+    ],
+    "informationMatrix": [100, 100, 100],
+    "optimizeEvery": 10,
+    "accumulationInterval": 100,
+    "alpha": 0.5
+  }
+  

@@ -1,0 +1,32 @@
+{
+    "HardwareConfiguration" : "RobotArmWagon",
+    "Communications" : {
+        "Priority" : 60,
+        "TIM" : {
+            "Host" : "localhost",
+            "Port" : 4000
+        },
+        "TIMArm" : {
+            "Host" : "localhost",
+            "Port" : 3002
+        },
+        "RPSensor" : {
+            "Host" : "localhost",
+            "Port" : 8000
+        }
+    },
+    "Movement" : {
+        "TIMPositionThreshold" : 0.3,
+        "DefaultTIMVelocity" : 1.0,
+        "ReducedTIMVelocity" : 0.5,
+        "Obstacles" : {
+            "Margin" : 9.0,
+            "AreaExtension" : 20.0
+        },
+        "RobotArmTrajectories" : "cpproboticframework/modules/Applications/MissionManager/config/RPSurveyLHC/TIM12ArmTrayectories.json"
+    },
+    "TIMHeadOffset" : 2.0,
+    "TIMTailOffset" : 9.0,
+    "MaxBufferSize" : 10,
+    "ResultsPath" : "cpproboticframework/build/"
+}

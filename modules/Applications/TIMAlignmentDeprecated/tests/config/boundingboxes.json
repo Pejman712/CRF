@@ -1,0 +1,37 @@
+{
+    "TwoGuidesRight": [
+        {"classification": "Guide", "box": [100, 0, 150, 50]},
+        {"classification": "Guide", "box": [530, 0, 580, 50]}
+    ],
+    "TwoGuidesLeft": [
+        {"classification": "Guide", "box": [100, 0, 150, 50]},
+        {"classification": "Guide", "box": [450, 0, 500, 50]}
+    ],
+    "TwoGuidesStop": [
+        {"classification": "Guide", "box": [100, 0, 150, 50]},
+        {"classification": "Guide", "box": [490, 0, 540, 50]}
+    ],
+    "CollimatorStop": [
+        {"classification": "Collimator", "box": [40, 0, 600, 50]}
+    ],
+    "CollimatorRight": [
+        {"classification": "Collimator", "box": [80, 0, 640, 50]}
+    ],
+    "CollimatorLeft": [
+        {"classification": "Collimator", "box": [0, 0, 360, 50]}
+    ],
+    "OneGuideRight": [
+        {"classification": "Guide", "box": [320, 0, 370, 50]}
+    ],
+    "OneGuideLeft": [
+        {"classification": "Guide", "box": [270, 0, 320, 50]}
+    ],
+    "OneGuideStop": [
+        {"classification": "Guide", "box": [295, 0, 345, 50]}
+    ],
+    "RandomStuff": [
+        {"classification": "Socket", "box": [0, 1, 2, 3]}
+    ],
+    "NoDetection": [
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "NumberOfMotors" : 2,
+    "dxl_id" : [16, 18],
+    "MotorType" : "AX-12A",
+    "Limits" :[
+        {
+            "MinPosValue" : 0,
+            "MaxPosValue" : 1024,
+            "StartValue"  : 512
+        },
+        {
+            "MinPosValue" : 100,
+            "MaxPosValue" : 800,
+            "StartValue"  : 450
+        }
+    ],
+    "Baud_Rate" : 1000000,
+    "Unit_degree" : 0.29,
+    "PulseMovement" : 10,
+    "AddrMX" : {
+        "TorqueEnable" : 24,
+        "GoalPosition" : 30,
+        "PresentPosition" : 36,
+        "Moving" : 46
+    },
+    "ProtocolVersion" : 1.0
+}

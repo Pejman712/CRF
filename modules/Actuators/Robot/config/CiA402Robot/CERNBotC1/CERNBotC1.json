@@ -1,0 +1,85 @@
+{
+    "NumberOfMotors" : 4,
+    "JointSpaceDegreeOfFreedom" : 4,
+    "TaskSpaceDegreeOfFreedom" : 3,
+    "PositionMode" : "ProfilePosition",
+    "VelocityMode" : "VelocityMode",
+    "TorqueMode" : "ProfileTorque",
+    "ControllerLoopTimeMs" : 10,
+    "JointLimits" : {
+        "MaxPosition" : ["inf", "inf", "inf", "inf"],
+        "MinPosition" : ["-inf", "-inf", "-inf", "-inf"],
+        "MaxVelocity" : [10, 10, 10, 10],
+        "MaxAcceleration" : [30, 30, 30, 30],
+        "MaxTorque" : [0, 0, 0, 0]
+    },
+    "TaskLimits" : {
+        "MaxVelocity" : { "data" : [1, 1, 1], "custom" : true},
+        "MaxAcceleration" : { "data" : [1, 1, 1], "custom" : true}
+    },
+    "ProfileParameters" : {
+        "JointVelocities" : [5, 5, 5, 5],
+        "JointAccelerations" : [20, 20, 20, 20],
+        "TaskVelocity" : { "data" : [1, 1, 1], "custom" : true},
+        "TaskAcceleration" : { "data" : [1, 1, 1], "custom" : true}
+    },
+    "Kinematics" : {
+        "Type" : "URDF",
+        "URDF" : {
+            "RobotURDFPath" : "/",
+            "EndEffectorName" : ""
+        }
+    },
+    "Motors" : [
+        {
+            "SlaveID" : [1, 2, 3, 4],
+            "PositionUnitConversion" : 10430.22,
+            "VelocityUnitConversion" : 9.55,
+            "AccelerationUnitConversion" : 9.55,
+            "TorqueUnitConversion": 1,
+            "GearboxRatio" : 40.04,
+            "ModesOfOperation" : {
+                "ProfilePositionMode" : {
+                    "MaxProfileVelocity" : 1000,
+                    "MaxMotorSpeed" : 2000,
+                    "QuickStopDeceleration" : 200,
+                    "MaxAcceleration" : 2000,
+                    "MotionProfileType" : "Trapezoidal"
+                },
+                "ProfileVelocityMode" : {
+                    "MaxProfileVelocity" : 500,
+                    "MaxMotorSpeed" : 2000,
+                    "QuickStopDeceleration" : 200,
+                    "MaxAcceleration" : 2000,
+                    "MotionProfileType" : "Trapezoidal"
+                },
+                "HomingMode" : {
+                },
+                "CyclicSynchronousPositionMode" : {
+                    "QuickStopDeceleration" : 200,
+                    "ProfileDeceleration" : 100,
+                    "FollowingErrorWindow" : 10000,
+                    "MaxMotorSpeed" : 2000,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 100,
+                        "InterpolationTimeIndex" : -3
+                    }
+                },
+                "CyclicSynchronousVelocityMode" : {
+                    "QuickStopDeceleration" : 200,
+                    "ProfileDeceleration" : 50,
+                    "MotorRatedTorque" : 5,
+                    "MaxMotorSpeed" : 2000,
+                    "InterpolationTimePeriod" :  {
+                        "InterpolationTimePeriodValue" : 50,
+                        "InterpolationTimeIndex" : -3
+                    }
+                },
+                "CyclicSynchronousTorqueMode" : {
+                        "QuickStopDeceleration" : 200,
+                        "ProfileDeceleration" : 50
+                }
+            }
+        }
+    ]
+}

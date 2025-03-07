@@ -1,0 +1,104 @@
+{
+    "IPAddress" : "127.0.0.1",
+    "JointSpaceDegreeOfFreedom" : 4,
+    "TaskSpaceDegreeOfFreedom" : 4,
+    "TaskSpace" : {
+        "Vx" : true,
+        "Vy" : true,
+        "Vz" : true,
+        "Wx" : false,
+        "Wy" : true,
+        "Wz" : false
+    },
+    "ControllerLoopTimeMs" : 2,
+    "LookAheadTime" : 0.03,
+    "Gain" : 1200,
+    "JointLimits" : {
+        "MaxPosition" : [6.28, 6.28, 6.28, 6.28],
+        "MinPosition" : [-6.28, -6.28, -6.28, -6.28],
+        "MaxVelocity" : [2.09, 2.09, 3.14, 3.14],
+        "MaxAcceleration" : [0, 0, 0, 0],
+        "MaxTorque" : [0, 0, 0, 0]
+    },
+    "TaskLimits" : {
+        "MaxVelocity" : [0, 0, 0, 0, 0, 0],
+        "MaxAcceleration" : [0, 0, 0, 0, 0, 0]
+    },
+    "ProfileParameters" : {
+        "JointVelocities" : [1, 1, 1, 1],
+        "JointAccelerations" : [1.4, 1.4, 1.4, 1.4],
+        "TaskVelocity" : [0.2, 0.2, 0.2, 0.0, 0.1, 0.0],
+        "TaskAcceleration" : [1, 1, 1, 0.0, 0.8, 0.0]
+    },
+    "Kinematics" : {
+        "Type" : "MathExpressions",
+        "DH" : {
+            "D" : [0.2755, 0.0, -0.0098, -0.3111],
+            "Theta" : [0.0, 1.5708, -1.5708, 0.0],
+            "A" : [0.0, 0.4100, 0.0, 0.0],
+            "Alpha" : [1.5708, 3.1416, 1.5708, 1.5708]
+        },
+        "MathExpressions" : {
+            "Lengths" : {
+                "lx" : [0.6127, 0.57155, 0.0, 0.0],
+                "ly" : [0.0, 0.0, 0.0, 0.11655],
+                "lz" : [0.1807, 0.0, 0.0, 0.17415]
+            },
+            "ForwardKinematics" : {
+                "IrIE" : {
+                    "0" : "cos(q1) + l1x",
+                    "1" : "cos(q2) + l1y",
+                    "2" : "cos(q3) + l1z"
+                },
+                "CardanXYZ" :
+                {
+                    "X" : "0",
+                    "Y" : "cos(q4) + l2x",
+                    "Z" : "NaN"
+                },
+                "IvIE" : {
+                    "0" : "cos(qd1) + sin(q1) + l2y",
+                    "1" : "cos(qd2) + sin(q2) + l2z",
+                    "2" : "cos(qd3) + sin(q3) + l3x",
+                    "3" : "0",
+                    "4" : "cos(qd4) + sin(q4) + l3y",
+                    "5" : "NaN"
+                },
+                "IalphaIE" : {
+                    "0" : "sin(qdd1) + cos(qd1) + sin(q1) + l3z",
+                    "1" : "sin(qdd2) + cos(qd2) + sin(q2) + l4x",
+                    "2" : "sin(qdd3) + cos(qd3) + sin(q3) + l4y",
+                    "3" : "0",
+                    "4" : "sin(qdd4) + cos(qd4) + sin(q4) + l4z",
+                    "5" : "0"
+                }
+            },
+            "Jacobian" : {
+                "Row0" : {
+                    "Col0" : "sin(q2) + l1y",
+                    "Col1" : "sin(q2) + l2y",
+                    "Col2" : "sin(q2) + l3y",
+                    "Col3" : "sin(q2) + l1x"
+                },
+                "Row1" : {
+                    "Col0" : "sin(q3)",
+                    "Col1" : "sin(q1)",
+                    "Col2" : "sin(q2) + l2x",
+                    "Col3" : "sin(q3)"
+                },
+                "Row2" : {
+                    "Col0" : "sin(q2)",
+                    "Col1" : "sin(q3)",
+                    "Col2" : "sin(q1) + l3x",
+                    "Col3" : "sin(q2) + l1z"
+                },
+                "Row3" : {
+                    "Col0" : "sin(q3) + l2z",
+                    "Col1" : "sin(q1)",
+                    "Col2" : "sin(q1) + l3z",
+                    "Col3" : "sin(q1)"
+                }
+            }
+        }
+    }
+}

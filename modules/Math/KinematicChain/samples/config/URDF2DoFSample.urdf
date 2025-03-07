@@ -1,0 +1,40 @@
+<robot>
+
+    <link name="rootLink"/>
+
+    <joint name="rootJoint" type="fixed">
+        <parent link="rootLink"/>
+        <child link="baseLink"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="baseLink"/>
+
+    <joint name="1stJoint" type="revolute">
+        <parent name="baseLink"/>
+        <child name="1stLink"/>
+        <origin rpy="0 3.1415 0" xyz="0 0 0.12"/>
+        <axis/>
+    </joint>
+
+    <link name="1stLink"/>
+
+    <joint name="2ndJoint" type="prismatic">
+        <parent name="1stLink"/>
+        <child name="2ndLink"/>
+        <origin/>
+        <axis/>
+    </joint>
+
+    <link name="2ndLink"/>
+
+    <joint name="endEffectorJoint" type="fixed">
+        <parent name="2ndLink"/>
+        <child name="leafLink"/>
+        <origin/>
+        <axis xyz="0 0 0"/>
+    </joint>
+
+    <link name="leafLink"/>
+
+</robot>

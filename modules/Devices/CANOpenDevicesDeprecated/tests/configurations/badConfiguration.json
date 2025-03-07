@@ -1,0 +1,18 @@
+[
+    {
+        "names": "targetVelocity",
+        "index": "0x60FF",
+        "size": 4
+    },
+    {
+        "name": "receivePDO1Parameter",
+        "index": "0x1400",
+        "subregisters": [
+            {
+                "name": "cobIDusedByRxPDO1",
+                "subindex": "0x01",
+                "size": 4
+            }
+        ]
+    }
+]

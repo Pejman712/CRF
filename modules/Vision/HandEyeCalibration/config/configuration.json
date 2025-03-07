@@ -1,0 +1,7 @@
+{
+    "inputImageFilename": "cpproboticframework/bin/image-%d.png",
+    "inputPoseFilename": "cpproboticframework/bin/pose_fPe_%d.yaml",
+    "intrinsicFile": "cpproboticframework/bin/camera.xml",
+    "cameraName": "Camera",
+    "outputFilename": "cpproboticframework/bin/eMc.txt"
+}

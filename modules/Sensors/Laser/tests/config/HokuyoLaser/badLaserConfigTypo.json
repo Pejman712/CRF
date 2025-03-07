@@ -1,0 +1,14 @@
+{
+    "Model" : "URG04LXUG01",
+    "ScanIntervalUs": 100000,
+    "ScanSize": 726,
+    "Range": {
+        "Minimum": 0.020,
+        "Maximum": 5.600
+        },
+    "AngularResdolution": 0.352,
+    "Angle": {
+        "Minimum": -119.531250,
+        "Maximum": 119.882812
+    }
+}

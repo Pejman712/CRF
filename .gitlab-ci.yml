@@ -1,0 +1,151 @@
+include:
+  - template: Code-Quality.gitlab-ci.yml
+  - project: 'mro/common/tools/gitlab-ci-utils'
+    file: 'ci/scripts/gitlab-ci-artifacts.yml'
+
+image: $CI_REGISTRY/mro/robotics/cernroboticframework/cpproboticframework/ubuntu22:0.4.1
+
+stages:
+- build
+- style
+- test
+- analysis
+- publish
+
+compilation20:
+  image: $CI_REGISTRY/mro/robotics/cernroboticframework/cpproboticframework/ubuntu20:0.4.0
+  stage: build
+  script: "./scripts/ciScripts/buildScript.sh"
+  tags:
+    - k8s-default
+  artifacts:
+    paths:
+      - ./build/
+      - ./bin/ut-*
+      - ./bin/testfiles/
+      - ./lib/
+    expire_in: 3h
+  needs: []
+
+compilation22:
+  stage: build
+  script: "./scripts/ciScripts/buildScript.sh"
+  tags:
+    - k8s-default
+  artifacts:
+    paths:
+      - ./build/
+      - ./bin/ut-*
+      - ./bin/testfiles/
+      - ./lib/
+    expire_in: 3h
+  needs: []
+
+code_quality:
+  stage: style
+  tags:
+    - docker-privileged-xl
+  artifacts:
+    paths: [ gl-code-quality-report.json ]
+
+linter:
+  stage: style
+  script: "./scripts/ciScripts/lintTestScript.sh"
+  tags:
+    - k8s-default
+  variables:
+    GIT_STRATEGY: fetch
+  needs: []
+
+unit_tests20:
+  image: $CI_REGISTRY/mro/robotics/cernroboticframework/cpproboticframework/ubuntu20:0.4.0
+  stage: test
+  script: "./scripts/ciScripts/unitTestScript.sh"
+  tags:
+    - k8s-default
+  dependencies:
+    - compilation20
+  variables:
+    GIT_STRATEGY: fetch
+  artifacts:
+    reports:
+      junit: ./build/modules/**/test-results/ut-*.xml
+    expire_in: 1 week
+    when: always
+  needs: ["compilation20"]
+
+unit_tests22:
+  stage: test
+  script: "./scripts/ciScripts/unitTestScript.sh"
+  tags:
+    - k8s-default
+  dependencies:
+    - compilation22
+  variables:
+    GIT_STRATEGY: fetch
+  artifacts:
+    reports:
+      junit: ./build/modules/**/test-results/ut-*.xml
+    expire_in: 1 week
+    when: always
+  needs: ["compilation22"]
+
+test_coverage:
+  stage: analysis
+  script: "./scripts/ciScripts/testCoverageScript.sh"
+  coverage: /^\s*lines:\s*\d+.\d+\%/
+  tags:
+    - k8s-default
+  variables:
+    GIT_STRATEGY: fetch
+  dependencies:
+    - compilation22
+  artifacts:
+    name: ${CI_JOB_NAME}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: build/test_coverage.xml
+    expire_in: 1 week
+    when: on_success
+  needs: ["compilation22"]
+
+valgrind_test:
+  stage: analysis
+  script: "./scripts/ciScripts/valgrindTestScript.sh"
+  only:
+    variables:
+      - $VALGRIND_TEST == "ON"
+  tags:
+    - k8s-default
+  variables:
+    GIT_STRATEGY: fetch
+  dependencies:
+    - compilation22
+  artifacts:
+    paths:
+      - ./build/Testing/Temporary/MemoryChecker*.log
+    expire_in: 1 week
+    when: always
+  allow_failure: true
+  needs: ["compilation22"]
+
+doxygen-html:
+  stage: build
+  tags:
+    - k8s-default
+  script:
+    - "doxygen Doxyfile"
+    - "mkdir -p public && mv doxygen/output/html public"
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 week
+    when: always
+
+publish-doxygen:
+  stage: publish
+  extends: .ci-artifacts
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  needs: ["doxygen-html"]

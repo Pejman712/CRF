@@ -1,0 +1,120 @@
+{
+    "NumberOfJoints" : 6,
+    "LoopTimeMs": 4,
+    "KinematicChain" :
+    {
+        "format": "DH",
+        "parameters": [
+            {
+                "D" : 0.205,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : -1.5708
+            },
+            {
+                "D" : 0.0,
+                "Theta" : -1.5708,
+                "A" : 0.35,
+                "Alpha" : 3.1416
+            },
+            {
+                "D" : 0.0,
+                "Theta" : -1.5708,
+                "A" : 0.0,
+                "Alpha" : -1.5708
+            },
+            {
+                "D" : 0.305,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : 1.5708
+            },
+            {
+                "D" : 0.0,
+                "Theta" : 0,
+                "A" : 0.0,
+                "Alpha" : -1.5708
+            },
+            {
+                "D" : 0.275,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : 0.0
+            }]
+    },
+    "Joints" : [
+        {
+            "Maximum": 2.87,
+            "Minimum": -2.87,
+            "MaximumVelocity": 1.0,
+            "MaximumAcceleration": 1.2,
+            "Direction": 1,
+            "Offset" : 0,
+            "Kp": 8,
+            "Ki": 1,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 2.87,
+            "Minimum": -2.87,
+            "MaximumVelocity": 1.0,
+            "MaximumAcceleration": 1.2,
+            "Direction": 1,
+            "Offset" : 0,
+            "Kp": 5,
+            "Ki": 0.8,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 2.57,
+            "Minimum": -2.57,
+            "MaximumVelocity": 1.0,
+            "MaximumAcceleration": 1.2,
+            "Direction": 1,
+            "Offset" : 0,
+            "Kp": 8,
+            "Ki": 0.8,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 2.87,
+            "Minimum": -2.87,
+            "MaximumVelocity": 1.0,
+            "MaximumAcceleration": 1.2,
+            "Direction": 1,
+            "Offset" : 0,
+            "Kp": 6,
+            "Ki": 1,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 2.45,
+            "Minimum": -2.45,
+            "MaximumVelocity": 1.0,
+            "MaximumAcceleration": 1.2,
+            "Direction": 1,
+            "Offset" : 0,
+            "Kp": 10,
+            "Ki": 1,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 2.87,
+            "Minimum": -2.87,
+            "MaximumVelocity": 1.0,
+            "MaximumAcceleration": 1.2,
+            "Direction": 1,
+            "Offset" : 0,
+            "Kp": 7,
+            "Ki": 1.5,
+            "Kd": 0.001
+        }
+    ],
+    "Task": {
+        "MaximumVelocity": [0.2, 0.2, 0.2, 1.0, 1.0, 1.0],
+        "MaximumAcceleration": [0.1, 0.1, 0.1, 1.0, 1.0, 1.0],
+        "Kp": [2, 2, 2, -1.27, -0.5, 1.27],
+        "Ki": [0.1, 0.1, -0.3, 0.43, -0.1, 0.43],
+        "Kd": [0.001, 0.001, 0.001, 0.01, 0.01, 0.01]
+    }
+}

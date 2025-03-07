@@ -1,0 +1,51 @@
+#!/bin/bash
+
+python3 ./scripts/cpplint.py --filter=-build/include_order,-build/c++11 --linelength=100 --counting=detailed \
+    $(find . -type d \( -path ./.git -o                                                \
+                        -path ./bin -o                                                 \
+                        -path ./build -o                                               \
+                        -path ./lib -o                                                 \
+                        -path ./cmake -o                                               \
+                        -path ./doxygen -o                                             \
+                        -path ./libraries -o                                           \
+                        -path ./modules/Actuators/RobotiqGripper140 -o                 \
+                        -path ./modules/Actuators/YoubotArm -o                         \
+                        -path ./modules/Applications/PersonFollowerDeprecated -o       \
+                        -path ./modules/Applications/TIMAlignmentDeprecated -o         \
+                        -path ./modules/Applications/WallDetector -o                   \
+                        -path ./modules/Communication/IPCDeprecated -o                 \
+                        -path ./modules/Communication/NetworkClient -o                 \
+                        -path ./modules/Communication/NetworkServer -o                 \
+                        -path ./modules/Communication/SqlAdapter -o                    \
+                        -path ./modules/Communication/TimeSynchronization -o           \
+                        -path ./modules/Communication/WebServers -o                    \
+                        -path ./modules/Devices/Controllino -o                         \
+                        -path ./modules/Devices/TeltonikaRUT -o                        \
+                        -path ./modules/Navigation/GraphOptimization -o                \
+                        -path ./modules/Navigation/StateEstimator -o                   \
+                        -path ./modules/Sensors/Inclinometer -o                        \
+                        -path ./modules/Sensors/Laser -o                               \
+                        -path ./modules/Sensors/LeakDetector -o                        \
+                        -path ./modules/Sensors/Radars -o                              \
+                        -path ./modules/Sensors/SonyDSCCamera -o                       \
+                        -path ./modules/Sensors/ThermalCamera -o                       \
+                        -path ./modules/Sensors/TrackingCamera -o                      \
+                        -path ./modules/Sensors/XlsAdapter -o                          \
+                        -path ./modules/Utility/DataLogger -o                          \
+                        -path ./modules/Utility/RGBDVisionUtility -o                   \
+                        -path ./modules/Vision/DepthEstimation -o                      \
+                        -path ./modules/Vision/DirectSparseOdometry -o                 \
+                        -path ./modules/Vision/InsulateFrameWorks -o                   \
+                        -path ./scripts \) -prune -o ! -type d !                       \
+                        -name "*.yml" !                                                \
+                        -name "*.txt" !                                                \
+                        -name "*.md" !                                                 \
+                        -name "*.cmake" !                                              \
+                        -name "*.sh" !                                                 \
+                        -name "*.png" !                                                \
+                        -name "*.pcd" !                                                \
+                        -name "*.binvox" !                                             \
+                        -name "*.xyz" !                                                \
+                        -name "*.yaml" !                                               \
+                        -name "*.xml" !                                                \
+                        -name "*.json" -print)

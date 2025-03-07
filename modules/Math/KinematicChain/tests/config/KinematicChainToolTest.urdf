@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="ECBPMi">
+
+    <link name="rootLink"/>
+
+    <joint name="rootJoint" type="fixed">
+        <parent link="rootLink"/>
+        <child link="ECBMi_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="ECBMi_link">
+       <visual>
+            <geometry>
+                <mesh filename=""/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="leafJoint" type="fixed">
+        <parent link="ECBMi_link"/>
+        <child link="leafLink"/>
+        <origin xyz="0.78 0.223 -0.121" rpy="3.14 1.2 2.3"/>
+    </joint>
+
+    <link name="leafLink"/>
+
+</robot>

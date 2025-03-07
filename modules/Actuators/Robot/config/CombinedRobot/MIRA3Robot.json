@@ -1,0 +1,96 @@
+{
+    "NumberOfRobots" : 2,
+    "RobotJointDimensions" : [4, 6],
+    "RobotTaskDimensions" : [3, 6],
+    "JointSpaceDegreeOfFreedom" : 10,
+    "TaskSpaceDegreeOfFreedom" : 6,
+    "ControllerLoopTimeMs" : 10,
+    "JointLimits" : {
+        "MaxPosition" : ["inf", "inf", "inf", "inf", "inf", 5.54, 5.98, "inf", 5.09, "inf"],
+        "MinPosition" : ["-inf", "-inf", "-inf", "-inf", "-inf", 0.75,  0.3, "-inf", 1.2, "-inf"],
+        "MaxVelocity" : [47.12, 47.12, 47.12, 47.12, 0.628, 0.628, 0.628, 0.837, 0.837, 0.837],
+        "MaxAcceleration" : [17.45, 17.45, 17.45, 17.45, 20, 20, 20, 30, 30, 30],
+        "MaxTorque" : [30, 30, 30, 30, 20, 20, 20, 20, 20, 20]
+    },
+    "TaskLimits" : {
+        "MaxVelocity" : [3.58, 3.58, 2, 2, 2, 11.19],
+        "MaxAcceleration" : [1.32, 1.32, 2, 2, 2, 4.14]
+    },
+    "ProfileParameters" : {
+        "JointVelocities" : [20, 20, 20, 20, 0.3, 0.3, 0.3, 0.4, 0.4, 0.4],
+        "JointAccelerations" : [10, 10, 10, 10, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5],
+        "TaskVelocity" : [0.1, 0.1, 0.1, 0.5, 0.5, 0.5],
+        "TaskAcceleration" : [2, 2, 1, 0.8, 0.8, 2.8]
+    },
+    "Kinematics" : {
+        "Type" : "URDF",
+        "URDF" : {
+            "RobotURDFPath" : "cpproboticframework/modules/Actuators/Robot/config/CombinedRobot/MIRA3Robot.urdf",
+            "ToolURDFPath" : "",
+            "EndEffectorName" : "leafLink"
+        }
+    },
+    "Robots" : [
+        {
+            "NumberOfMotors" : 4,
+            "PositionMode" : "ProfilePosition",
+            "VelocityMode" : "ProfileVelocity",
+            "TorqueMode" : "ProfileTorque",
+            "TaskLimits" : {
+                "MaxVelocity" : [3.58, 3.58, 0, 0, 0, 11.19],
+                "MaxAcceleration" : [1.32, 1.32, 0, 0, 0, 4.14]
+            },
+            "ProfileParameters" : {
+                "TaskVelocity" : [2, 2, 0, 0, 0, 5],
+                "TaskAcceleration" : [1, 1, 0, 0, 0, 2]
+            },
+            "Motors" : [
+                {
+                    "SlaveID" : [1, 2, 3, 4],
+                    "PositionUnitConversion" : 11408.5627,
+                    "VelocityUnitConversion" : 11408.5627,
+                    "AccelerationUnitConversion" : 11408.5627,
+                    "TorqueUnitConversion": 1,
+                    "CurrentUnitConversion": 1,
+                    "HaltOptionCode" : "SlowDownRamp",
+                    "QuickStopOptionCode" : "QuickStopRampAndQuickStopActive",
+                    "PDOConfiguration" : {
+                        "RxPDOAssign" : [
+                            {"Idx" : "160A"},
+                            {"Idx" : "160B"},
+                            {"Idx" : "160F"},
+                            {"Idx" : "161C"},
+                            {"Idx" : "160C"},
+                            {"Idx" : "161A"}
+                        ],
+                        "TxPDOAssign" : [
+                            {"Idx" : "1A0A"},
+                            {"Idx" : "1A0B"},
+                            {"Idx" : "1A0E"},
+                            {"Idx" : "1A11"},
+                            {"Idx" : "1A13"},
+                            {"Idx" : "1A1F"}
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "SerialNumber" : "PJ00900006525926-0",
+            "EthernetCommunication" : {
+                "IPAdress" : "192.168.132.160",
+                "SubnetMask" : "255.255.255.0",
+                "Port" : 55000,
+                "LocalPcIPAddress": "192.168.132.50"
+            },
+            "TaskLimits" : {
+                "MaxVelocity": [0.2, 0.2, 0.2, 2, 2, 2],
+                "MaxAcceleration": [0.1, 0.1, 0.1, 0.2, 0.2, 0.2]
+            },
+            "ProfileParameters" : {
+                "TaskVelocity" : [0.2, 0.2, 0.2, 0.1, 0.1, 0.1],
+                "TaskAcceleration" : [1, 1, 1, 0.8, 0.8, 0.8]
+            }
+        }
+    ]
+}

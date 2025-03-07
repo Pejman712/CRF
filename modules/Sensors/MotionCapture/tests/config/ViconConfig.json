@@ -1,0 +1,12 @@
+{
+    "SystemSetup": {
+        "ConnectionTimeout": 5000,
+        "ClientBufferSize" : 1,
+        "StreamingType" : 0,
+        "AxisMapping" : 0
+    },
+    "DataStreaming": {
+        "Lightweight" : false,
+        "ObjectsOnly" : false
+    }
+}

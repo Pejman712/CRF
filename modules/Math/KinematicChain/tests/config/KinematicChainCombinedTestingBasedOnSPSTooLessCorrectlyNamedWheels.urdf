@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ****************************************************************************************** -->
+<!-- Description of omniwheeled platform with a mounted arm, -->
+<!-- resembling Jaco kinova 2 robot with one additional prismatic joint -->
+<!-- for Kinematic Chain library testing purposes. -->
+<!-- WARNING!!! In this URDF the last fixed joint was removed. -->
+<!-- ****************************************************************************************** -->
+<robot name="KinematicChainPlatformTestingBasedOnSPS" ip="0.0.0.0">
+
+    <link name="rootLink"/>
+
+    <joint name="rootJoint" type="fixed">
+        <parent link="rootLink"/>
+        <child link="platform_root_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- ****************************************** BODY ****************************************** -->
+    <!-- platform body description - root frame at center -->
+    <link name="platform_root_link">
+        <collision>
+            <origin xyz="0 0 0" />
+            <geometry>
+                <!-- TODO (any) change to take into account sensors -->
+                <box size="0.526 0.19 0.174" />
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- ***************************************** WHEELS ***************************************** -->
+
+    <!-- front left wheel description -->
+    <joint name="frontLeftWheel_joint" type="continuous">
+        <origin rpy="-1.57079632679 0 0" xyz="0.183 0.139 -0.011" />
+        <parent link="platform_root_link" />
+        <child link="frontLeftWheel" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="frontLeftWheel">
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <cylinder length="0.040" radius="0.076" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <mass value="0.3844" />
+            <inertia ixx="0.000324824" ixy="0" ixz="0" iyy="0.000480000" iyz="0" izz="0.000324824" />
+        </inertial>
+    </link>
+
+    <!-- front right wheel description -->
+    <joint name="upper_right_wheel_joint" type="continuous">
+        <origin rpy="-1.57079632679 0 0" xyz="0.183 -0.139 -0.011" />
+        <parent link="platform_root_link" />
+        <child link="upper_right_wheel" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="upper_right_wheel">
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <cylinder length="0.040" radius="0.076" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <mass value="0.3844" />
+            <inertia ixx="0.000324824" ixy="0" ixz="0" iyy="0.000480000" iyz="0" izz="0.000324824" />
+        </inertial>
+    </link>
+
+    <!-- rear left wheel description -->
+    <joint name="rearLeftWheel_joint" type="continuous">
+        <origin rpy="-1.57079632679 0 0" xyz="-0.183 0.139 -0.011" />
+        <parent link="platform_root_link" />
+        <child link="rearLeftWheel" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="rearLeftWheel">
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <cylinder length="0.040" radius="0.076" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <mass value="0.3844" />
+            <inertia ixx="0.000324824" ixy="0" ixz="0" iyy="0.000480000" iyz="0" izz="0.000324824" />
+        </inertial>
+    </link>
+
+    <!-- rear right wheel description -->
+    <joint name="rearRightWheel_joint" type="continuous">
+        <origin rpy="-1.57079632679 0 0" xyz="-0.183 -0.139 -0.011" />
+        <parent link="platform_root_link" />
+        <child link="rearRightWheel" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="rearRightWheel">
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <cylinder length="0.040" radius="0.076" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <mass value="0.3844" />
+            <inertia ixx="0.000324824" ixy="0" ixz="0" iyy="0.000480000" iyz="0" izz="0.000324824" />
+        </inertial>
+    </link>
+
+    <!-- ****************************************** ARM ******************************************* -->
+
+    <joint name="kinova_joint_2" type="continuous">
+        <parent link="platform_root_link" />
+        <child link="kinova_link_2" />
+        <axis xyz="0 1 0" />
+        <origin rpy="0 -0.33161255787 0" xyz="0.2502 0.0013 0" />
+    </joint>
+
+    <link name="kinova_link_2" />
+
+    <joint name="kinova_joint_3" type="continuous">
+        <parent link="kinova_link_2" />
+        <child link="kinova_link_3" />
+        <axis xyz="0 1 0" />
+        <origin rpy="0 0 3.14152" xyz="-0.489649 0 0" />
+    </joint>
+
+    <link name="kinova_link_3" />
+
+    <joint name="kinova_joint_4" type="continuous">
+        <parent link="kinova_link_3" />
+        <child link="kinova_link_4_1" />
+        <axis xyz="1 0 0" />
+        <origin rpy="0 0 0" xyz="-0.197162 -0.035 0" />
+    </joint>
+
+    <link name="kinova_link_4_1" />
+
+    <joint name="kinova_joint_4_5" type="prismatic">
+        <parent link="kinova_link_4_1" />
+        <child link="kinova_link_4_2" />
+        <axis xyz="0 0 1" />
+        <origin rpy="3.14152 0 2" xyz="-0.101 1.4 -0.5" />
+        <limit effort="500" lower="-100" upper="100" velocity="500" />
+    </joint>
+
+    <link name="kinova_link_4_2" />
+
+    <joint name="kinova_joint_5" type="continuous">
+        <parent link="kinova_link_4_2" />
+        <child link="kinova_link_5" />
+        <axis xyz="0 1 0" />
+        <origin rpy="3.14152 0 0" xyz="-0.101 0 0" />
+    </joint>
+
+    <link name="kinova_link_5" />
+
+    <joint name="kinova_joint_6" type="continuous">
+        <parent link="kinova_link_5" />
+        <child link="kinova_end_effector" />
+        <axis xyz="1 0 0" />
+        <origin rpy="0 0 3.14152" xyz="0.0707 0 0" />
+    </joint>
+
+    <link name="kinova_end_effector">
+        <inertial>
+            <mass value="0.0" />
+            <origin xyz="0 -3 0" rpy="0 2 0" />
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
+    <joint name="leafJoint" type="fixed">
+        <parent link="kinova_end_effector"/>
+        <child link="leafLink"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="leafLink"/>
+
+</robot>

@@ -1,0 +1,173 @@
+{
+    "PositionUnitConversion" : 0,
+    "VelocityUnitConversion" : 0,
+    "AccelerationUnitConversion" : 0,
+    "TorqueUnitConversion": 0,
+    "CurrentUnitConversion": 0,
+    "Polarity" : "NoInversion | GlobalInversion | PositionInversion | VelocityInversion",
+    "MaxMotorSpeed" : 0,
+    "MaxMotorTorque" : 0,
+    "MaxMotorCurrent" : 0,
+    "MotorRatedTorque" : 0,
+    "MotorRatedCurrent" : 0,
+    "QuickStopOptionCode" : "SlowDownRampAndSwitchOnDisable | QuickStopRampAndSwitchOnDisable | CurrentLimitAndSwitchOnDisable | VoltageLimitAndSwitchOnDisable | SlowDownRampAndQuickStopActive | QuickStopRampAndQuickStopActive | CurrentLimitAndQuickStopActive | VoltageLimitAndQuickStopActive",
+    "ShutdownOptionCode" : "Disabled | SlowDownRamp",
+    "DisableOperationOptionCode" : "Disabled | SlowDownRamp",
+    "FaultOptionCode" : "SlowDownRamp | QuickStopRamp | CurentLimit | VoltageLimit",
+    "HaltOptionCode" : "SlowDownRamp | QuickStopRamp | CurentLimit | VoltageLimit",
+    "ModesOfOperation" : {
+        "ProfilePositionMode" : {
+            "PositionRangeLimit" : {
+                "Min" : 0,
+                "Max" : 0
+            },
+            "SoftwarePositionLimit" : {
+                "Min" : 0,
+                "Max" : 0
+            },
+            "MaxProfileVelocity" : 0,
+            "QuickStopDeceleration" : 0,
+            "MaxAcceleration" : 0,
+            "MaxDeceleration" : 0,
+            "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+            "ProfileJerkUse" : 0,
+            "ProfileJerks" : [0, 0, 0, 0],
+            "EndVelocity" : 0
+        },
+        "ProfileVelocityMode" : {
+            "SoftwarePositionLimit" : {
+                "Min" : 0,
+                "Max" : 0
+            },
+            "SensorSelectionCode" : 0,
+            "VelocityWindow" : 0,
+            "VelocityWindowTime" : 0,
+            "VelocityThreshold" : 0,
+            "VelocityThresholdTime" : 0,
+            "MaxSlippage" : 0,
+            "MaxProfileVelocity" : 0,
+            "QuickStopDeceleration" : 0,
+            "MaxAcceleration" : 0,
+            "MaxDeceleration" : 0,
+            "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+            "ProfileJerkUse" : 0,
+            "ProfileJerks" : 0
+        },
+        "ProfileTorqueMode" : {
+            "PositiveTorqueLimitValue" : 0,
+            "NegativeTorqueLimitValue" : 0,
+            "TorqueSlope" : 0,
+            "TorqueProfileType" : "Linear | Sin^2"
+        },
+        "VelocityMode" : {
+            "VelocityMinMaxAmount" : {
+                "Min" : 0,
+                "Max" : 0
+            },
+            "VelocityQuickStop" : {
+                "DeltaSpeed" : 0,
+                "DeltaTime" : 0
+            },
+            "SetPointFactor" : {
+                "Numerator" : 0,
+                "Denominator" : 0
+            },
+            "DimensionFactor" : {
+                "Numerator" : 0,
+                "Denominator" : 0
+            }
+        },
+        "InterpolatedPositionMode" : {
+            "PositionRangeLimit" : {
+                "Min" : 0,
+                "Max" : 0
+            },
+            "SoftwarePositionLimit" : {
+                "Min" : 0,
+                "Max" : 0
+            },
+            "HomeOffset" : 0,
+            "InterpolationSubModeSelect" : 0,
+            "InterpolationDataConfiguration" : {
+                "MaximumBufferSize" : 0,
+                "ActualBufferSize" : 0,
+                "BufferOrganization" : 0,
+                "BufferPosition" : 0,
+                "SizeOfDataRecord" : 0,
+                "BufferClear" : 0
+            },
+            "InterpolationTimePeriod" :  {
+                "InterpolationTimePeriodValue" : 0,
+                "InterpolationTimeIndex" : 0
+            },
+            "Polarity" : "PositionPolarity | GlobalPolarity",
+            "MaxProfileVelocity" : 0,
+            "QuickStopDeceleration" : 0,
+            "MaxAcceleration" : 0,
+            "MaxDeceleration" : 0,
+            "EndVelocity" : 0,
+            "PositionWindow": 0,
+            "PositionWindowTime" : 0
+        },
+        "HomingMode" : {
+        },
+        "CyclicSynchronousPositionMode" : {
+            "PositionRangeLimit" : {
+                "Min" : 0,
+                "Max" : 0
+            },
+            "SoftwarePositionLimit" : {
+                "Min" : 0,
+                "Max" : 0
+            },
+            "Polarity" : "PositionPolarity | GlobalPolarity",
+            "FollowingErrorWindow" : 0,
+            "FollowingErrorTimeOut" : 0,
+            "QuickStopDeceleration" : 0,
+            "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+            "ProfileJerkUse" : 0,
+            "ProfileJerks" : 0,
+            "InterpolationTimePeriod" :  {
+                "InterpolationTimePeriodValue" : 0,
+                "InterpolationTimeIndex" : 0
+            },
+            "ProfileDeceleration" : 0
+        },
+        "CyclicSynchronousVelocityMode" : {
+            "QuickStopDeceleration" : 0,
+            "ProfileDeceleration" : 0,
+            "MotionProfileType" : "Trapezoidal | Sin2 | JerkFreeRamp | JerkLimitedRamp",
+            "ProfileJerkUse" : 0,
+            "ProfileJerks" : 0,
+            "SoftwarePositionLimit" :  {
+                "Min" : 0,
+                "Max" : 0
+            },
+            "Polarity" : "VelocityPolarity | GlobalPolarity",
+            "InterpolationTimePeriod" :  {
+                "InterpolationTimePeriodValue" : 0,
+                "InterpolationTimeIndex" : 0
+            }
+        },
+        "CyclicSynchronousTorqueMode" : {
+            "PositiveTorqueLimitValue" : 0,
+            "NegativeTorqueLimitValue" : 0,
+            "TorqueSlope" : 0,
+            "MaxAcceleration" : 0,
+            "MaxDeceleration" : 0,
+            "LowVelocityLimitValue" : 0,
+            "HighVelocityLimitValue" : 0,
+            "TorqueLimitationOptionCodeCST" : "NoLimit | TorqueReducedUntilZero | RampLimit | LimitAccordingToSign | MaxTorqueLimit",
+            "SoftwarePositionLimit" : {
+                "Min" : 0,
+                "Max" : 0
+            },
+            "QuickStopDeceleration" : 0,
+            "ProfileDeceleration" : 0,
+            "InterpolationTimePeriod" : {
+                "InterpolationTimePeriodValue" : 0,
+                "InterpolationTimeIndex" : 0
+            }
+        }
+    }
+}

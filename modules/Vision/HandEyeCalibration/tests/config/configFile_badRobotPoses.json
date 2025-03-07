@@ -1,0 +1,7 @@
+{
+    "inputImageFilename": "cpproboticframework/tests/Applications/HandEyeCalibrationTests/data/good_images/image-%d.png",
+    "inputPoseFilename": "ingidibidingi_%d.yaml",
+    "intrinsicFile": "cpproboticframework/tests/Applications/HandEyeCalibrationTests/data/good_intrinsic_file.xml",
+    "cameraName": "Camera",
+    "outputFilename": "cpproboticframework/build/test_eMc.txt"
+}

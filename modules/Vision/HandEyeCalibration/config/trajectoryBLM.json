@@ -1,0 +1,93 @@
+{
+    "positionsSize": 8,
+    "positions" : {
+        "position0": {
+            "joint0": 0.741675,
+            "joint1": -1.4146259,
+            "joint2": 0.0,
+            "joint3": -0.289341,
+            "joint4": 0.2,
+            "joint5": 1.08073
+        },
+        "position1": {
+            "joint0": 0.741675,
+            "joint1": -0.9146259,
+            "joint2": 0.842278,
+            "joint3": -0.289341,
+            "joint4": 0,
+            "joint5": 1.08073
+        },
+        "position2": {
+            "joint0": 0.741675,
+            "joint1": -0.7146259,
+            "joint2": 0.842278,
+            "joint3": -0.289341,
+            "joint4": 0.5,
+            "joint5": 1.08073
+        },
+        "position3": {
+            "joint0": 0.801675,
+            "joint1": -0.6146259,
+            "joint2": 0.842278,
+            "joint3": -0.289341,
+            "joint4": 0.6,
+            "joint5": 1.08073
+        },
+        "position4": {
+            "joint0": 0.741675,
+            "joint1": -0.5146259,
+            "joint2": 0.842278,
+            "joint3": -0.289341,
+            "joint4": 0.8,
+            "joint5": 1.08073
+        },
+        "position5": {
+            "joint0": 0.741675,
+            "joint1": -0.4146259,
+            "joint2": 0.842278,
+            "joint3": -0.289341,
+            "joint4": 0.95,
+            "joint5": 1.08073
+        },
+        "position6": {
+            "joint0": 0.741675,
+            "joint1": -0.3146259,
+            "joint2": 0.842278,
+            "joint3": -0.289341,
+            "joint4": 1.1,
+            "joint5": 1.08073
+        },
+        "position7": {
+            "joint0": 0.741675,
+            "joint1": -0.0146259,
+            "joint2": 0.842278,
+            "joint3": -0.289341,
+            "joint4": 1.43105,
+            "joint5": 1.08073
+        },
+        "position8": {
+            "joint0": 0.741675,
+            "joint1": 0.0946259,
+            "joint2": 0.842278,
+            "joint3": -0.289341,
+            "joint4": 1.53105,
+            "joint5": 1.08073
+        },
+        "position9": {
+            "joint0": 0.741675,
+            "joint1": 0.1246259,
+            "joint2": 0.842278,
+            "joint3": -0.289341,
+            "joint4": 1.603105,
+            "joint5": 1.08073
+        },
+        "position10": {
+            "joint0": 0.741675,
+            "joint1": 0.1646259,
+            "joint2": 0.842278,
+            "joint3": -0.289341,
+            "joint4": 1.753105,
+            "joint5": 1.08073
+        }        
+    }
+}

@@ -1,0 +1,133 @@
+{
+    "SerialNumber" : "PJ00900006509031-0",
+    "EthernetCommunication" :
+    {
+        "IPAdress" : "192.168.1.112",
+        "SubnetMask" : "255.255.255.0",
+        "Port" : 55000,
+        "LocalPcIPAddress": "192.168.1.36"
+    },
+    "NumberOfJoints" : 6,
+    "LoopTimeMs": 10,
+    "KinematicChain" :
+    {
+        "format": "DH",
+        "parameters": [
+            {
+                "D" : 0.2755,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : 1.5708
+            },
+            {
+                "D" : 0.0,
+                "Theta" : 1.5708,
+                "A" : 0.4100,
+                "Alpha" : 3.1416
+            },
+            {
+                "D" : -0.0098,
+                "Theta" : -1.5708,
+                "A" : 0.0,
+                "Alpha" : 1.5708
+            },
+            {
+                "D" : -0.3111,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : 1.5708
+            },
+            {
+                "D" : 0.0,
+                "Theta" : 0,
+                "A" : 0.0,
+                "Alpha" : 1.5708
+            },
+            {
+                "D" : 0.2638,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : 0.0
+            }]
+    },
+    "Joints" : [
+        {
+            "Maximum": 6.1415,
+            "Minimum": -6.1415,
+            "MaximumVelocity": 0.628,
+            "MaximumAcceleration": 0.6,
+            "MaximumTorque": 20,
+            "Direction": -1,
+            "Offset" : 1.5708,
+            "Kp": 8,
+            "Ki": 1,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 2.25,
+            "Minimum": -2.25,
+            "MaximumVelocity": 0.628,
+            "MaximumAcceleration": 0.6,
+            "Direction": 1,
+            "Offset" : 3.1416,
+            "Kp": 5,
+            "Ki": 0.8,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 2.75,
+            "Minimum": -2.75,
+            "MaximumVelocity": 0.628,
+            "MaximumAcceleration": 0.6,
+            "MaximumTorque": 20,
+            "Direction": 1,
+            "Offset" : 3.1416,
+            "Kp": 8,
+            "Ki": 0.8,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 6.1415,
+            "Minimum": -6.1415,
+            "MaximumVelocity": 0.837,
+            "MaximumAcceleration": 0.8,
+            "MaximumTorque": 20,
+            "Direction": 1,
+            "Offset" : 0,
+            "Kp": 6,
+            "Ki": 1,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 1.95,
+            "Minimum": -1.95,
+            "MaximumVelocity": 0.837,
+            "MaximumAcceleration": 0.8,
+            "MaximumTorque": 20,
+            "Direction": 1,
+            "Offset" : 3.1416,
+            "Kp": 10,
+            "Ki": 1,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 6.1415,
+            "Minimum": -6.1415,
+            "MaximumVelocity": 0.837,
+            "MaximumAcceleration": 0.8,
+            "MaximumTorque": 20,
+            "Direction": -1,
+            "Offset" : 0,
+            "Kp": 7,
+            "Ki": 1.5,
+            "Kd": 0.001
+        }
+    ],
+    "Task": {
+        "MaximumVelocity": [0.15, 0.15, 0.15, 2.0, 2.0, 2.0],
+        "MaximumAcceleration": [0.5, 0.5, 0.5, 5.0, 5.0, 5.0],
+        "Kp": [2, 2, 2, -1.27, -0.5, 1.27],
+        "Ki": [0.1, 0.1, -0.3, 0.43, -0.1, 0.43],
+        "Kd": [0.001, 0.001, 0.001, 0.01, 0.01, 0.01]
+    }
+}

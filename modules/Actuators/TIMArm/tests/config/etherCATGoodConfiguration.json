@@ -1,0 +1,75 @@
+{
+    "Task": {
+        "Kd": [0.001, 0.001, 0.001, 0.01, 0.01, 0.01],
+        "Ki": [0.1, 0.1, -0.3, 0.43, -0.1, 0.43],
+        "Kp": [2, 2, 2, -1.27, -0.5, 1.27],
+        "MaximumAcceleration": [0.1, 0.1, 0.1, 1.0, 1.0, 1.0],
+        "MaximumVelocity": [0.1, 0.1, 0.1, 1.0, 1.0, 1.0]
+    },
+    "Joints" : [
+        {
+            "Maximum": 0.03,
+            "Minimum": -1.57079,
+            "MaximumVelocity": 0.25,
+            "MaximumAcceleration": 0.1,
+            "MaximumTorque": 0.0,
+            "Direction": 1,
+            "Offset" : 0.0,
+            "Kp": 1,
+            "Ki": 0.1,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 0.05,
+            "Minimum": -1.57,
+            "MaximumVelocity": 0.25,
+            "MaximumAcceleration": 0.1,
+            "MaximumTorque": 0.0,
+            "Direction": 1,
+            "Offset" : 0.0,
+            "Kp": 1,
+            "Ki": 0.1,
+            "Kd": 0.001
+        },
+        {
+            "Maximum": 0.750,
+            "Minimum": 0.0,
+            "MaximumVelocity": 0.040,
+            "MaximumAcceleration": 0.090,
+            "MaximumTorque": 0.0,
+            "Direction": 1,
+            "Offset" : 0.0,
+            "Kp": 1,
+            "Ki": 0.1,
+            "Kd": 0.001
+        }
+    ],
+    "KinematicChain" :
+    {
+        "format": "DH",
+        "parameters": [
+            {
+                "D" : 0.0,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : -1.57079,
+                "Type" : "Rotational"
+            },
+            {
+                "D" : 0.0,
+                "Theta" : -1.57079,
+                "A" : 0.0,
+                "Alpha" : 1.57079,
+                "Type" : "Rotational"
+            },
+            {
+                "D" : 0.458,
+                "Theta" : 0.0,
+                "A" : 0.0,
+                "Alpha" : 0.0,
+                "Type" : "Linear"
+            }]
+    },
+    "LoopTimeMs":10,
+    "NumberOfJoints":3
+}

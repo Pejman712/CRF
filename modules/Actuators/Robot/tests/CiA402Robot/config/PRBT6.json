@@ -1,0 +1,63 @@
+{
+    "NumberOfMotors" : 6,
+    "PositionMode" : "ProfilePosition",
+    "VelocityMode" : "VelocityMode",
+    "TorqueMode" : "ProfileTorque",
+    "JointSpaceDegreeOfFreedom" : 6,
+    "TaskSpaceDegreeOfFreedom" : 6,
+    "ControllerLoopTimeMs" : 11,
+    "JointLimits" : {
+        "MaxPosition" : [2.87, 2.87, 2.37, 2.87, 2.45, 2.87],
+        "MinPosition" : [-2.87, -2.87, -2.37, -2.87, -2.45, -2.87],
+        "MaxVelocity" : [0.57, 0.57, 0.57, 0.57, 0.57, 0.57],
+        "MaxAcceleration" : [7.85, 7.85, 7.85, 7.85, 7.85, 7.85],
+        "MaxTorque" : [0, 0, 0, 0, 0, 0]
+    },
+    "TaskLimits" : {
+        "MaxVelocity" : [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        "MaxAcceleration" : [1, 1, 1, 1, 1, 1]
+    },
+    "ProfileParameters" : {
+        "JointVelocities" : [1, 1, 1, 1, 1, 1],
+        "JointAccelerations" : [6, 6, 6, 6, 6, 6],
+        "TaskVelocity" : [0.2, 0.2, 0.2, 0.1, 0.1, 0.1],
+        "TaskAcceleration" : [1, 1, 1, 0.8, 0.8, 0.8]
+    },
+    "Kinematics" : {
+        "Type" : "URDF",
+        "URDF" : {
+            "RobotURDFPath" : "cpproboticframework/modules/Actuators/Robot/tests/CiA402Robot/config/dummy6DoF.urdf",
+            "EndEffectorName" : "end_effector_link"
+        }
+    },
+    "Motors" : [
+        {
+            "SlaveID" : [3, 4, 5, 6, 7, 8],
+            "PositionUnitConversion" : 57295.7795,
+            "VelocityUnitConversion" : 57295.7795,
+            "AccelerationUnitConversion" : 57295.7795,
+            "TorqueUnitConversion": 1,
+            "ModesOfOperation" : {
+                "InterpolatedPositionMode" : {
+                },
+                "VelocityMode": {
+                    "VelocityMinMaxAmount" : {
+                        "Min": 0,
+                        "Max": 0.57
+                    },
+                    "DimensionFactor" : {
+                        "Numerator" :1,
+                        "Denominator" :1
+                    }
+
+                },
+                "ProfilePositionMode" : {
+                    "MaxProfileVelocity" : 1.57,
+                    "QuickStopDeceleration" : 7.85,
+                    "MaxAcceleration" : 7.85,
+                    "MotionProfileType" : "Trapezoidal"
+                }
+            }
+        }
+    ]
+}

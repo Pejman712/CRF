@@ -1,0 +1,252 @@
+{
+    "positionsSize": 30,
+    "positions" : {
+        "position0": {
+            "joint0": -1.5,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 1,
+            "joint5":0.738833
+        },
+        "position1": {
+            "joint0": -1.3,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 0.5,
+            "joint5":0.738833
+        },
+        "position2": {
+            "joint0": -1.1,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 1,
+            "joint5":0.738833
+        },
+        "position3": {
+            "joint0": -0.9,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 1,
+            "joint5":0.738833
+        },
+        "position4": {
+            "joint0": -0.7,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 1,
+            "joint5":0.738833
+        }
+        ,
+        "position5": {
+            "joint0": -0.5,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 1,
+            "joint5":0.738833
+        }
+        ,
+        "position6": {
+            "joint0": -0.3,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 1,
+            "joint5":0.738833
+        }
+        ,
+        "position7": {
+            "joint0": -0.1,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 1,
+            "joint5":0.738833
+        }
+        ,
+        "position8": {
+            "joint0": 0.1,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 1,
+            "joint5":0.738833
+        }
+        ,
+        "position9": {
+            "joint0": 0.3,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 1,
+            "joint5":0.738833
+        },
+        "position10": {
+            "joint0": 0.3,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 0.1,
+            "joint5":0.738833
+        },
+        "position11": {
+            "joint0": 0.1,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 0.1,
+            "joint5":0.738833
+        },
+        "position12": {
+            "joint0": -0.1,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 0.1,
+            "joint5":0.738833
+        },
+        "position13": {
+            "joint0": -0.3,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 0.1,
+            "joint5":0.738833
+        },
+        "position14": {
+            "joint0": -0.5,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 0.1,
+            "joint5":0.738833
+        },
+        "position15": {
+            "joint0": -0.7,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 0.1,
+            "joint5":0.738833
+        },
+        "position16": {
+            "joint0": -0.9,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 0.1,
+            "joint5":0.738833
+        },
+        "position17": {
+            "joint0": -1.1,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 0.1,
+            "joint5":0.738833
+        },
+        "position18": {
+            "joint0": -1.3,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 0.1,
+            "joint5":0.738833
+        },
+        "position19": {
+            "joint0": -1.5,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": 0.1,
+            "joint5":0.738833
+        },
+        "position20": {
+            "joint0": 0.3,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": -0.3,
+            "joint5":0.738833
+        },
+        "position21": {
+            "joint0": 0.1,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": -0.3,
+            "joint5":0.738833
+        },
+        "position22": {
+            "joint0": -0.1,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": -0.3,
+            "joint5":0.738833
+        },
+        "position23": {
+            "joint0": -0.3,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": -0.3,
+            "joint5":0.738833
+        },
+        "position24": {
+            "joint0": -0.5,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": -0.3,
+            "joint5":0.738833
+        },
+        "position25": {
+            "joint0": -0.7,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": -0.3,
+            "joint5":0.738833
+        },
+        "position26": {
+            "joint0": -0.9,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": -0.3,
+            "joint5":0.738833
+        },
+        "position27": {
+            "joint0": -1.1,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": -0.3,
+            "joint5":0.738833
+        },
+        "position28": {
+            "joint0": -1.3,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": -0.3,
+            "joint5":0.738833
+        },
+        "position29": {
+            "joint0": -1.5,
+            "joint1": -0.0150098,
+            "joint2": 1.74529,
+            "joint3": -0.000698132,
+            "joint4": -0.3,
+            "joint5":0.738833
+        }
+    }
+    }
+    }
+}

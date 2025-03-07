@@ -1,0 +1,31 @@
+{
+    "PositionUnitConversion" : 65535,
+    "VelocityUnitConversion" : 60,
+    "AccelerationUnitConversion" : 60,
+    "TorqueUnitConversion": 1,
+    "GearboxRatio" : 40.04,
+    "ModesOfOperation" : {
+        "ProfilePositionMode" : {
+            "MaxProfileVelocity" : 1000,
+            "QuickStopDeceleration" : 200,
+            "MaxAcceleration" : 2000,
+            "MotionProfileType" : "Trapezoidal"
+        },
+        "ProfileVelocityMode" : {
+            "MaxProfileVelocity" : 500,
+            "QuickStopDeceleration" : 200,
+            "MaxAcceleration" : 2000,
+            "MotionProfileType" : "Trapezoidal"
+        },
+        "HomingMode" : {
+        },
+        "InterpolatedPositionMode" : {
+            "InterpolationTimePeriod" :  {
+                "InterpolationTimePeriodValue" : 1,
+                "InterpolationTimeIndex" : -3
+            },
+            "PositionWindow": 1000,
+            "PositionWindowTime" : 1000
+        }
+    }
+}

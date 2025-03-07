@@ -1,0 +1,8 @@
+{
+    "inputImageFilename": "cpproboticframework/tests/Applications/HandEyeCalibrationTests/data/lessThan8good_images/image-%d.png",
+    "inputPoseFilename": "cpproboticframework/tests/Applications/HandEyeCalibrationTests/data/good_poses/pose_fPe_%d.yaml",
+    "intrinsicFile": "cpproboticframework/tests/Applications/HandEyeCalibrationTests/data/good_intrinsic_file.xml",
+    "cameraName": "Camera",
+    "endEffectorToObjectoutputFilename": "cpproboticframework/build/test_eMo.txt",
+    "worldToCameraoutputFilename": "cpproboticframework/build/test_wMc.txt"
+}

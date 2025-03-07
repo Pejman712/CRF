@@ -1,0 +1,44 @@
+{
+    "PositionUnitConversion" : 65535,
+    "VelocityUnitConversion" : 60,
+    "AccelerationUnitConversion" : 60,
+    "TorqueUnitConversion": 1,
+    "ModesOfOperation" : {
+        "ProfilePositionMode" : {
+            "MaxProfileVelocity" : 1000,
+            "QuickStopDeceleration" : 200,
+            "MaxAcceleration" : 2000,
+            "MotionProfileType" : "Trapezoidal"
+        },
+        "ProfileVelocityMode" : {
+            "MaxProfileVelocity" : 500,
+            "QuickStopDeceleration" : 200,
+            "MaxAcceleration" : 2000,
+            "MotionProfileType" : "Trapezoidal"
+        },
+        "HomingMode" : {
+        },
+        "CyclicSynchronousPositionMode" : {
+            "QuickStopDeceleration" : 200,
+            "ProfileDeceleration" : 100,
+            "FollowingErrorWindow" : 10000,
+            "InterpolationTimePeriod" :  {
+                "InterpolationTimePeriodValue" : 100,
+                "InterpolationTimeIndex" : -3
+            }
+        },
+        "CyclicSynchronousVelocityMode" : {
+            "QuickStopDeceleration" : 200,
+            "ProfileDeceleration" : 50,
+            "MotorRatedTorque" : 5,
+            "InterpolationTimePeriod" :  {
+                "InterpolationTimePeriodValue" : 50,
+                "InterpolationTimeIndex" : -3
+            }
+        },
+        "CyclicSynchronousTorqueMode" : {
+                "QuickStopDeceleration" : 200,
+                "ProfileDeceleration" : 50
+        }
+    }
+}

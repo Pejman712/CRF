@@ -1,0 +1,87 @@
+{
+    "PLC" : {
+        "IP" : "192.168.3.40",
+        "Rack" : 0,
+        "Slot" : 2,
+        "maxHeartbeatValue" : 10000,
+        "UpdateIntervalInSeconds" : 1,
+        "commandWaitingTimeInSeconds" : 10.0
+    },
+    "Limits" : {
+        "MaximumPosition" : 5015,
+        "MinimumPosition" : 980,
+        "MaximumVelocity" : 0.3
+    },
+    "Datablocks" : {
+        "TIMAlarms" : {
+            "DatablockNumber" : 511,
+            "DatablockLength" : 28,
+            "Variables" : {
+                "BarcodeReaderError" :                {"RegisterOffset" : 26, "BitNumber" : 0},
+                "BatteryError" :                      {"RegisterOffset" : 26, "BitNumber" : 1},
+                "ChargingArmMotorError" :             {"RegisterOffset" : 26, "BitNumber" : 2},
+                "FrontBumperPressed" :                {"RegisterOffset" : 26, "BitNumber" : 3},
+                "FrontLaserScannerError" :            {"RegisterOffset" : 26, "BitNumber" : 5},
+                "FrontProtectiveFieldReading" :       {"RegisterOffset" : 26, "BitNumber" : 7},
+                "BackBumperPressed" :                 {"RegisterOffset" : 26, "BitNumber" : 4},
+                "BackLaserScannerError" :             {"RegisterOffset" : 26, "BitNumber" : 6},
+                "BackProtectiveFieldReading" :        {"RegisterOffset" : 27, "BitNumber" : 0},
+                "MainMotorError" :                    {"RegisterOffset" : 27, "BitNumber" : 2},
+                "PositionEncoderError" :              {"RegisterOffset" : 27, "BitNumber" : 3},
+                "PositionEncoderReadingError" :       {"RegisterOffset" : 27, "BitNumber" : 5},
+                "VelocityEncoderError" :              {"RegisterOffset" : 27, "BitNumber" : 4},
+                "VelocityEncoderReadingError" :       {"RegisterOffset" : 27, "BitNumber" : 6},
+                "EmergencyStop" :                     {"RegisterOffset" : 27, "BitNumber" : 7}
+            }
+        },
+        "TIMCommands" : {
+            "DatablockNumber" : 509,
+            "DatablockLength" : 6,
+            "Variables" : {
+                "SetPositionManually" :               {"RegisterOffset" : 0,  "BitNumber" : 7},
+                "MoveToTarget" :                      {"RegisterOffset" : 0,  "BitNumber" : 6},
+                "JogForward" :                        {"RegisterOffset" : 0,  "BitNumber" : 4},
+                "JogBackward" :                       {"RegisterOffset" : 0,  "BitNumber" : 5},
+                "Stop" :                              {"RegisterOffset" : 4,  "BitNumber" : 0},
+                "StartCharging" :                     {"RegisterOffset" : 0,  "BitNumber" : 2},
+                "StopCharging" :                      {"RegisterOffset" : 0,  "BitNumber" : 3},
+                "EnableEconomyMode" :                 {"RegisterOffset" : 0,  "BitNumber" : 0},
+                "DisableEconomyMode" :                {"RegisterOffset" : 0,  "BitNumber" : 1},
+                "AcknowledgeAlarms" :                 {"RegisterOffset" : 1,  "BitNumber" : 0},
+                "MechanicalStabilizerInitialized" :   {"RegisterOffset" : 4,  "BitNumber" : 2},
+                "LocalHeartbeat" :                    {"RegisterOffset" : 2,  "BitNumber" : 0}
+            }
+        },
+        "TIMSettings" : {
+            "DatablockNumber" : 510,
+            "DatablockLength" : 26,
+            "Variables" : {
+                "TargetPosition" :                    {"RegisterOffset" : 4,  "BitNumber" : 0},
+                "TargetVelocity" :                    {"RegisterOffset" : 8,  "BitNumber" : 0},
+                "PositionSetManually" :               {"RegisterOffset" : 0,  "BitNumber" : 0}
+            }
+        },
+        "TIMStatus" : {
+            "DatablockNumber" : 511,
+            "DatablockLength" : 28,
+            "Variables" : {
+                "TIMPosition" :                       {"RegisterOffset" : 0,  "BitNumber" : 0},
+                "TIMVelocity" :                       {"RegisterOffset" : 4,  "BitNumber" : 0},
+                "TargetReached" :                     {"RegisterOffset" : 8,  "BitNumber" : 0},
+                "TIMStopped" :                        {"RegisterOffset" : 8,  "BitNumber" : 1},
+                "Charging" :                          {"RegisterOffset" : 8,  "BitNumber" : 2},
+                "ChargingCurrent" :                   {"RegisterOffset" : 10, "BitNumber" : 0},
+                "BatteryVoltage" :                    {"RegisterOffset" : 14, "BitNumber" : 0},
+                "BatteryCurrent" :                    {"RegisterOffset" : 18, "BitNumber" : 0},
+                "EconomyMode" :                       {"RegisterOffset" : 22, "BitNumber" : 0},
+                "ChargingArmConnected" :              {"RegisterOffset" : 22, "BitNumber" : 1},
+                "ChargingArmRetracted" :              {"RegisterOffset" : 22, "BitNumber" : 2},
+                "DevicesRetracted" :                  {"RegisterOffset" : 0,  "BitNumber" : 0},
+                "FrontWarningField" :                 {"RegisterOffset" : 22, "BitNumber" : 3},
+                "BackWarningField" :                  {"RegisterOffset" : 22, "BitNumber" : 4},
+                "TIMHeartbeat" :                      {"RegisterOffset" : 24, "BitNumber" : 0},
+                "MainMotorOn" :                       {"RegisterOffset" : 27, "BitNumber" : 1}
+            }
+        }
+    }
+}

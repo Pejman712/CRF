@@ -1,0 +1,955 @@
+[
+    {
+        "name": "consumerHeartbeatTime",
+        "index": "0x1016",
+        "subregisters": [
+            {
+                "name": "consumer1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "consumer2",
+                "subindex": "0x02",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "producerHeartbeatTime",
+        "index": "0x1017",
+        "size": 2
+    },
+    {
+        "name": "receivePDO1Parameter",
+        "index": "0x1400",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "name": "receivePDO2Parameter",
+        "index": "0x1401",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "name": "receivePDO3Parameter",
+        "index": "0x1402",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "name": "receivePDO4Parameter",
+        "index": "0x1403",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            }
+        ]
+    },
+    {
+        "name": "receivePDO1Mapping",
+        "index": "0x1600",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            },
+            {
+                "name": "mappedObject9",
+                "subindex": "0x09",
+                "size": 4
+            },
+            {
+                "name": "mappedObject10",
+                "subindex": "0x0A",
+                "size": 4
+            },
+            {
+                "name": "mappedObject11",
+                "subindex": "0x0B",
+                "size": 4
+            },
+            {
+                "name": "mappedObject12",
+                "subindex": "0x0C",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "receivePDO2Mapping",
+        "index": "0x1601",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            },
+            {
+                "name": "mappedObject9",
+                "subindex": "0x09",
+                "size": 4
+            },
+            {
+                "name": "mappedObject10",
+                "subindex": "0x0A",
+                "size": 4
+            },
+            {
+                "name": "mappedObject11",
+                "subindex": "0x0B",
+                "size": 4
+            },
+            {
+                "name": "mappedObject12",
+                "subindex": "0x0C",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "receivePDO3Mapping",
+        "index": "0x1602",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            },
+            {
+                "name": "mappedObject9",
+                "subindex": "0x09",
+                "size": 4
+            },
+            {
+                "name": "mappedObject10",
+                "subindex": "0x0A",
+                "size": 4
+            },
+            {
+                "name": "mappedObject11",
+                "subindex": "0x0B",
+                "size": 4
+            },
+            {
+                "name": "mappedObject12",
+                "subindex": "0x0C",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "receivePDO4Mapping",
+        "index": "0x1603",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            },
+            {
+                "name": "mappedObject9",
+                "subindex": "0x09",
+                "size": 4
+            },
+            {
+                "name": "mappedObject10",
+                "subindex": "0x0A",
+                "size": 4
+            },
+            {
+                "name": "mappedObject11",
+                "subindex": "0x0B",
+                "size": 4
+            },
+            {
+                "name": "mappedObject12",
+                "subindex": "0x0C",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO1Parameter",
+        "index": "0x1800",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            },
+            {
+                "name": "inhibitTime",
+                "subindex": "0x03",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO2Parameter",
+        "index": "0x1801",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            },
+            {
+                "name": "inhibitTime",
+                "subindex": "0x03",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO3Parameter",
+        "index": "0x1802",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            },
+            {
+                "name": "inhibitTime",
+                "subindex": "0x03",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO4Parameter",
+        "index": "0x1803",
+        "subregisters": [
+            {
+                "name": "cobID",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "transmissionType",
+                "subindex": "0x02",
+                "size": 1
+            },
+            {
+                "name": "inhibitTime",
+                "subindex": "0x03",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO1Mapping",
+        "index": "0x1A00",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            },
+            {
+                "name": "mappedObject9",
+                "subindex": "0x09",
+                "size": 4
+            },
+            {
+                "name": "mappedObject10",
+                "subindex": "0x0A",
+                "size": 4
+            },
+            {
+                "name": "mappedObject11",
+                "subindex": "0x0B",
+                "size": 4
+            },
+            {
+                "name": "mappedObject12",
+                "subindex": "0x0C",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO2Mapping",
+        "index": "0x1A01",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            },
+            {
+                "name": "mappedObject9",
+                "subindex": "0x09",
+                "size": 4
+            },
+            {
+                "name": "mappedObject10",
+                "subindex": "0x0A",
+                "size": 4
+            },
+            {
+                "name": "mappedObject11",
+                "subindex": "0x0B",
+                "size": 4
+            },
+            {
+                "name": "mappedObject12",
+                "subindex": "0x0C",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO3Mapping",
+        "index": "0x1A02",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            },
+            {
+                "name": "mappedObject9",
+                "subindex": "0x09",
+                "size": 4
+            },
+            {
+                "name": "mappedObject10",
+                "subindex": "0x0A",
+                "size": 4
+            },
+            {
+                "name": "mappedObject11",
+                "subindex": "0x0B",
+                "size": 4
+            },
+            {
+                "name": "mappedObject12",
+                "subindex": "0x0C",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "transmitPDO4Mapping",
+        "index": "0x1A03",
+        "subregisters": [
+            {
+                "name": "numberOfObjects",
+                "subindex": "0x00",
+                "size": 1
+            },
+            {
+                "name": "mappedObject1",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "mappedObject2",
+                "subindex": "0x02",
+                "size": 4
+            },
+            {
+                "name": "mappedObject3",
+                "subindex": "0x03",
+                "size": 4
+            },
+            {
+                "name": "mappedObject4",
+                "subindex": "0x04",
+                "size": 4
+            },
+            {
+                "name": "mappedObject5",
+                "subindex": "0x05",
+                "size": 4
+            },
+            {
+                "name": "mappedObject6",
+                "subindex": "0x06",
+                "size": 4
+            },
+            {
+                "name": "mappedObject7",
+                "subindex": "0x07",
+                "size": 4
+            },
+            {
+                "name": "mappedObject8",
+                "subindex": "0x08",
+                "size": 4
+            },
+            {
+                "name": "mappedObject9",
+                "subindex": "0x09",
+                "size": 4
+            },
+            {
+                "name": "mappedObject10",
+                "subindex": "0x0A",
+                "size": 4
+            },
+            {
+                "name": "mappedObject11",
+                "subindex": "0x0B",
+                "size": 4
+            },
+            {
+                "name": "mappedObject12",
+                "subindex": "0x0C",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "nodeID",
+        "index": "0x2000",
+        "size": 1
+    },
+    {
+        "name": "homePosition",
+        "index": "0x30B0",
+        "size": 4
+    },
+    {
+        "name": "currentDemandValue",
+        "index": "0x30D0",
+        "size": 4
+    },
+    {
+        "name": "currentActualValues",
+        "index": "0x30D1",
+        "subregisters": [
+            {
+                "name": "averaged",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "actual",
+                "subindex": "0x02",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "torqueActualValues",
+        "index": "0x30D2",
+        "subregisters": [
+            {
+                "name": "averaged",
+                "subindex": "0x01",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "velocityActualValues",
+        "index": "0x30D3",
+        "subregisters": [
+            {
+                "name": "averaged",
+                "subindex": "0x01",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "digitalInputProperties",
+        "index": "0x3141",
+        "subregisters": [
+            {
+                "name": "logicState",
+                "subindex": "0x01",
+                "size": 2
+            },
+            {
+                "name": "polarity",
+                "subindex": "0x02",
+                "size": 2
+            }
+        ]
+    },
+    {
+        "name": "errorCode",
+        "index": "0x603F",
+        "size": 2
+    },
+    {
+        "name": "controlWord",
+        "index": "0x6040",
+        "size": 2
+    },
+    {
+        "name": "statusWord",
+        "index": "0x6041",
+        "size": 2
+    },
+    {
+        "name": "modesOfOperation",
+        "index": "0x6060",
+        "size": 1
+    },
+    {
+        "name": "modesOfOperationDisplay",
+        "index": "0x6061",
+        "size": 1
+    },
+    {
+        "name": "positionDemandValue",
+        "index": "0x6062",
+        "size": 4
+    },
+    {
+        "name": "actualPosition",
+        "index": "0x6064",
+        "size": 4
+    },
+    {
+        "name": "velocityDemandValue",
+        "index": "0x606B",
+        "size": 4
+    },
+    {
+        "name": "actualVelocity",
+        "index": "0x606C",
+        "size": 4
+    },
+    {
+        "name": "targetTorque",
+        "index": "0x6071",
+        "size": 2
+    },
+    {
+        "name": "motorRatedTorque",
+        "index": "0x6076",
+        "size": 4
+    },
+    {
+        "name": "actualTorque",
+        "index": "0x6077",
+        "size": 2
+    },
+    {
+        "name": "targetPosition",
+        "index": "0x607A",
+        "size": 4
+    },
+    {
+        "name": "softwarePositionLimit",
+        "index": "0x607D",
+        "subregisters": [
+            {
+                "name": "minimum",
+                "subindex": "0x01",
+                "size": 4
+            },
+            {
+                "name": "maximum",
+                "subindex": "0x02",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "maxProfileVelocity",
+        "index": "0x607F",
+        "size": 4
+    },
+    {
+        "name": "profileVelocity",
+        "index": "0x6081",
+        "size": 4
+    },
+    {
+        "name": "profileAcceleration",
+        "index": "0x6083",
+        "size": 4
+    },
+    {
+        "name": "profileDeceleration",
+        "index": "0x6084",
+        "size": 4
+    },
+    {
+        "name": "quickStopDeceleration",
+        "index": "0x6085",
+        "size": 4
+    },
+    {
+        "name": "positionOffset",
+        "index": "0x60B0",
+        "size": 4
+    },
+    {
+        "name": "velocityOffset",
+        "index": "0x60B1",
+        "size": 4
+    },
+    {
+        "name": "torqueOffset",
+        "index": "0x60B2",
+        "size": 2
+    },
+    {
+        "name": "maxAcceleration",
+        "index": "0x60C5",
+        "size": 4
+    },
+    {
+        "name": "digitalInputs",
+        "index": "0x60FD",
+        "size": 4
+    },
+    {
+        "name": "digitalOutputs",
+        "index": "0x60FE",
+        "subregisters": [
+            {
+                "name": "phisicalOutputs",
+                "subindex": "0x01",
+                "size": 4
+            }
+        ]
+    },
+    {
+        "name": "targetVelocity",
+        "index": "0x60FF",
+        "size": 4
+    }
+]

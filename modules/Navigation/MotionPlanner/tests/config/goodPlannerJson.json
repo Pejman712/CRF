@@ -1,0 +1,19 @@
+{
+	"RobotConfigFileLocation": "./config/robotConfigFile.json",
+	"Optimizer": 1,
+	"Planner": 2,
+	"Dimensions": 2,
+	"MaxTime": 5.0,
+	"StateSpaces": {
+		"State0": {
+		"Type": 1,
+		"lowerBound": 0.0,
+		"upperBound": 2.0
+		},
+        "State1": {
+        "Type": 1,
+        "lowerBound": -2.0,
+        "upperBound": 2.0
+        }
+	}
+}

@@ -1,0 +1,17 @@
+{
+    "Model" : "HDL-32",
+    "IPAddress" : "192.168.1.201",
+    "UPDPort" : 2368,
+    "CorrectionFile" : "",
+    "ScanIntervalUs": 100,
+    "ScanSize": 0,
+    "Range": {
+        "Minimum": 1.0,
+        "Maximum": 80.0
+        },
+    "AngularResolution": 0.4,
+    "Angle": {
+        "Minimum": -180.0,
+        "Maximum": 180.0
+    }
+}

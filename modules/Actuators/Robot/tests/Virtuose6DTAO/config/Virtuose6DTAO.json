@@ -1,0 +1,26 @@
+{
+    "IPAddress" : "192.168.1.53",
+    "JointSpaceDegreeOfFreedom" : 6,
+    "TaskSpaceDegreeOfFreedom" : 6,
+    "ControllerLoopTimeMs" : 1,
+    "JointLimits" : {
+        "MaxPosition" : [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        "MinPosition" : [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        "MaxVelocity" : [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        "MaxAcceleration" : [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        "MaxTorque" : [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    },
+    "TaskLimits" : {
+        "MaxVelocity" : [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        "MaxAcceleration" : [1, 1, 1, 1, 1, 1]
+    },
+    "ProfileParameters" : {
+        "JointVelocities" : [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        "JointAccelerations" : [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        "TaskVelocity" : [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        "TaskAcceleration" : [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    },
+    "Kinematics" : {
+        "Type" : "Internal"
+    }
+}

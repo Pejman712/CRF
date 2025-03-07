@@ -1,0 +1,17 @@
+{
+    "HardwareConfiguration" : "RobotArmWagon",
+    "Movement" : {
+        "TIMPositionThreshold" : 0.3,
+        "DefaultTIMVelocity" : 1.0,
+        "ReducedTIMVelocity" : 0.5,
+        "Obstacles" : {
+            "Margin" : 9.0,
+            "AreaExtension" : 20.0
+        },
+        "RobotArmTrajectories" : "cpproboticframework/modules/Utility/MissionUtility/tests/config/TestArmTrayectories.json"
+    },
+    "TIMHeadOffset" : 2.0,
+    "TIMTailOffset" : 9.0,
+    "MaxBufferSize" : 10,
+    "ResultsPath" : "cpproboticframework/build/"
+}

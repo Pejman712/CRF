@@ -1,0 +1,16 @@
+{
+    "NumberOfJoints" : 6,
+    "LogFilePath" : "ftSensorCalibrationTest.json",
+    "JointPositions":
+    {
+        "CalibrationStart": [0, -0.7, 0.78, 0, 2.45, 0,],
+        "CalibrationEnd": [0, -0.7, 0.78, 0, -2.45, 0, 0.42]
+    },
+    "PathResolution": 100,
+    "MeasurementsPerPoint": 10,
+    "ValidationThreshold":
+    {
+        "ForceN": 1,
+        "TorqueNm": 0.1
+    }
+}

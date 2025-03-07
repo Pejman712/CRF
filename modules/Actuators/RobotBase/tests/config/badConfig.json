@@ -1,0 +1,13 @@
+{
+    "Name" : "CERNBot2",
+    "NumberOfWheels" : 4,
+    "LoopTimeUs": 20000,
+    "hasLiftingStage": 1,
+    "Wheel": {
+        "PositionX": 0.685,
+        "PositionY": 0.71,
+        "InchSize" : 8,
+        "WheelsDiameter8": 0.2032,
+        "WheelsDiameter10": 0.2554
+        }
+}

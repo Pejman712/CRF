@@ -1,0 +1,5 @@
+{
+    "vignette": "../tests/Applications/DsoTests/configFiles/vignette.png",
+    "cameraConfig": "xxx",
+    "gammaCalib": "../tests/Applications/DsoTests/configFiles/gammaCalib.txt"
+}

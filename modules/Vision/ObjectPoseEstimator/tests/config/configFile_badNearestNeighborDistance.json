@@ -1,0 +1,49 @@
+{
+    "preScanObjectPath": "cpproboticframework/tests/Applications/ObjectPoseEstimatorTests/data/BlmModelHalf2.pcd",
+    "clusteringParameters" : {
+        "clusterVisualization": false,
+        "clusterTolerance": 0.05,
+        "minClusterSize": 50,
+        "maxClusterSize": 250000
+    },
+    "momentOfInertiaParameters" : {
+        "momentOfInertiaVisualization": false
+    },
+    "fitnessParameters" : {
+        "nearestNeighborDistance": 0.00
+    },
+    "initialAlignmentParameters" : {
+        "icpInitialAligmentVisualization": false,
+        "sampleConsensusInlierThreshold": 0.02,
+        "sampleConsensusMaximumIterations": 1000000,
+        "sampleConsensusRefineModel": false,
+        "subsamplingSideLength": 0.01,
+        "FPFHPersintenceAlpha": 0.05,
+        "multiscaleFeaturePersistenceScaleValue1": 0.09,
+        "multiscaleFeaturePersistenceScaleValue2": 0.11,
+        "multiscaleFeaturePersistenceScaleValue3": 0.15,
+        "SHOTColorFeatures": true,
+        "SHOTComputationThreads": 4,
+        "SHOTColorPersintenceAlpha": 0.05,
+        "SHOTColormultiscaleFeaturePersistenceScaleValue1": 0.09,
+        "SHOTColormultiscaleFeaturePersistenceScaleValue2": 0.11,
+        "SHOTColormultiscaleFeaturePersistenceScaleValue3": 0.15
+    },
+    "icpRefinementParameters" : {
+        "icpRefinement": false,
+        "icpStepsVisualization": false,
+        "icpSourceNormalsVisualization": false,
+        "weightedTransformEstimation": true,
+        "covarianceSubsampling" :false,
+        "covarianceSamplingTotalPointsDivision": 2,
+        "normalSamplingTotalPointsDivision": 2,
+        "normalSamplingBinSize": 50,
+        "correspondencesMaximumDistance": 0.05,
+        "correspondencesMaximumMedianDistanceFactor": 1.5,
+        "correspondencesMaximunAngleInRad": 0.2,
+        "translationThreshold": 9e-08,
+        "rotationThreshold": 0.0044,
+        "maximumIterations": 100,
+        "passThroughMinLimit": 0.45
+    }
+}

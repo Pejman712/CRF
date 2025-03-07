@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="KinovaJaco2SW" ip="0.0.0.0">
+    <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+    </material>
+    <material name="blue">
+        <color rgba="0.0 0.0 0.8 1.0"/>
+    </material>
+    <material name="green">
+        <color rgba="0.0 0.8 0.0 1.0"/>
+    </material>
+    <material name="grey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+    </material>
+    <material name="light_grey">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+    </material>
+    <material name="orange">
+        <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+    </material>
+    <material name="brown">
+        <color rgba="0.870588235294 0.811764705882 0.764705882353 1.0"/>
+    </material>
+    <material name="red">
+        <color rgba="0.8 0.0 0.0 1.0"/>
+    </material>
+    <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+    <!-- Material for the visual primitives -->
+    <material name="anymal_material">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+    </material>
+    <!-- Xacro:Properties -->
+    <!-- [m] -->
+    <!-- Base link -->
+   
+     <link name="platform_root_link">
+        <collision>
+            <origin xyz="0 0 0" />
+            <geometry>
+                <!-- TODO (any) change to take into account sensors -->
+                <box size="0.526 0.19 0.174" />
+            </geometry>
+        </collision>
+    </link>
+   
+    <joint name="j2s6s200_joint_1" type="continuous">
+        <parent link="platform_root_link"/>
+        <child link="j2s6s200_link_1"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="40" lower="-6.28318530718" upper="6.28318530718" velocity="0.628318530718"/>
+        <!-- <origin rpy="0 3.14159265359 1.57079632679" xyz="0.045 0 0.149124"/> -->
+        <origin rpy="3.14159262359 0 0" xyz="0 0 0"/> 
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <transmission name="j2s6s200_joint_1_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_1_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>160</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name="j2s6s200_link_1">
+        <visual>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <visual>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.7477"/>
+            <origin xyz="0 -0.002 -0.0605"/>
+            <inertia ixx="0.00152031725204" ixy="0" ixz="0" iyy="0.00152031725204" iyz="0" izz="0.00059816"/>
+        </inertial>
+    </link>
+
+    <joint name="j2s6s200_joint_2" type="revolute">
+        <parent link="j2s6s200_link_1"/>
+        <child link="j2s6s200_link_2"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="80" lower="0.820304748437" upper="5.46288055874" velocity="0.628318530718"/>
+        <origin rpy="-1.57079632679 0 3.14159265359" xyz="0 0.0016 -0.11875"/>
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <transmission name="j2s6s200_joint_2_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_2_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>160</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name="j2s6s200_link_2">
+        <visual>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <visual>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.99"/>
+            <origin xyz="0 -0.2065 -0.01"/>
+            <inertia ixx="0.010502207991" ixy="0" ixz="0" iyy="0.000792" iyz="0" izz="0.010502207991"/>
+        </inertial>
+    </link>
+
+    <joint name="j2s6s200_joint_3" type="revolute">
+        <parent link="j2s6s200_link_2"/>
+        <child link="j2s6s200_link_3"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="40" lower="0.331612557879" upper="5.9515727493" velocity="0.628318530718"/>
+        <origin rpy="0 3.14159265359 0" xyz="0 -0.410 0"/>
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <transmission name="j2s6s200_joint_3_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_3">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_3_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>160</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name="j2s6s200_link_3">
+        <visual>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <visual>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.6763"/>
+            <origin xyz="0 0.081 -0.0086"/>
+            <inertia ixx="0.00142022431908" ixy="0" ixz="0" iyy="0.000304335" iyz="0" izz="0.00142022431908"/>
+        </inertial>
+    </link>
+
+    <joint name="j2s6s200_joint_4" type="continuous">
+        <parent link="j2s6s200_link_3"/>
+        <child link="j2s6s200_link_4"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="20" lower="-6.28318530718" upper="6.28318530718" velocity="0.837758040957"/>
+        <origin rpy="-1.57079632679 0 3.14159265359" xyz="0 0.2073 -0.0114"/>
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <transmission name="j2s6s200_joint_4_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_4">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_4_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>160</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name="j2s6s200_link_4">
+        <visual>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <visual>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.463"/>
+            <origin xyz="0 0.0028848942 -0.0541932613"/>
+            <inertia ixx="0.0004321316048" ixy="0" ixz="0" iyy="0.0004321316048" iyz="0" izz="9.26e-05"/>
+        </inertial>
+    </link>
+
+    <joint name="j2s6s200_joint_5" type="revolute">
+        <parent link="j2s6s200_link_4"/>
+        <child link="j2s6s200_link_5"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="20" lower="0.523598775598" upper="5.75958653158" velocity="0.837758040957"/>
+        <origin rpy="1.57079632679 0 3.14159265359" xyz="0 0 -0.10375"/>
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <transmission name="j2s6s200_joint_5_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_5">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_5_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>160</mechanicalReduction>
+        </actuator>
+    </transmission>
+   
+    <link name="j2s6s200_link_5">
+        <visual>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+            <material name="carbon_fiber">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <visual>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length = "0.1" radius = "0.025" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.463"/>
+            <origin xyz="0 0.0497208855 -0.0028562765"/>
+            <inertia ixx="0.0004321316048" ixy="0" ixz="0" iyy="9.26e-05" iyz="0" izz="0.0004321316048"/>
+        </inertial>
+    </link>
+
+    <joint name="j2s6s200_joint_6" type="continuous">
+        <parent link="j2s6s200_link_5"/>
+        <child link="j2s6s200_end_effector"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="20" lower="-6.28318530718" upper="6.28318530718" velocity="0.837758040957"/>
+        <origin rpy="-1.57079632679 0 3.14159265359" xyz="0 0.10375 0"/>
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+    <transmission name="j2s6s200_joint_6_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j2s6s200_joint_6">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j2s6s200_joint_6_actuator">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>160</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name="j2s6s200_end_effector">
+      <inertial>
+        <mass value="0.0"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+    </link>
+   
+</robot>

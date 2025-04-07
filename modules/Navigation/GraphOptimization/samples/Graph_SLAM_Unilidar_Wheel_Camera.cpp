@@ -625,18 +625,18 @@ int main(int argc, char* argv[]) {
             continue;
         }
         //std::cout << "[DEBUG] Retrieved point cloud with " << cloud->points.size() << " points." << std::endl;
-
+        
         auto end = std::chrono::steady_clock::now();
         std::chrono::duration<double> elapsedSeconds = end - lastSaveTime;
         //std::cout << "[DEBUG] Acquisition time: " << elapsedSeconds.count() << " s" << std::endl;
-
+        
         // Accumulate points from the current cloud into the accumulated cloud
         *accumulatedCloud += *cloud;
         //std::cout << "[DEBUG] Accumulated cloud now has " << accumulatedCloud->points.size() << " points." << std::endl;
-
+        
         if (currentTime - lastSaveTime >= accumulationInterval) {
             //std::cout << "[DEBUG] Accumulation interval reached. Processing accumulated point cloud." << std::endl;
-
+        
             // Convert accumulated points to PCL PointXYZ for processing
             pcl::PointCloud<pcl::PointXYZI>::Ptr xyz_cloud(new pcl::PointCloud<pcl::PointXYZI>());
             for (const auto& point : accumulatedCloud->points) {
@@ -648,19 +648,19 @@ int main(int argc, char* argv[]) {
                 xyz_cloud->points.push_back(xyz_point);
             }
             //std::cout << "[DEBUG] Converted accumulated cloud to xyz_cloud with " << xyz_cloud->points.size() << " points." << std::endl;
-
+        
             // Ensure the point cloud is properly organized before GICP
             xyz_cloud->width = xyz_cloud->points.size();
             xyz_cloud->height = 1;  // Unorganized point cloud
             xyz_cloud->is_dense = true;  // Optional
             //std::cout << "[DEBUG] Organized xyz_cloud: width = " << xyz_cloud->width << ", height = " << xyz_cloud->height << std::endl;
-
+        
             // Ensure that the previous cloud is also organized correctly
             previousCloud->width = previousCloud->points.size();
             previousCloud->height = 1;  // Unorganized point cloud
             previousCloud->is_dense = true;  // Optional        
             //std::cout << "[DEBUG] Organized previousCloud: width = " << previousCloud->width << ", height = " << previousCloud->height << std::endl;
-
+        
             // Skip the comparison if this is the first scan (i.e., no previous cloud available)
             if (previousCloud->empty()) {
                 //std::cout << "[DEBUG] previousCloud is empty. Storing current xyz_cloud as previousCloud." << std::endl;
@@ -668,7 +668,7 @@ int main(int argc, char* argv[]) {
                 lastSaveTime = currentTime; // Reset the save time
                 continue;  // Skip to the next iteration
             }
-
+        
             // Filter the clouds based on height, if needed (optional)
             pcl::PointCloud<pcl::PointXYZI>::Ptr cloud_filtered_source(new pcl::PointCloud<pcl::PointXYZI>());
             pcl::PointCloud<pcl::PointXYZI>::Ptr cloud_filtered_target(new pcl::PointCloud<pcl::PointXYZI>());
@@ -678,7 +678,7 @@ int main(int argc, char* argv[]) {
             pass.setFilterLimits(0, 25.0); 
             pass.filter(*cloud_filtered_source);
             //std::cout << "[DEBUG] Applied passthrough filter. Source cloud now has " << cloud_filtered_source->points.size() << " points." << std::endl;
-
+        
             pass.setInputCloud(previousCloud);
             pass.filter(*cloud_filtered_target);
             //std::cout << "[DEBUG] Applied passthrough filter. Target cloud now has " << cloud_filtered_target->points.size() << " points." << std::endl;
@@ -691,16 +691,16 @@ int main(int argc, char* argv[]) {
                     for (const auto& point : cloud->points) {
                         intensities.push_back(point.intensity);
                     }
-
+        
                     // Sort intensity values
                     std::sort(intensities.begin(), intensities.end());
-
+        
                     // Compute percentile indices
                     size_t idx_low = static_cast<size_t>(intensities.size() * low_intensity_bound);
                     size_t idx_high = static_cast<size_t>(intensities.size() * high_intensity_bound);
                     float intensity_low = intensities[idx_low];
                     float intensity_high = intensities[idx_high];
-
+        
                     // Apply intensity filter
                     pcl::PassThrough<pcl::PointXYZI> intensityPass;
                     intensityPass.setFilterFieldName("intensity");
@@ -708,71 +708,71 @@ int main(int argc, char* argv[]) {
                     intensityPass.setInputCloud(cloud);
                     pcl::PointCloud<pcl::PointXYZI>::Ptr intensity_filtered(new pcl::PointCloud<pcl::PointXYZI>());
                     intensityPass.filter(*intensity_filtered);
-
+        
                     return intensity_filtered;
                 } else {
                     std::cerr << "Cloud is empty after z-filtering." << std::endl;
                     return pcl::PointCloud<pcl::PointXYZI>::Ptr();
                 }
             };
-
+        
             // Filter source and target clouds based on intensity
             cloud_filtered_source = intensityFilter(cloud_filtered_source);
             cloud_filtered_target = intensityFilter(cloud_filtered_target);
-
+        
             if (!cloud_filtered_source || !cloud_filtered_target) {
                 std::cerr << "Error in intensity filtering." << std::endl;
                 continue;
             }
             Eigen::Matrix4f transformationMatrix;
-
+        
             // Create rotation matrix from gyroYaw
             Eigen::Matrix3f gyroRotationMatrix;
             gyroRotationMatrix = Eigen::AngleAxisf(gyro_z, Eigen::Vector3f::UnitZ()).matrix();
-
+        
             // Create transformation matrix
             Eigen::Matrix4f gyroTransformation = Eigen::Matrix4f::Identity();
             gyroTransformation.block<3,3>(0,0) = gyroRotationMatrix;
-
+        
             // Transform cloud_filtered_source
             pcl::transformPointCloud(*cloud_filtered_source, *cloud_filtered_source, gyroTransformation);
-
+        
             auto startTime = std::chrono::high_resolution_clock::now();
-
+        
             // Use 'template' keyword to disambiguate the function template
             //std::cout << "[DEBUG] Starting GICP alignment." << std::endl;
             bool gicpConverged = crf::utility::visionutility::pointcloud::gicp::template gicp<pcl::PointXYZI>(
                 cloud_filtered_target, cloud_filtered_source, transformationMatrix);
             //std::cout << "[DEBUG] GICP alignment completed. Converged: " << (gicpConverged ? "Yes" : "No") << std::endl;
-
+        
             auto endTime = std::chrono::high_resolution_clock::now();
             std::chrono::duration<double> processingTime = endTime - startTime;
             //std::cout << "[DEBUG] GICP processing time: " << processingTime.count() << " seconds." << std::endl;
-
+        
             if (!gicpConverged) {
                 // GICP did not converge, use wheel odometry
                 //std::cout << "[DEBUG] GICP did not converge. Using wheel odometry for transformation." << std::endl;
                 double dx = x_l * dt;
                 double dy = y_l * dt;
                 double dtheta = w_l * dt;
-
+        
                 odomTransformation(0, 0) = std::cos(dtheta);
                 odomTransformation(0, 1) = -std::sin(dtheta);
                 odomTransformation(1, 0) = std::sin(dtheta);
                 odomTransformation(1, 1) = std::cos(dtheta);
                 odomTransformation(0, 3) = dx;
                 odomTransformation(1, 3) = dy;
-
+        
                 cumulativeTransformation = cumulativeTransformation * odomTransformation.inverse();
-
+        
                 // Extract x, y, yaw from cumulativeTransformation
                 float x_translation = cumulativeTransformation(0, 3);
                 float y_translation = cumulativeTransformation(1, 3);
                 float psi = atan2(cumulativeTransformation(1, 0), cumulativeTransformation(0, 0));
-
+        
                 // Save to CSV file
                 gicpOdomFile << timeInSeconds << "," << x_translation << "," << y_translation << "," << psi << std::endl;
-
+        
                 std::cout << "[DEBUG] Odometry Translation: dx = " << dx
                           << ", dy = " << dy
                           << ", dtheta = " << dtheta << std::endl;
@@ -782,43 +782,43 @@ int main(int argc, char* argv[]) {
                 //std::cout << "[DEBUG] GICP converged. Processing transformation matrix." << std::endl;
                 Eigen::Matrix3f rotationMatrix = transformationMatrix.block<3,3>(0,0);
                 Eigen::Vector3f translationVector = transformationMatrix.block<3,1>(0,3);
-                yaw = atan2(rotationMatrix(1,0), rotationMatrix(0,0));
-                //std::cout << "[DEBUG] Extracted yaw from rotation matrix: " << yaw << std::endl;
-
+                float gicpYaw = atan2(rotationMatrix(1,0), rotationMatrix(0,0));
+                //std::cout << "[DEBUG] Extracted yaw from rotation matrix: " << gicpYaw << std::endl;
+        
                 std::cout << "[DEBUG] Gicp Translation: x = " << translationVector[0]
                           << ", y = " << translationVector[1]
-                          << ", yaw = " << yaw << std::endl;
-
+                          << ", yaw = " << gicpYaw << std::endl;
+        
                 Eigen::Matrix3f newRotationMatrix;
-                newRotationMatrix << cos(yaw), -sin(yaw), 0.0f,
-                                    sin(yaw),  cos(yaw), 0.0f,
+                newRotationMatrix << cos(gicpYaw), -sin(gicpYaw), 0.0f,
+                                    sin(gicpYaw),  cos(gicpYaw), 0.0f,
                                         0.0f,      0.0f, 1.0f;
                 //std::cout << "[DEBUG] New rotation matrix:\n" << newRotationMatrix << std::endl;
-
+        
                 translationVector[2] = 0.0f;
                 Eigen::Matrix4f modifiedTransformationMatrix = Eigen::Matrix4f::Identity();
                 modifiedTransformationMatrix.block<3,3>(0,0) = newRotationMatrix;
                 modifiedTransformationMatrix.block<3,1>(0,3) = translationVector;
-                transformationMatrix = modifiedTransformationMatrix* gyroTransformation;
-
+                transformationMatrix = modifiedTransformationMatrix * gyroTransformation;
+        
                 cumulativeTransformation = cumulativeTransformation * transformationMatrix.inverse();
-
+        
                 // Extract x, y, yaw from cumulativeTransformation
                 float x_translation = cumulativeTransformation(0, 3);
                 float y_translation = cumulativeTransformation(1, 3);
                 float psi = atan2(cumulativeTransformation(1, 0), cumulativeTransformation(0, 0));
-
+        
                 // Save to CSV file
                 gicpOdomFile << timeInSeconds << "," << x_translation << "," << y_translation << "," << psi << std::endl;
             }
-
+        
             // Update the previous cloud for the next iteration
             *previousCloud = *xyz_cloud;  // Save the current scan as the previous scan
             //std::cout << "[DEBUG] Updated previousCloud with current xyz_cloud." << std::endl;
-
+        
             comparisonCount++;
             //std::cout << "[DEBUG] Total comparisons: " << comparisonCount << ", Non-convergences: " << nonConvergenceCount << std::endl;
-
+        
             // ------------------------ Kalman Filter Prediction and Correction ------------------------
             //std::cout << "[DEBUG] Retrieving IMU data for Kalman Filter." << std::endl;
             // Use the cumulative transformation matrix to extract x_translation and y_translation
@@ -828,7 +828,7 @@ int main(int argc, char* argv[]) {
             std::cout << "Gicp/odom cumulitive: x_translation = " << x_translation
                       << ", y_translation = " << y_translation
                       << ", psi (yaw) = " << psi << std::endl;
-
+        
             Eigen::VectorXd control_input_vec(6);
             control_input_vec << x_l, y_l, w_l, a_x, a_y, gyro_z;
             system_model->setControl(control_input_vec);
@@ -837,20 +837,20 @@ int main(int argc, char* argv[]) {
             measurement_input_vec << x_translation, y_translation, psi;
             observation_model->setMeasurement(measurement_input_vec);
             //std::cout << "[DEBUG] Set measurement input vector:\n" << measurement_input_vec << std::endl;
-
+        
             //std::cout << "[DEBUG] Performing Kalman Filter prediction." << std::endl;
             kf.prediction(system_model, state_space);
             //std::cout << "[DEBUG] Prediction step completed." << std::endl;
-
+        
             //std::cout << "[DEBUG] Performing Kalman Filter correction." << std::endl;
             kf.correction(observation_model, state_space);
             //std::cout << "[DEBUG] Correction step completed." << std::endl;
-
+        
             Eigen::VectorXd meanf = state_space->getMean();
-
+        
             // Save Kalman filter mean to CSV file
             kalmanFilterFile << timeInSeconds << "," << meanf[0] << "," << meanf[1] << "," << meanf[2] << std::endl;
-
+        
             // ------------------------ Add Pose and Edge to g2o Graph ------------------------
             //std::cout << "[DEBUG] Adding pose and edge to g2o graph." << std::endl;
             // Extract the current pose from the Kalman Filter
@@ -859,12 +859,12 @@ int main(int argc, char* argv[]) {
             double current_yaw = meanf[2];
             std::cout << "[DEBUG] Current Pose from Kalman Filter: x = " << current_x
                       << ", y = " << current_y << ", yaw = " << current_yaw << std::endl;
-
+        
             // Create a new vertex for the current pose
             g2o::VertexSE2* vi = new g2o::VertexSE2();
             vi->setId(vertex_id);
             vi->setEstimate(g2o::SE2(current_x, current_y, current_yaw));
-
+        
             // If it's the first vertex, fix it
             if (vertex_id == 0) {
                 vi->setFixed(true);
@@ -872,43 +872,56 @@ int main(int argc, char* argv[]) {
             } else {
                 std::cout << "[DEBUG] Added vertex with ID " << vertex_id << std::endl;
             }
-
+        
             optimizer.addVertex(vi);
-
+        
             // If not the first pose, add an edge from the previous pose
             if (vertex_id > 0) {
                 g2o::EdgeSE2* edge = new g2o::EdgeSE2();
                 edge->vertices()[0] = dynamic_cast<g2o::VertexSE2*>(optimizer.vertex(vertex_id - 1));
                 edge->vertices()[1] = vi;
-
+        
+                // Get previous pose vertex
+                g2o::VertexSE2* v_prev = dynamic_cast<g2o::VertexSE2*>(optimizer.vertex(vertex_id - 1));
+                g2o::SE2 prev_pose = v_prev->estimate();
+                
+                // Calculate relative transformation (from previous pose to current pose)
+                // This is what the edge should represent
+                g2o::SE2 current_pose(current_x, current_y, current_yaw);
+                g2o::SE2 relative_pose = prev_pose.inverse() * current_pose;
+                
                 // Set the measurement as the relative transformation
-                if (!gicpConverged){
-                    transformationMatrix = odomTransformation;
-                }
-
-                float x_translation = transformationMatrix(0, 3);
-                float y_translation = transformationMatrix(1, 3);
-                float psi = atan2(transformationMatrix(1,0), transformationMatrix(0,0));
-                g2o::SE2 relative_pose(x_translation, y_translation, yaw);
                 edge->setMeasurement(relative_pose);
-                //std::cout << "[DEBUG] Set edge measurement (relative_pose): " << relative_pose.translation().transpose()
-                 //         << ", rotation (radians) = " << relative_pose.rotation().angle() << std::endl;
-
-                // Set information matrix (higher confidence in odometry)
+                
+                std::cout << "[DEBUG] Edge measurement (relative pose): dx = " << relative_pose.translation().x()
+                        << ", dy = " << relative_pose.translation().y()
+                        << ", dtheta = " << relative_pose.rotation().angle() << std::endl;
+        
+                // Set information matrix (confidence levels)
                 Eigen::Matrix3d information = Eigen::Matrix3d::Identity();
-                information(0,0) = information_matrix_entries(0); // From configuration
-                information(1,1) = information_matrix_entries(1); // From configuration
-                information(2,2) = information_matrix_entries(2); // From configuration
+                
+                // If we're using GICP result, set higher confidence
+                if (gicpConverged) {
+                    information(0,0) = information_matrix_entries(0); // x confidence
+                    information(1,1) = information_matrix_entries(1); // y confidence
+                    information(2,2) = information_matrix_entries(2); // rotation confidence
+                } else {
+                    // Lower confidence for odometry-only measurements
+                    information(0,0) = information_matrix_entries(0) * 0.5;
+                    information(1,1) = information_matrix_entries(1) * 0.5;
+                    information(2,2) = information_matrix_entries(2) * 0.5;
+                }
+                
                 edge->setInformation(information);
                 //std::cout << "[DEBUG] Set edge information matrix:\n" << information << std::endl;
-
+        
                 optimizer.addEdge(edge);
-                ///std::cout << "[DEBUG] Added edge between vertex " << vertex_id - 1 << " and vertex " << vertex_id << std::endl;
+                //std::cout << "[DEBUG] Added edge between vertex " << vertex_id - 1 << " and vertex " << vertex_id << std::endl;
             }
-
+        
             vertex_id++;
             //std::cout << "[DEBUG] Vertex ID incremented to " << vertex_id << std::endl;
-
+        
             // ------------------------ Perform Graph Optimization ------------------------
             // Define when to optimize (e.g., every N poses)
             if (vertex_id % optimize_every == 0) {
@@ -921,7 +934,7 @@ int main(int argc, char* argv[]) {
                 } else {
                     std::cout << "[DEBUG] Optimization complete. Iterations: " << optimization_result << std::endl;
                 }
-
+        
                 // Save the optimized poses to CSV file
                 for (int id = 0; id < vertex_id; ++id) {
                     g2o::VertexSE2* v = dynamic_cast<g2o::VertexSE2*>(optimizer.vertex(id));
@@ -932,33 +945,31 @@ int main(int argc, char* argv[]) {
                     }
                 }
             }
-
+        
             // ------------------------ Transform the Target Cloud ------------------------
             //std::cout << "[DEBUG] Transforming target cloud with cumulative transformation matrix." << std::endl;
             pcl::PointCloud<pcl::PointXYZI>::Ptr transformedTargetCloud(new pcl::PointCloud<pcl::PointXYZI>());
             pcl::transformPointCloud(*xyz_cloud, *transformedTargetCloud, cumulativeTransformation);
             //std::cout << "[DEBUG] Transformed target cloud has " << transformedTargetCloud->points.size() << " points." << std::endl;
-
+        
             // Reset the accumulated cloud
             accumulatedCloud->clear();
             //std::cout << "[DEBUG] Cleared accumulatedCloud." << std::endl;
-
+        
             // Reset the lastSaveTime
             lastSaveTime = currentTime;
             //std::cout << "[DEBUG] Reset lastSaveTime to current time." << std::endl;
         }
-    }
-
-    // ------------------------ Close CSV Files ------------------------
-    // Close CSV files
-    gicpOdomFile.close();
-    kalmanFilterFile.close();
-    graphOptimizedPosesFile.close();
-
-    // ------------------------ Cleanup ------------------------
-    //std::cout << "[DEBUG] Exiting main loop. Cleaning up." << std::endl;
-    setNonBlockingInput(false);
-    std::cout << "[DEBUG] Terminal settings restored. Program exiting." << std::endl;
-
-    return 0;
-}
+        
+        // ------------------------ Close CSV Files ------------------------
+        // Close CSV files
+        gicpOdomFile.close();
+        kalmanFilterFile.close();
+        graphOptimizedPosesFile.close();
+        
+        // ------------------------ Cleanup ------------------------
+        //std::cout << "[DEBUG] Exiting main loop. Cleaning up." << std::endl;
+        setNonBlockingInput(false);
+        std::cout << "[DEBUG] Terminal settings restored. Program exiting." << std::endl;
+        
+        return 0;
